@@ -2,5 +2,18 @@ import { defineConfig } from 'vite'
 import tailwindcss from '@tailwindcss/vite'
 
 export default defineConfig({
-    plugins: [tailwindcss()]
+    plugins: [tailwindcss()],
+    build: {
+        rollupOptions: {
+            input: {
+                main: 'index.html',
+                work: 'work.html',
+                about: 'about.html',
+                project1: 'project-1.html',
+                project2: 'project-2.html',
+                project3: 'project-3.html',
+                bmworkflowdiagram: 'bm-workflow-diagram.html',
+            }
+        }
+    }
 })
