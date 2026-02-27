@@ -1,1 +1,64 @@
 @import "tailwindcss";
+
+@custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
+
+:root {
+    --bg-color: #F5F5F4;
+    --text-color: #454545;
+    --nav-hover: #666666;
+    --a-hover: #2563EB;
+    --border-color: #BCBBBF;
+    --card-bg: #f8f8f8;
+    --j-card-bg: #e4ecef;
+}
+
+[data-theme="dark"] {
+    --bg-color: #22222E;
+    --text-color: #ffffff;
+    --nav-hover: #cccccc;
+    --a-hover: #2563EB;
+    --border-color: #cccccc;
+    --card-bg: #252525;
+    --j-card-bg: #39515A;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica', 'Arial', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: background-color 0.3s ease, color 0.3s ease;
+    line-height: 1.6;
+}
+
+#closeModal:hover {
+    cursor: pointer;
+}
+
+.mb-0 {
+    margin-bottom: 0 !important;
+}
+
+p {
+    margin: 0 0  15px;
+}
+
+.theme-toggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-color);
+    transition: transform 0.2s ease;
+}
+
+.theme-toggle:hover {
+    transform: scale(1.1);
+}
+
+.theme-toggle svg {
+    width: 20px;
+    height: 20px;
+}

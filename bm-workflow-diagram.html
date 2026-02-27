@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>BlueMatrix — Publishing Pipeline</title>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            background: #f7f7f5;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'IBM Plex Sans', sans-serif;
+            padding: 40px 20px;
+        }
+
+        .canvas {
+            width: 100%;
+            max-width: 480px;
+        }
+
+        .title-block { margin-bottom: 36px; }
+
+        .title {
+            font-size: 18px;
+            font-weight: 500;
+            color: #111;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+        }
+
+        .subtitle {
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 11px;
+            color: #888;
+            margin-top: 4px;
+        }
+
+        .pipeline {
+            display: flex;
+            flex-direction: column;
+            align-items: stretch;
+        }
+
+        .node {
+            background: #fff;
+            border: 1px solid #ddd;
+            padding: 14px 18px;
+        }
+
+        .node-label {
+            font-size: 13px;
+            font-weight: 500;
+            color: #111;
+        }
+
+        .node-note {
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 10px;
+            color: #999;
+            margin-top: 3px;
+        }
+
+        .arrow {
+            display: flex;
+            align-items: center;
+            padding: 0 18px;
+            height: 32px;
+            gap: 8px;
+        }
+
+        .arrow-line {
+            width: 1px;
+            height: 100%;
+            background: #ccc;
+        }
+
+        .arrow-text {
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 9px;
+            color: #bbb;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+        }
+
+        .outputs-row {
+            display: flex;
+            gap: 8px;
+            margin-top: 8px;
+        }
+
+        .output {
+            flex: 1;
+            border: 1px solid #ddd;
+            background: #fff;
+            padding: 10px 12px;
+            text-align: center;
+        }
+
+        .output-label {
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 10px;
+            color: #555;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+
+        .divider {
+            border: none;
+            border-top: 1px solid #e0e0e0;
+            margin: 28px 0 16px;
+        }
+
+        .footer {
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 10px;
+            color: #bbb;
+        }
+    </style>
+</head>
+<body>
+
+<div class="canvas">
+
+    <div class="title-block">
+        <div class="title">BlueMatrix - Publishing Pipeline</div>
+        <div class="subtitle">Stylesheet architecture / single-source publishing</div>
+    </div>
+
+    <div class="pipeline">
+
+        <div class="node">
+            <div class="node-label">Authoring Template</div>
+            <div class="node-note">Client-specific report structure</div>
+        </div>
+
+        <div class="arrow">
+            <div class="arrow-line"></div>
+            <div class="arrow-text">authored content</div>
+        </div>
+
+        <div class="node">
+            <div class="node-label">Structured Content</div>
+            <div class="node-note">Normalized field containers</div>
+        </div>
+
+        <div class="arrow">
+            <div class="arrow-line"></div>
+            <div class="arrow-text">serialize</div>
+        </div>
+
+        <div class="node">
+            <div class="node-label">XML + Client Config</div>
+            <div class="node-note">Content + branding parameters</div>
+        </div>
+
+        <div class="arrow">
+            <div class="arrow-line"></div>
+            <div class="arrow-text">transform</div>
+        </div>
+
+        <div class="node">
+            <div class="node-label">XSLT Transform</div>
+            <div class="node-note">Layout rules, typography, conditional logic</div>
+        </div>
+
+        <div class="arrow">
+            <div class="arrow-line"></div>
+            <div class="arrow-text">render</div>
+        </div>
+
+        <div class="node">
+            <div class="node-label">Published Outputs</div>
+            <div class="node-note">Delivered simultaneously across channels</div>
+        </div>
+
+        <div class="outputs-row">
+            <div class="output"><div class="output-label">Web</div></div>
+            <div class="output"><div class="output-label">PDF</div></div>
+            <div class="output"><div class="output-label">Email</div></div>
+        </div>
+
+    </div>
+
+    <hr class="divider">
+
+</div>
+
+</body>
+</html>

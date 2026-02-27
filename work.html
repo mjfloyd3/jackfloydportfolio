@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="UI Developer and Product Designer with 7 years of experience in fintech">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Jack Floyd</title>
+    <script type="module" src="/src/main.js"></script>
+    <script>
+        if (sessionStorage.getItem('work_unlocked') !== 'true') {
+            window.location.href = 'index.html';
+        }
+    </script>
+</head>
+
+<body>
+
+<nav-bar></nav-bar>
+<main class="min-h-screen px-4 sm:px-6 pt-32 pb-20">
+    <div class="max-w-5xl mx-auto px-6">
+        <h2 class="text-xl font-medium text-[var(--text-color)] mb-8">Selected Work</h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+            <a href="project-1.html" class="group block">
+                <div class="overflow-hidden bg-[var(--card-bg)] aspect-[4/3] mb-4">
+                    <img src="assets/images/admin-queue-designed.png" alt="Product Redesign"
+                         class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" />
+                </div>
+                <p class="text-sm font-medium text-[var(--text-color)]">Product Redesign</p>
+                <p class="text-xs font-light text-[var(--nav-hover)] mt-1">Reimagined admin interface with UX enhancements.</p>
+            </a>
+
+            <a href="project-2.html" class="group block">
+                <div class="overflow-hidden bg-[var(--card-bg)] aspect-[4/3] mb-4">
+                    <img src="assets/images/bridge-theme-designed.png" alt="Financial research report templates"
+                         class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" />
+                </div>
+                <p class="text-sm font-medium text-[var(--text-color)]">Custom Research Publishing Templates</p>
+                <p class="text-xs font-light text-[var(--nav-hover)] mt-1">Structured workflows and scalable multi-output content frameworks.</p>
+            </a>
+
+            <a href="project-3.html" class="group block">
+                <div class="overflow-hidden bg-[var(--card-bg)] aspect-[4/3] mb-4">
+                    <img src="assets/images/bm-site-page-sample.png" alt="Company website redesign"
+                         class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" />
+                </div>
+                <p class="text-sm font-medium text-[var(--text-color)]">Company Website Redesign</p>
+                <p class="text-xs font-light text-[var(--nav-hover)] mt-1">Internal knowledge management and client-facing documentation.</p>
+            </a>
+
+        </div>
+    </div>
+</main>
+
+<my-footer></my-footer>
+
+
+</body>
+</html>
