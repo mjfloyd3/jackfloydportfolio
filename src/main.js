@@ -5,7 +5,7 @@ customElements.define("nav-bar", class extends HTMLElement {
     connectedCallback() {
         this.innerHTML = `
                 <div class="fixed top-0 left-0 right-0 z-50 backdrop-blur-md bg-[#F5F5F4]/80">
-                    <nav class="flex max-w-6xl mx-auto justify-between items-center px-8 lg:px-8 py-8">
+                    <nav class="flex max-w-6xl mx-auto justify-between items-center px-8 lg:px- py-8">
                         <div class="logo">
                             <a href="index.html" class="link-unstyled font-semibold text-[clamp(1.15rem,1.3vw,1.35rem)]">
                                 Jack Floyd
