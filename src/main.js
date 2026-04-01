@@ -1,6 +1,5 @@
 import './style.css'
 
-
 customElements.define("nav-bar", class extends HTMLElement {
     connectedCallback() {
         this.innerHTML = `
@@ -12,11 +11,8 @@ customElements.define("nav-bar", class extends HTMLElement {
                             </a>
                         </div>
                         <div class="nav-right flex items-center gap-4">
-                           
-                                
-                                <a href="about.html">About</a>
-                            
-                            <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+                            <a href="about.html">About</a>
+                            <button type="button" class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
                                 <svg id="sunIcon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
                                 </svg>
@@ -28,6 +24,38 @@ customElements.define("nav-bar", class extends HTMLElement {
                     </nav>
                 </div>
                 `;
+
+        // Theme logic runs here, inside connectedCallback, so elements are guaranteed to exist
+        const navbar = this.querySelector('.fixed.top-0');
+        const themeToggle = this.querySelector('#themeToggle');
+        const sunIcon = this.querySelector('#sunIcon');
+        const moonIcon = this.querySelector('#moonIcon');
+        const html = document.documentElement;
+
+        function applyTheme(theme) {
+            html.setAttribute('data-theme', theme);
+            localStorage.setItem('theme', theme);
+
+            if (theme === 'dark') {
+                navbar.classList.remove('bg-[#F5F5F4]/80');
+                navbar.classList.add('bg-[#22222E]/80');
+                sunIcon.style.display = 'none';
+                moonIcon.style.display = 'block';
+            } else {
+                navbar.classList.remove('bg-[#22222E]/80');
+                navbar.classList.add('bg-[#F5F5F4]/80');
+                sunIcon.style.display = 'block';
+                moonIcon.style.display = 'none';
+            }
+        }
+
+        const savedTheme = localStorage.getItem('theme') || 'light';
+        applyTheme(savedTheme);
+
+        themeToggle.addEventListener('click', () => {
+            const current = html.getAttribute('data-theme');
+            applyTheme(current === 'dark' ? 'light' : 'dark');
+        });
     }
 });
 
@@ -35,7 +63,6 @@ customElements.define("nav-bar", class extends HTMLElement {
 customElements.define("my-footer", class extends HTMLElement {
     connectedCallback() {
         this.innerHTML = `
-                    
                     <footer class="border-t border-gray-200 text-gray-400 text-sm">
                       <div class="mx-auto max-w-6xl px-12 py-12 flex justify-between items-center">
                         <p>&copy; 2026</p>
@@ -59,101 +86,65 @@ customElements.define("my-footer", class extends HTMLElement {
                         </div>
                       </div>
                     </footer>
-               
                 `;
     }
 });
 
-const navbar = document.querySelector('.fixed.top-0');
-const themeToggle = document.getElementById('themeToggle');
-const sunIcon = document.getElementById('sunIcon');
-const moonIcon = document.getElementById('moonIcon');
-const html = document.documentElement;
 
-function applyTheme(theme) {
-    html.setAttribute('data-theme', theme);
-    localStorage.setItem('theme', theme);
-
-    if (theme === 'dark') {
-        navbar.classList.remove('bg-[#F5F5F4]/80');
-        navbar.classList.add('bg-[#22222E]/80');
-        sunIcon.style.display = 'none';
-        moonIcon.style.display = 'block';
-    } else {
-        navbar.classList.remove('bg-[#22222E]/80');
-        navbar.classList.add('bg-[#F5F5F4]/80');
-        sunIcon.style.display = 'block';
-        moonIcon.style.display = 'none';
-    }
-}
-
-// apply on load
-const savedTheme = localStorage.getItem('theme') || 'light';
-applyTheme(savedTheme);
-
-// toggle on click
-themeToggle.addEventListener('click', () => {
-    const current = html.getAttribute('data-theme');
-    applyTheme(current === 'dark' ? 'light' : 'dark');
-});
-
-
-
-const PROJECT_PASSWORD = 'guitar';
-
-
-// Smooth scrolling for navigation links
+// Smooth scrolling for anchor links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
         const target = document.querySelector(this.getAttribute('href'));
         if (target) {
-            target.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
-            });
+            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
         }
     });
 });
 
 
-const passwordModal = document.getElementById('passwordModal');
-const passwordForm = document.getElementById('passwordForm');
-const passwordInput = document.getElementById('passwordInput');
-const errorMessage = document.getElementById('errorMessage');
-const closeModal = document.getElementById('closeModal');
+// Password modal — only runs on pages that have the modal
+const openWorkBtn = document.getElementById('openWork');
+if (openWorkBtn) {
+    const PROJECT_PASSWORD = 'guitar';
+    const passwordModal = document.getElementById('passwordModal');
+    const passwordForm = document.getElementById('passwordForm');
+    const passwordInput = document.getElementById('passwordInput');
+    const errorMessage = document.getElementById('errorMessage');
+    const closeModal = document.getElementById('closeModal');
 
-document.getElementById('openWork').addEventListener('click', (e) => {
-    e.preventDefault();
-    openModal();
-});
-
-closeModal.addEventListener('click', closeModalHandler);
-
-passwordModal.addEventListener('click', (e) => {
-    if (e.target === passwordModal) closeModalHandler();
-});
-
-passwordForm.addEventListener('submit', (e) => {
-    e.preventDefault();
-    if (passwordInput.value === PROJECT_PASSWORD) {
-        sessionStorage.setItem('work_unlocked', 'true');
-        closeModalHandler();
-        window.location.href = 'work.html';
-    } else {
-        errorMessage.textContent = 'Incorrect password. Please try again.';
+    const openModal = () => {
+        passwordModal.classList.remove('hidden');
         passwordInput.value = '';
-        passwordInput.focus();
+        errorMessage.textContent = '';
+        setTimeout(() => passwordInput.focus(), 100);
     }
-});
 
-function openModal() {
-    passwordModal.classList.remove('hidden');
-    passwordInput.value = '';
-    errorMessage.textContent = '';
-    setTimeout(() => passwordInput.focus(), 100);
-}
+    const closeModalHandler = () => {
+        passwordModal.classList.add('hidden');
+    }
 
-function closeModalHandler() {
-    passwordModal.classList.add('hidden');
+    openWorkBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        openModal();
+    });
+
+    closeModal.addEventListener('click', closeModalHandler);
+
+    passwordModal.addEventListener('click', (e) => {
+        if (e.target === passwordModal) closeModalHandler();
+    });
+
+    passwordForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        if (passwordInput.value === PROJECT_PASSWORD) {
+            sessionStorage.setItem('work_unlocked', 'true');
+            closeModalHandler();
+            window.location.href = 'work.html';
+        } else {
+            errorMessage.textContent = 'Incorrect password. Please try again.';
+            passwordInput.value = '';
+            passwordInput.focus();
+        }
+    });
 }
