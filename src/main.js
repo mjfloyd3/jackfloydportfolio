@@ -1,4 +1,8 @@
 import './style.css'
+import { inject } from '@vercel/analytics'
+
+// Initialize Vercel Analytics
+inject()
 
 customElements.define("nav-bar", class extends HTMLElement {
     connectedCallback() {
