@@ -75,6 +75,13 @@
                 <p><em>A scalable, design-driven template system that bridges authoring, data, and output.</em></p>
                 <p>I design and implement custom authoring templates that encode each client's brand system, guide analysts toward consistent layouts, and dynamically pull in structured financial data. The result is a system where authors focus on content, design stays consistent, and data flows accurately from internal models to published research.</p>
 
+                <figure>
+                    <img src="assets/images/editor-screen-sample.png" class="w-full" alt="Bridge theme web report sample" />
+                    <figcaption class="text-xs italic text-center mt-2 text-[var(--nav-hover)]">
+                        Sample editor view showing the report authoring environment, including admin-managed layout configurations, structured financial data entry, and permission-scoped content fields.
+                    </figcaption>
+                </figure>
+
                 <hr class="border-none border-t border-[var(--border-color)] my-6">
 
                 <h3 class="text-xl font-semibold mb-4">Impact</h3>
@@ -149,6 +156,9 @@
 </main>
 
 <my-footer></my-footer>
-
+<div class="modal-overlay" id="imgModal">
+    <button class="modal-close" id="modalClose">✕</button>
+    <img id="modalImg" src="" alt="">
+</div>
 </body>
 </html>

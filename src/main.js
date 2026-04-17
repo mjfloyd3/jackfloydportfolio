@@ -152,3 +152,29 @@ if (openWorkBtn) {
         }
     });
 }
+
+const overlay = document.getElementById('imgModal');
+const modalImg = document.getElementById('modalImg');
+
+document.querySelectorAll('img').forEach(img => {
+    img.style.cursor = 'pointer';
+    img.addEventListener('click', () => {
+        modalImg.src = img.src;
+        modalImg.alt = img.alt;
+        overlay.classList.add('active');
+    });
+});
+
+// Close on backdrop click
+overlay.addEventListener('click', () => overlay.classList.remove('active'));
+
+// Don't close when clicking the image itself
+modalImg.addEventListener('click', e => e.stopPropagation());
+
+// Close button
+document.getElementById('modalClose').addEventListener('click', () => overlay.classList.remove('active'));
+
+// Close on Escape key
+document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') overlay.classList.remove('active');
+});
