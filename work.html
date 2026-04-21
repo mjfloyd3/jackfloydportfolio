@@ -6,110 +6,101 @@
     <meta name="description" content="UI Developer and Product Designer with 7 years of experience in fintech">
     <meta name="robots" content="noindex, nofollow">
     <title>Jack Floyd</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noticia+Text:ital,wght@0,400;0,700;1,400;1,700&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
     <script type="module" src="/src/main.js"></script>
     <script>
         if (sessionStorage.getItem('work_unlocked') !== 'true') {
             window.location.href = 'index.html';
         }
     </script>
+
+    <style>
+        h2 {
+            font-family: 'Noticia Text', Georgia, serif;
+            font-weight: 400;
+        }
+        .project-item:hover .thumb-img { transform: scale(1.03); }
+    </style>
+
 </head>
+
 
 <body>
 
 <nav-bar></nav-bar>
 <main class="min-h-screen px-4 sm:px-6 pt-32 pb-20">
     <div class="max-w-5xl mx-auto px-6">
-        <h2 class="text-xl font-medium text-[var(--text-color)] mb-8">Selected Work</h2>
+        <h2 class="text-2xl font-medium text-[var(--text-color)] mb-8">Selected Work</h2>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="flex flex-col">
 
-            <a href="project-1.html" class="group block">
-                <div class="overflow-hidden bg-[var(--card-bg)] aspect-[4/3] mb-4">
-                    <img src="assets/images/admin-queue-designed.png" alt="Product Redesign"
-                         class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" />
-                </div>
-                <p class="text-sm font-medium text-[var(--text-color)]">Product Redesign</p>
-                <p class="text-xs font-light text-[var(--nav-hover)] mt-1">Admin UI redesign for a fintech publishing platform.</p>
-            </a>
+        <a href="project-1.html" class="group flex flex-col sm:flex-row items-stretch hover:opacity-90 transition-opacity duration-150 no-underline">
+            <div class="w-full rounded-lg sm:w-[48%] shrink-0 aspect-video overflow-hidden bg-[#D3D9EF] flex items-center justify-center p-6">
+                <img src="assets/images/admin-new.png" alt="Admin UI redesign" class="w-full h-full object-contain transition-transform duration-300 group-hover:scale-105" />
+            </div>
+            <div class="flex flex-col justify-center gap-2 flex-1 sm:px-8 py-6 py-6">
+                <h3 class="text-3xl font-medium font-mono text-[var(--text-color)] m-0">Product Redesign</h3>
+                <p class="text-lg font-light text-[var(--nav-hover)] leading-relaxed m-0">Admin UI redesign for a fintech publishing platform.</p>
+            </div>
+        </a>
 
-            <a href="project-2.html" class="group block">
-                <div class="overflow-hidden bg-[var(--card-bg)] aspect-[4/3] mb-4">
-                    <img src="assets/images/bridge-theme-designed.png" alt="Financial research report templates"
-                         class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" />
-                </div>
-                <p class="text-sm font-medium text-[var(--text-color)]">Custom Research Publishing Templates</p>
-                <p class="text-xs font-light text-[var(--nav-hover)] mt-1">Custom research report templates for institutional investment banks.</p>
-            </a>
+        <a href="project-2.html" class="py-16 group flex flex-col sm:flex-row items-stretch hover:opacity-90 transition-opacity duration-150 no-underline">
+            <div class="w-full rounded-lg sm:w-[48%] shrink-0 h-64 bg-[#292E39] flex items-center justify-center p-6">
+                <img class="h-full w-auto object-contain transition-transform duration-300 group-hover:scale-105" src="assets/images/report-publishing-templates.png" alt="Research report templates" />
+            </div>
+            <div class="flex flex-col justify-center gap-2 flex-1 px-8 py-6">
+                <h3 class="text-3xl font-medium font-mono text-[var(--text-color)] m-0">Custom Research Publishing Templates</h3>
+                <p class="text-lg font-light text-[var(--nav-hover)] leading-relaxed m-0">Custom research report templates for institutional investment banks.</p>
+            </div>
+        </a>
 
-            <a href="project-3.html" class="group block">
-                <div class="overflow-hidden bg-[var(--card-bg)] aspect-[4/3] mb-4">
-                    <img src="assets/images/bm-site-page-sample.png" alt="Company website redesign"
-                         class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" />
-                </div>
-                <p class="text-sm font-medium text-[var(--text-color)]">Company Website Redesign</p>
-                <p class="text-xs font-light text-[var(--nav-hover)] mt-1">Full company website redesign, concept through deployment.</p>
-            </a>
 
-        </div>
+        <a href="project-3.html" class="pb-16 group flex flex-col sm:flex-row items-stretch hover:opacity-90 transition-opacity duration-150 no-underline">
+            <div class="w-full rounded-lg sm:w-[48%] shrink-0 h-64 bg-[#A5EDEA] flex items-center justify-center p-6">
+                <img class="h-full w-auto object-contain transition-transform duration-300 group-hover:scale-105" src="assets/images/site-page-redesign.png" alt="Company website redesign" />
+            </div>
+            <div class="flex flex-col justify-center gap-2 flex-1 px-8 py-6">
+                <h3 class="text-3xl font-medium font-mono text-[var(--text-color)] m-0">Company Website Redesign</h3>
+                <p class="text-sm font-light text-[var(--nav-hover)] leading-relaxed m-0">Full company website redesign, concept through deployment.</p>
+            </div>
+        </a>
 
-        <h2 class="text-xl font-medium text-[var(--text-color)] mb-8 mt-8">Independent Projects</h2>
+    </div>
 
-        <ul>
-            <li>
-                <a href="https://altgeneration.lovable.app/" class="project-item flex items-center gap-4 px-3 py-3 rounded-lg hover:bg-[var(--card-bg)] group">
-                    <div class="flex-shrink-0 w-12 h-12 rounded-sm overflow-hidden bg-stone-800 ring-1 ring-stone-700">
-                        <img src="assets/images/altgen.png" alt="AltGen project thumbnail" class="thumb w-full h-full object-cover">
-                    </div>
-                    <div class="flex-1 min-w-0">
-                        <p class="text-sm font-medium text-[var(--text-color)] mb-0">AltGen</p>
-                        <p class="text-xs text-[var(--nav-hover)] mt-0 mb-0.5">AI-powered alt text generation for any image on the web.</p>
-                        <div class="flex gap-1.5 flex-wrap">
-                            <span class="text-[10px] px-2 py-0.5 rounded-full border border-[var(--border-color)] text-[var(--nav-hover)]">Design</span>
-                            <span class="text-[10px] px-2 py-0.5 rounded-full border border-[var(--border-color)] text-[var(--nav-hover)]">AI</span>
-                            <span class="text-[10px] px-2 py-0.5 rounded-full border border-[var(--border-color)] text-[var(--nav-hover)]">Dev</span>
-                        </div>
-                    </div>
-                    <span class="arrow text-sm flex-shrink-0 text-[var(--nav-hover)]">→</span>
-                </a>
-            </li>
-            <li class="border-t border-[var(--border-color)]"></li>
-            <li>
-                <a href="https://carlycaptions.lovable.app" class="project-item flex items-center gap-4 px-3 py-3 rounded-lg hover:bg-[var(--card-bg)] group">
-                    <div class="flex-shrink-0 w-12 h-12 rounded-sm overflow-hidden bg-stone-800 ring-1 ring-stone-700">
-                        <img src="assets/images/carlycaptions.png" alt="Carly Captions project thumbnail" class="thumb w-full h-full object-cover">
-                    </div>
-                    <div class="flex-1 min-w-0">
-                        <p class="text-sm font-medium text-[var(--text-color)] mb-0">Carly Captions</p>
-                        <p class="text-xs text-[var(--nav-hover)] mt-0 mb-0.5">Mood-based lyric generator for social captions.</p>
-                        <div class="flex gap-1.5 flex-wrap">
-                            <span class="text-[10px] px-2 py-0.5 rounded-full border border-[var(--border-color)] text-[var(--nav-hover)]">Design</span>
-                            <span class="text-[10px] px-2 py-0.5 rounded-full border border-[var(--border-color)] text-[var(--nav-hover)]">AI</span>
-                            <span class="text-[10px] px-2 py-0.5 rounded-full border border-[var(--border-color)] text-[var(--nav-hover)]">Dev</span>
-                        </div>
-                    </div>
-                    <span class="arrow text-sm flex-shrink-0 text-[var(--nav-hover)]">→</span>
-                </a>
-            </li>
-            <li class="border-t border-[var(--border-color)]"></li>
-            <li>
-                <a href="https://mjfloyd3.github.io/NYC-Knows/" class="project-item flex items-center gap-4 px-3 py-3 rounded-lg hover:bg-[var(--card-bg)] group">
-                    <div class="flex-shrink-0 w-12 h-12 rounded-sm overflow-hidden bg-stone-800 ring-1 ring-stone-700">
-                        <img src="assets/images/nycknowspreview.png" alt="NYC Knows project thumbnail" class="thumb w-full h-full object-cover">
-                    </div>
-                    <div class="flex-1 min-w-0">
-                        <p class="text-sm font-medium text-[var(--text-color)] mb-0">NYC Knows</p>
-                        <p class="text-xs text-[var(--nav-hover)] mt-0 mb-0.5">Web app for locating local health testing centers.</p>
-                        <div class="flex gap-1.5 flex-wrap">
-                            <span class="text-[10px] px-2 py-0.5 rounded-full border border-[var(--border-color)] text-[var(--nav-hover)]">Design</span>
-                            <span class="text-[10px] px-2 py-0.5 rounded-full border border-[var(--border-color)] text-[var(--nav-hover)]">Data Viz</span>
-                            <span class="text-[10px] px-2 py-0.5 rounded-full border border-[var(--border-color)] text-[var(--nav-hover)]">D3.js</span>
-                        </div>
-                    </div>
-                    <span class="arrow text-sm flex-shrink-0 text-[var(--nav-hover)]">→</span>
-                </a>
-            </li>
-            <li class="border-t border-[var(--border-color)]"></li>
-        </ul>
+        <h2 class="text-2xl font-medium text-[var(--text-color)] mb-8 mt-8">Independent Projects</h2>
+
+        <a href="https://altgeneration.lovable.app/" class="pb-16 group flex flex-col sm:flex-row items-stretch transition-opacity duration-150 no-underline">
+            <div class="w-full rounded-lg sm:w-[48%] shrink-0 h-64 bg-[#333333] flex items-center justify-center p-6">
+                <img src="assets/images/altgen.png" alt="AltGen project thumbnail" class="w-2/3 transition-transform duration-300 group-hover:scale-105">
+            </div>
+            <div class="flex flex-col justify-center gap-2 flex-1 px-8 py-6">
+                <h3 class="text-3xl font-medium font-mono text-[var(--text-color)] m-0">AI-Powered alt-text generation</h3>
+                <p class="text-sm font-light text-[var(--nav-hover)] leading-relaxed m-0">Generate accessible alt text for any image on the web. Right-click. Done. Powered by AI vision models.</p>
+            </div>
+        </a>
+
+        <a href="https://carlycaptions.lovable.app" class="pb-16 group flex flex-col sm:flex-row items-stretch transition-opacity duration-150 no-underline">
+            <div class="w-full rounded-lg sm:w-[48%] shrink-0 h-64 bg-[#FF69B4] flex items-center justify-center p-6">
+                <img src="assets/images/carlycaptions.png" alt="AltGen project thumbnail" class="w-2/3 transition-transform duration-300 group-hover:scale-105">
+            </div>
+            <div class="flex flex-col justify-center gap-2 flex-1 px-8 py-6">
+                <h3 class="text-3xl font-medium font-mono text-[var(--text-color)] m-0">A Lyric Tool for the World's Most Dedicated Pop Audience</h3>
+                <p class="text-sm font-light text-[var(--nav-hover)] leading-relaxed m-0">Interactive lyric matcher using React, TypeScript, Framer Motion.</p>
+            </div>
+        </a>
+
+        <a href="https://mjfloyd3.github.io/NYC-Knows/" class="pb-16 group flex flex-col sm:flex-row items-stretch transition-opacity duration-150 no-underline">
+            <div class="w-full rounded-lg sm:w-[48%] shrink-0 h-64 bg-[#FF6B29] flex items-center justify-center p-0">
+                <img src="assets/images/nycknowspreview.png" alt="NYC Knows Preview" class="transition-transform duration-300 group-hover:scale-105">
+            </div>
+            <div class="flex flex-col justify-center gap-2 flex-1 px-8 py-6">
+                <h3 class="text-3xl font-medium font-mono text-[var(--text-color)] m-0">NYC Knows</h3>
+                <p class="text-sm font-light text-[var(--nav-hover)] leading-relaxed m-0">Web app for locating local health testing centers and visualizing public health data.</p>
+            </div>
+        </a>
+
+
 
     </div>
 </main>

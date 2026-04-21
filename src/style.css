@@ -43,7 +43,8 @@ body {
 }
 
 p {
-    margin: 0 0  15px;
+    margin: 0 0 15px;
+    font-size: 1.25em;
 }
 
 .theme-toggle {

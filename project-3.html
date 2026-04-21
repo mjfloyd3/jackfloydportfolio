@@ -7,6 +7,15 @@
     <meta name="robots" content="noindex, nofollow">
     <title>Jack Floyd | Company Website Redesign</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noticia+Text:ital,wght@0,400;0,700;1,400;1,700&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+    <style type="text/css">
+        h3 {
+            font-family: 'Noticia Text', Georgia, serif;
+            font-weight: 400;
+        }
+    </style>
+
     <script type="module" src="/src/main.js"></script>
     <script>
         if (sessionStorage.getItem('work_unlocked') !== 'true') {
@@ -18,12 +27,16 @@
 
 <nav-bar></nav-bar>
 
-<main class="max-w-6xl mx-auto px-8 pt-32 pb-20">
+<div class="pt-32 bg-[#A5EDEA] p-8 flex items-center justify-center overflow-hidden">
+    <img src="assets/images/site-page-redesign.png" alt="Admin UI redesign" class="w-3/4 lg:w-[38%] h-auto block rounded-lg" />
+</div>
+
+<main class="max-w-6xl mx-auto px-10 pt-16 pb-20">
 
     <!-- Hero -->
     <section class="mb-16 mt-8">
-        <div class="max-w-3xl">
-            <h1 class="text-3xl font-semibold mb-4">Company website redesign</h1>
+        <div>
+            <h1 class="text-4xl font-medium mb-8 font-mono">Company website redesign</h1>
             <p class="mb-6 text-xl">Highlighting market expertise for improved product communication & impact</p>
 
             <div class="border border-[var(--border-color)] rounded-md bg-[var(--bg-color)] p-5 mt-6">
@@ -44,105 +57,85 @@
 
     <!-- Overview + Goal -->
     <section class="mb-16">
-        <div class="max-w-3xl">
-            <h3 class="text-xl font-semibold mb-4">Overview</h3>
+
+            <h3 class="text-2xl mb-4">A Brand Ready to Grow</h3>
             <p>BlueMatrix needed a more robust website to reflect its evolution and launch a new corporate logo and visual identity. The redesign was an opportunity to better communicate the platform's capabilities and reposition the brand for growth.</p>
 
             <hr class="border-none border-t border-[var(--border-color)] my-6">
 
-            <h3 class="text-xl font-semibold mb-4">Goal</h3>
+            <h3 class="text-2xl mb-4">Repositioning for a Wider Market</h3>
             <p class="mb-3">Beyond an updated look and feel, the primary goals were to:</p>
-            <ul class="list-disc ml-6 space-y-1 text-sm">
+            <ul class="list-disc ml-6 space-y-1 text-xl">
                 <li>Restructure how we market investment research products</li>
                 <li>Reposition market expertise to attract new industries</li>
                 <li>Introduce an insights page, client logos, and product graphics to build brand trust</li>
             </ul>
-        </div>
+
     </section>
 
     <!-- Discovery -->
     <section class="mb-16">
-        <hr class="border-t border-[var(--border-color)] my-8">
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
             <div>
-                <h3 class="text-xl font-semibold mb-4">Discovery</h3>
+                <h3 class="text-2xl mb-4">From Scattered Input to Shared Vision</h3>
                 <p>I translated early discussions between design and marketing teams into low-fidelity wireframes, used to visualize how text-heavy content would fit each page and how to balance it with visual elements.</p>
             </div>
+
             <figure>
                 <img src="assets/images/redesign-wireframes.png" alt="Early wireframes for site redesign" class="w-full" />
-                <figcaption class="text-xs italic text-center mt-2 text-[var(--nav-hover)]">Early wireframes based on a sitemap discussion between design and marketing teams.</figcaption>
             </figure>
-        </div>
-    </section>
 
-    <!-- Moodboards -->
-    <section class="mb-16">
-        <hr class="border-t border-[var(--border-color)] my-8">
-        <h3 class="text-xl font-semibold mb-6">Moodboards, graphics, and mockups</h3>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-start mb-10">
-            <div>
+
                 <p>A fellow designer and I developed mood boards, design systems, and core visual elements, presenting regularly to leadership to ensure alignment. We incorporated feedback from stakeholders across the organization including the CEO, Sales, and Product leads.</p>
                 <p>After design approval, I led development and implementation of all webpages, including forms, authentication flows, and blog publishing.</p>
-            </div>
+
             <figure>
                 <img src="assets/images/moodboard-bm-site.png" alt="Moodboard for website redesign" class="w-full" />
-                <figcaption class="text-xs italic text-center mt-2 text-[var(--nav-hover)]">Moodboard reflecting the aesthetic direction of the visual design.</figcaption>
             </figure>
-        </div>
+
 
         <figure class="mb-10">
             <img src="assets/images/website-des-system.png" alt="Design system sample used for the website" class="w-full" />
-            <figcaption class="text-xs italic text-center mt-2 text-[var(--nav-hover)]">Design system sample used for the website.</figcaption>
+            <figcaption class="text-md italic text-center mt-2 text-[var(--nav-hover)]">Design system sample used for the website.</figcaption>
         </figure>
 
         <figure>
             <img src="assets/images/website-final-screens.png" alt="Finalized mockups ready for development" class="w-full" />
-            <figcaption class="text-xs italic text-center mt-2 text-[var(--nav-hover)]">Finalized mockups ready for development and implementation.</figcaption>
+            <figcaption class="text-md italic text-center mt-2 text-[var(--nav-hover)]">Finalized mockups ready for development and implementation.</figcaption>
         </figure>
     </section>
 
     <!-- Results -->
     <section class="mb-16">
-        <hr class="border-t border-[var(--border-color)] my-8">
-        <h3 class="text-xl font-semibold mb-6">Results</h3>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
+        <h3 class="text-2xl mb-4">Built to Grow With the Business</h3>
             <div>
                 <p class="mb-6">The redesign shipped with meaningful improvements in accessibility, SEO, and performance, and received strong positive feedback across the organization.</p>
 
-                <blockquote class="pl-5 border-l-2 border-[var(--text-color)]">
+                <blockquote class="pl-5 ml-12 mt-12 border-l-2 border-[var(--text-color)]">
                     <p class="font-medium mb-3">The result is clean, stylish, bug-free, performant and appropriate for our industry. We've all heard a lot of positive comments so far.</p>
-                    <footer class="text-sm text-[var(--nav-hover)]">— <cite>Leadership, BlueMatrix</cite></footer>
+                    <footer class="text-md text-[var(--nav-hover)]">— <cite>Leadership, BlueMatrix</cite></footer>
                 </blockquote>
 
-                <p class="!mt-8 font-semibold">
+                <figure class="mt-8">
+                    <img src="assets/images/website-results.png" class="w-1/2 mx-auto" alt="Performance improvements post go-live" />
+                    <figcaption class="text-md italic text-center mt-2 text-[var(--nav-hover)]">Performance improvements post go-live.</figcaption>
+                </figure>
+
+                <p class="!mt-16 font-medium !text-2xl" style="line-height:1.65 !important;">
                     The redesigned site served as the firm's primary web presence through a pivotal period, supporting the onboarding of several major institutional clients across global banking and asset management, a private equity acquisition, and a more than threefold expansion of the firm's team.
                 </p>
             </div>
-            <figure>
-                <img src="assets/images/website-results.png" class="w-full" alt="Performance improvements post go-live" />
-                <figcaption class="text-xs italic text-center mt-2 text-[var(--nav-hover)]">Performance improvements post go-live.</figcaption>
-            </figure>
-        </div>
+
     </section>
 
-    <!-- More Work -->
-    <section class="mt-20">
-        <hr class="border-t-2 border-[var(--border-color)] my-8">
-        <h2 class="text-2xl font-semibold text-center mb-8">More work</h2>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
 
-            <a href="project-1.html" class="group block no-underline">
-                <div class="overflow-hidden rounded-md mb-3">
-                    <img src="assets/images/admin-queue-designed.png" class="w-full transition-transform duration-200 group-hover:scale-95 rounded-md" alt="Admin page product redesign" />
-                </div>
-                <h4 class="text-lg font-light text-[var(--text-color)]">Admin page product redesign</h4>
-            </a>
+    <!-- More Work -->
+    <section class="mt-28">
+        <hr class="border-t-2 border-[var(--border-color)] my-8">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-center justify-between">
 
             <a href="project-2.html" class="group block no-underline">
-                <div class="overflow-hidden rounded-md mb-3">
-                    <img src="assets/images/bridge-theme-designed.png" class="w-full transition-transform duration-200 group-hover:scale-95 rounded-md" alt="Financial research report templates" />
-                </div>
+                <i class="bi bi-arrow-left"></i><span class="font-mono text-gray-500 dark:text-gray-400 uppercase"> Previous</span>
                 <h4 class="text-lg font-light text-[var(--text-color)]">Financial research report templates</h4>
             </a>
 

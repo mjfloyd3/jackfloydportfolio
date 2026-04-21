@@ -6,10 +6,109 @@
     <meta name="description" content="UI Developer and Product Designer with fintech and SaaS experience">
     <meta name="robots" content="noindex, nofollow">
     <title>Jack Floyd | Research Publishing Templates</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noticia+Text:ital,wght@0,400;0,700;1,400;1,700&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+    <style type="text/css">
+    h3 {
+        font-family: 'Noticia Text', Georgia, serif;
+        font-weight: 400;
+    }
+
+    .tab-group {
+        width: 100%;
+    }
+
+    .tab-bar {
+        display: flex;
+        gap: 0;
+        border-bottom: 1px solid #e0e0e0;
+    }
+
+    .tab-btn {
+        padding: 10px 20px;
+        font-size: 15px;
+        background: none;
+        border: none;
+        border-bottom: 4px solid transparent;
+        color: #111;
+        cursor: pointer;
+        letter-spacing: 0.03em;
+        transition: color 0.15s, border-color 0.15s;
+        margin-bottom: -1px;
+    }
+
+    .tab-btn:hover {
+        color: #333;
+    }
+
+    .tab-btn.active {
+        color: #111;
+        border-bottom-color: #111;
+        font-weight: 500;
+    }
+
+    .tab-panel {
+        display: none;
+        border: 1px solid #e0e0e0;
+        border-top: none;
+        border-radius: 0;
+        overflow: hidden;
+        background: #f7f7f5;
+        text-align: center;
+    }
+
+    .tab-panel img {
+        display: block;
+        width: 90%;
+        height: auto;
+        margin: 3rem auto;
+        box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+    }
+
+    .tab-panel.active {
+        display: block;
+    }
+
+    .tab-panel-caption {
+        border: none;
+        border-bottom: 1px solid #e0e0e0;
+        border-left: 1px solid #e0e0e0;
+        border-right: 1px solid #e0e0e0;
+        border-radius: 0 0 6px 6px;
+        padding: 10px;
+    }
+
+    [data-theme="dark"] .tab-btn {
+        color: #888;
+    }
+
+    [data-theme="dark"] .tab-btn:hover {
+        color: #d0d0ce;
+    }
+
+    [data-theme="dark"] .tab-btn.active {
+        color: #f0f0ee;
+        border-bottom-color: #f0f0ee;
+    }
+
+    [data-theme="dark"] .tab-panel {
+        background: #1e1e1c;
+    }
+
+    @media (max-width: 600px) {
+        .tab-btn {
+            padding: 9px 14px;
+            font-size: 12px;
+        }
+    }
+    </style>
     <script type="module" src="/src/main.js"></script>
     <script>
-        if (sessionStorage.getItem('work_unlocked') !== 'true') {
-            window.location.href = 'index.html';
+        function applyTheme(theme) {
+            // sync iframes
+            document.querySelectorAll('iframe').forEach(iframe => {
+                iframe.contentWindow.postMessage(theme, '*');
+            });
         }
     </script>
 </head>
@@ -17,18 +116,22 @@
 
 <nav-bar></nav-bar>
 
-<main class="max-w-6xl mx-auto px-8 pt-32 pb-20">
+<div class="pt-32 bg-[#292E39] p-8 flex items-center justify-center overflow-hidden">
+    <img src="assets/images/report-publishing-templates.png" alt="Admin UI redesign" class="w-3/4 lg:w-[38%] h-auto block rounded-lg" />
+</div>
+
+<main class="max-w-6xl mx-auto px-10 pt-16 pb-20">
 
     <!-- Hero -->
     <section class="mb-16 mt-8">
-        <div class="max-w-3xl">
-            <h1 class="text-3xl font-semibold mb-4">Financial research report templates</h1>
+        <div>
+            <h1 class="text-4xl font-medium mb-8 font-mono">Financial research report templates</h1>
             <p class="mb-6 text-xl">Design and development of custom-branded research templates for institutional investment banks, built to publish accurately across web, PDF, and email using XSLT and client-specific data models.</p>
 
             <!-- Info card -->
             <div class="border border-[var(--border-color)] rounded-md bg-[var(--bg-color)] p-5 mt-6">
-                <p class="mb-0 text-sm">BlueMatrix</p>
-                <p class="text-sm">Role: Designer & Developer</p>
+                <p class="mb-0 text-xl">BlueMatrix</p>
+                <p class="text-lg">Role: Designer & Developer</p>
                 <div class="flex gap-4 items-center mt-3 flex-wrap">
                     <img src="https://cdn.simpleicons.org/html5" width="26" height="26" title="HTML5" alt="HTML5" />
                     <img src="https://cdn.simpleicons.org/css" width="26" height="26" title="CSS" alt="CSS" />
@@ -45,14 +148,10 @@
 
     <!-- Process / Constraints / Solution / Impact + Diagram -->
     <section class="mb-16">
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
 
-            <!-- Left: content -->
-            <div class="md:col-span-2">
-
-                <h3 class="text-xl font-semibold mb-4">Process</h3>
+                <h3 class="text-2xl mb-4">The Research Publication Problem</h3>
                 <p>Investment banks publish complex, data-heavy research consistently across formats while maintaining strict brand standards. High-stakes research must:</p>
-                <ul class="list-disc ml-6 space-y-1 mb-6 text-sm">
+                <ul class="list-disc ml-6 space-y-1 mb-6 text-lg">
                     <li>Be accurate and compliant</li>
                     <li>Match firm-specific branding</li>
                     <li>Publish reliably across web, PDF, and email in a single click</li>
@@ -60,8 +159,8 @@
 
                 <hr class="border-none border-t border-[var(--border-color)] my-6">
 
-                <h3 class="text-xl font-semibold mb-4">Constraints</h3>
-                <ul class="list-disc ml-6 space-y-1 mb-6 text-sm">
+                <h3 class="text-2xl mb-4">Built for Enterprise-Scale Publishing</h3>
+                <ul class="list-disc ml-6 space-y-1 mb-6 text-xl">
                     <li>Enterprise fintech environment with strict publishing and compliance requirements</li>
                     <li>Non-technical authors creating content inside a structured authoring system</li>
                     <li>Multiple output formats with different layout and rendering limitations</li>
@@ -71,82 +170,111 @@
 
                 <hr class="border-none border-t border-[var(--border-color)] my-6">
 
-                <h3 class="text-xl font-semibold mb-4">Solution</h3>
+                <h3 class="text-2xl mb-4">Templates That Bridge Authors, Data, and Output</h3>
                 <p><em>A scalable, design-driven template system that bridges authoring, data, and output.</em></p>
-                <p>I design and implement custom authoring templates that encode each client's brand system, guide analysts toward consistent layouts, and dynamically pull in structured financial data. The result is a system where authors focus on content, design stays consistent, and data flows accurately from internal models to published research.</p>
+                <p>
+                    Custom authoring templates encode each client's brand system, guide analysts toward consistent layouts, and dynamically pull in structured financial data. The result is a system where authors focus on content, design stays consistent, and data flows accurately from internal models to published research.
+                </p>
 
-                <figure>
-                    <img src="assets/images/editor-screen-sample.png" class="w-full" alt="Bridge theme web report sample" />
-                    <figcaption class="text-xs italic text-center mt-2 text-[var(--nav-hover)]">
-                        Sample editor view showing the report authoring environment, including admin-managed layout configurations, structured financial data entry, and permission-scoped content fields.
-                    </figcaption>
-                </figure>
+                <iframe src="bm-workflow-diagram.html" width="100%" height="600" scrolling="no" frameborder="0"></iframe>
+
+                    <div class="tab-group">
+                        <div class="tab-bar">
+                            <button class="tab-btn active font-mono" onclick="switchTab('editor', this)">Editor</button>
+                            <button class="tab-btn font-mono" onclick="switchTab('web', this)">Web</button>
+                            <button class="tab-btn font-mono" onclick="switchTab('pdf', this)">PDF</button>
+                            <button class="tab-btn font-mono" onclick="switchTab('email', this)">Email</button>
+                        </div>
+
+                        <div class="tab-panel active" id="panel-editor">
+                            <img src="assets/images/editor-tabbed.png" alt="Authoring editor view">
+                        </div>
+
+                        <div class="tab-panel" id="panel-web">
+                            <img src="assets/images/web-tabbed.png" alt="Web Output">
+                        </div>
+
+                        <div class="tab-panel" id="panel-pdf">
+                            <img src="assets/images/pdf-tabbed.png" alt="PDF output">
+                        </div>
+
+                        <div class="tab-panel" id="panel-email">
+                            <img src="assets/images/email-tabbed.png" alt="Email Output">
+                        </div>
+
+                    </div>
+                    <div class="tab-panel-caption">
+                        <p class="mb-0" style="font-size: 18px !important;text-align: center;">The same report renders automatically across every format, PDF, web, and email, from a single authoring environment.</p>
+
+                    </div>
+
 
                 <hr class="border-none border-t border-[var(--border-color)] my-6">
 
-                <h3 class="text-xl font-semibold mb-4">Impact</h3>
-                <ul class="list-disc ml-6 space-y-1 text-sm">
-                    <li>Enabled dozens of investment banks and boutique research firms to publish branded research at scale</li>
-                    <li>Reduced manual formatting errors and inconsistencies</li>
-                    <li>Improved cross-format consistency between web, PDF, and email outputs</li>
-                    <li>Created reusable widgets that streamlined client onboarding and gave smaller firms a framework for structuring their content</li>
-                </ul>
+                <h3 class="text-2xl mb-4">Consistency and Scale, Delivered</h3>
+                <p>
+                    The system now powers branded research publishing for investment banks and boutique firms of all sizes, cutting down on the manual formatting errors and inconsistencies that had plagued earlier workflows. Output quality became more predictable across web, PDF, and email simultaneously. Reusable widgets also shortened the onboarding process for new clients, giving smaller firms in particular a ready-made framework for structuring their content from day one.
+                </p>
 
-            </div>
 
-            <!-- Right: diagram -->
-            <div class="md:col-span-1">
-                <iframe src="bm-workflow-diagram.html" width="100%" height="680" scrolling="no" frameborder="0"></iframe>
-            </div>
 
-        </div>
     </section>
 
     <!-- Sample content -->
     <section class="mb-16">
-        <h3 class="text-xl font-semibold mb-3">Sample content</h3>
-        <p class="text-sm text-[var(--nav-hover)] mb-8">Intended for recruiters and hiring managers only.</p>
+<!--        <h3 class="text-2xl mb-3">Sample content</h3>-->
+<!--        <p class="text-md text-[var(&#45;&#45;nav-hover)] mb-8">Intended for recruiters and hiring managers only.</p>-->
 
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-4">
-            <figure>
-                <img src="assets/images/bridge-theme.png" class="w-full" alt="Bridge theme web report sample" />
-            </figure>
-            <figure>
-                <img src="assets/images/bridge-theme-2.png" class="w-full" alt="Bridge theme web report sample variant" />
-            </figure>
+<!--        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-4">-->
+<!--            <figure>-->
+<!--                <img src="assets/images/bridge-theme.png" class="w-full" alt="Bridge theme web report sample" />-->
+<!--            </figure>-->
+<!--            <figure>-->
+<!--                <img src="assets/images/bridge-theme-2.png" class="w-full" alt="Bridge theme web report sample variant" />-->
+<!--            </figure>-->
+<!--        </div>-->
+<!--        <p class="text-sm text-[var(&#45;&#45;nav-hover)] mb-10">Web report samples of our core product offerings: device-responsive designs where client brand colors, fonts, and logos are swapped in.</p>-->
+
+<!--        <hr class="border-t-1 border-[var(&#45;&#45;border-color)] my-8">-->
+<!--        <figure class="mb-8">-->
+<!--            <img src="assets/images/scotia-mockup-1.png" class="w-full" alt="Custom branded web report with PDF output" />-->
+<!--            <figcaption class="text-sm italic text-center mt-2 text-[var(&#45;&#45;nav-hover)]">Client sample of a custom web report with branded assets; PDF output shown on the right.</figcaption>-->
+<!--        </figure>-->
+
+<!--        <hr class="border-t-1 border-[var(&#45;&#45;border-color)] my-8">-->
+<!--        <figure>-->
+<!--            <img src="assets/images/jeff-html5.png" class="w-full" alt="Custom branded web report sample" />-->
+<!--            <figcaption class="text-sm italic text-center mt-2 text-[var(&#45;&#45;nav-hover)]">Client sample of a custom web report featuring client branded assets.</figcaption>-->
+<!--        </figure>-->
+
+        <h3 class="text-2xl font-semibold mb-3 !mt-24">In production for</h3>
+        <p class="m-0 text-gray-400 dark:text-gray-600 !text-xs">(selected clients)</p>
+        <div class="flex flex-wrap items-center justify-center gap-x-20 gap-y-8 py-10 px-2">
+            <img src="https://cdn.brandfetch.io/idWPmUE5JO/theme/dark/logo.svg?c=1bxid64Mup7aczewSAYMX&t=1772325269222" alt="Santander" class="grayscale opacity-60 h-6 w-auto" />
+            <img src="https://cdn.brandfetch.io/ideITXemi6/theme/dark/logo.svg?c=1bxid64Mup7aczewSAYMX&t=1668075589683" alt="Oppenheimer" class="grayscale opacity-60 h-6 w-auto" />
+            <img src="https://cdn.brandfetch.io/idVCed0KqE/theme/dark/idBjzEBhkn.svg?c=1bxid64Mup7aczewSAYMX&t=1679401844661" alt="Wells Fargo" class="grayscale opacity-60 h-10 w-auto" />
+            <img src="https://cdn.brandfetch.io/idpbcJQizc/theme/dark/logo.svg?c=1bxid64Mup7aczewSAYMX&t=1667925347838" alt="Stifel" class="grayscale opacity-60 h-6 w-auto" />
+            <img src="https://cdn.brandfetch.io/idw78yhsR6/theme/dark/logo.svg?c=1bxid64Mup7aczewSAYMX&t=1667600054146" alt="Freedom Capital Markets" class="grayscale opacity-60 h-6 w-auto" />
+            <img src="https://cdn.brandfetch.io/id6wH4wcFV/theme/dark/logo.svg?c=1bxid64Mup7aczewSAYMX&t=1678711843472" alt="TD" class="grayscale opacity-60 h-10 w-auto" />
+            <img src="https://cdn.brandfetch.io/idRXKWVnll/w/400/h/400/theme/dark/icon.png?c=1bxid64Mup7aczewSAYMX&t=1771863256429" alt="Jefferies"  class="grayscale opacity-60 h-10 w-auto" />
+            <img src="https://cdn.brandfetch.io/idDOxkxf_o/theme/light/logo.svg?c=1bxid64Mup7aczewSAYMX&t=1768127773650" alt="Ventum Financial" class="grayscale opacity-60 h-6 w-auto" style="filter: invert(1) opacity(0.7);"/>
+            <img src="https://cdn.brandfetch.io/idPA4Ta76m/theme/dark/logo.svg?c=1bxid64Mup7aczewSAYMX&t=1768982854665" alt="Baird" class="grayscale opacity-60 h-10 w-auto" />
+            <img src="https://cdn.brandfetch.io/idpRvIyo6M/theme/light/logo.svg?c=1bxid64Mup7aczewSAYMX&t=1770398409720" alt="Crux Climate" style="filter: invert(1) opacity(0.6);"  class="grayscale opacity-60 h-8 w-auto" />
         </div>
-        <p class="text-xs text-[var(--nav-hover)] mb-10">Web report samples of our core product offerings: device-responsive designs where client brand colors, fonts, and logos are swapped in.</p>
-
-        <hr class="border-t-1 border-[var(--border-color)] my-8">
-        <figure class="mb-8">
-            <img src="assets/images/scotia-mockup-1.png" class="w-full" alt="Custom branded web report with PDF output" />
-            <figcaption class="text-xs italic text-center mt-2 text-[var(--nav-hover)]">Client sample of a custom web report with branded assets; PDF output shown on the right.</figcaption>
-        </figure>
-
-        <hr class="border-t-1 border-[var(--border-color)] my-8">
-        <figure>
-            <img src="assets/images/jeff-html5.png" class="w-full" alt="Custom branded web report sample" />
-            <figcaption class="text-xs italic text-center mt-2 text-[var(--nav-hover)]">Client sample of a custom web report featuring client branded assets.</figcaption>
-        </figure>
     </section>
 
     <!-- More Work -->
     <section class="mt-28">
         <hr class="border-t-2 border-[var(--border-color)] my-8">
-        <h2 class="text-2xl font-semibold text-center mb-8">More work</h2>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-center justify-between">
 
             <a href="project-1.html" class="group block no-underline">
-                <div class="overflow-hidden rounded-md mb-3">
-                    <img src="assets/images/admin-queue-designed.png" alt="Admin page product redesign" class="w-full transition-transform duration-200 group-hover:scale-95 rounded-md" />
-                </div>
+                <i class="bi bi-arrow-left"></i><span class="font-mono text-gray-500 dark:text-gray-400 uppercase"> Previous</span>
                 <h4 class="text-lg font-light text-[var(--text-color)]">Admin page product redesign</h4>
             </a>
 
-            <a href="project-3.html" class="group block no-underline">
-                <div class="overflow-hidden rounded-md mb-3">
-                    <img src="assets/images/bm-site-page-sample.png" alt="Company website redesign" class="w-full transition-transform duration-200 group-hover:scale-95 rounded-md" />
-                </div>
+            <a href="project-3.html" class="group block no-underline md:justify-self-end !text-right">
+                <span class="font-mono text-gray-500 dark:text-gray-400 uppercase">Next </span><i class="bi bi-arrow-right"></i>
                 <h4 class="text-lg font-light text-[var(--text-color)]">Company website redesign</h4>
             </a>
 
@@ -156,9 +284,20 @@
 </main>
 
 <my-footer></my-footer>
+
 <div class="modal-overlay" id="imgModal">
     <button class="modal-close" id="modalClose">✕</button>
     <img id="modalImg" src="" alt="">
 </div>
+
+<script>
+    function switchTab(name, btn) {
+        document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+        document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+        document.getElementById('panel-' + name).classList.add('active');
+        btn.classList.add('active');
+    }
+</script>
+
 </body>
 </html>

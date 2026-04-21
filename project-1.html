@@ -6,6 +6,14 @@
     <meta name="description" content="UI Developer and Product Designer with fintech and SaaS experience">
     <meta name="robots" content="noindex, nofollow">
     <title>Jack Floyd — Admin UI Redesign</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noticia+Text:ital,wght@0,400;0,700;1,400;1,700&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+    <style type="text/css">
+        h3 {
+            font-family: 'Noticia Text', Georgia, serif;
+            font-weight: 400;
+        }
+        </style>
     <script type="module" src="/src/main.js"></script>
     <script>
         if (sessionStorage.getItem('work_unlocked') !== 'true') {
@@ -17,13 +25,18 @@
 
 <nav-bar></nav-bar>
 
-<main class="max-w-6xl mx-auto px-8 pt-32 pb-20">
+<div class="pt-32 bg-[#D3D9EF] p-8 flex items-center justify-center overflow-hidden">
+    <img src="assets/images/admin-new.png" alt="Admin UI redesign" class="w-3/4 lg:w-[38%] h-auto block rounded-lg" />
+</div>
 
-    <section id="project1">
+<main class="max-w-6xl mx-auto px-10 pt-16 pb-20">
+
+    <section class="mb-16">
 
         <!-- Intro -->
-        <div class="max-w-3xl mb-12 mt-8">
-            <h2 class="text-3xl font-semibold mb-4">Product Redesign</h2>
+
+            <h1 class="text-4xl font-medium mb-8 font-mono">Product redesign</h1>
+
             <h3 class="text-xl font-normal mb-4">Reimagining the Admin Hub as an intuitive workspace prioritizing key information and structure for effective workflows</h3>
             <!-- Info card -->
             <div class="border border-[var(--border-color)] rounded-md bg-[var(--bg-color)] p-5 my-6">
@@ -37,24 +50,27 @@
                     <img src="https://cdn.simpleicons.org/bootstrap" width="26" height="26" title="Bootstrap" alt="Bootstrap" />
                 </div>
             </div>
-            <p>
+            <p class="!mb-16">
                 The goal of this redesign was to modernize an outdated Admin Center and improve user interactions. The focus was on reducing cognitive load, supporting administrative confidence, and making platform configurations more intuitive.
             </p>
-        </div>
 
         <!-- Before/After 1 -->
+
+        <h3 class="text-2xl mb-8">From cluttered interface to intentional, structured design</h3>
+
+
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-10">
             <div>
+                <h4 class="mb-2 font-mono uppercase text-gray-400 dark:text-gray-600">Before</h4>
                 <img src="assets/images/creator-landing-old.png" alt="Original creator landing page" class="w-full" />
                 <div class="pl-0 mt-4">
-                    <h3 class="text-base font-semibold mb-2">Before</h3>
-                    <p class="text-sm text-[var(--nav-hover)]">Navigation was buried under competing elements with no clear hierarchy or responsive behavior.</p>
+                    <p class="text-sm text-[var(--nav-hover)]">Buried navigation under competing elements with no clear hierarchy or responsive behavior</p>
                 </div>
             </div>
             <div>
+                <h4 class="mb-2 font-mono uppercase text-gray-400 dark:text-gray-600">After</h4>
                 <img src="assets/images/creator-landing-new.png" alt="Redesigned creator landing page" class="w-full" />
                 <div class="pl-0 mt-4">
-                    <h3 class="text-base font-semibold mb-2">After</h3>
                     <p class="text-sm text-[var(--nav-hover)]">Reorganized layout with clear information hierarchy, contextual navigation, and responsive behavior.</p>
                 </div>
             </div>
@@ -63,16 +79,16 @@
         <!-- Before/After 2 -->
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-10">
             <div>
+                <h4 class="mb-2 font-mono uppercase">Before</h4>
                 <img src="assets/images/admin-disc-old.png" alt="Original admin disclaimers section" class="w-full" />
                 <div class="pl-0 mt-4">
-                    <h3 class="text-base font-semibold mb-2">Before</h3>
                     <p class="text-sm text-[var(--nav-hover)]">Editing controls were hidden off-screen with no visual structure to guide the user.</p>
                 </div>
             </div>
             <div>
+                <h4 class="mb-2 font-mono uppercase">After</h4>
                 <img src="assets/images/admin-disc-new.png" alt="Redesigned admin disclaimers section" class="w-full" />
                 <div class="pl-0 mt-4">
-                    <h3 class="text-base font-semibold mb-2">After</h3>
                     <p class="text-sm text-[var(--nav-hover)]">Actionable items surfaced in context with a cleaner, more trustworthy aesthetic.</p>
                 </div>
             </div>
@@ -80,6 +96,7 @@
 
         <!-- Full screen sample -->
         <div class="mt-10 mb-10">
+            <h3 class="text-2xl mb-8">Redesigned issuer configuration screen</h3>
             <figure>
                 <img src="assets/images/topics-desktop.png" alt="Redesigned Admin Issuers page" class="w-full" />
                 <figcaption class="text-xs italic text-center mt-2 text-[var(--nav-hover)]">Admin &gt; Issuers page — improved layout with clear primary and secondary action hierarchy.</figcaption>
@@ -89,24 +106,24 @@
         <hr class="border-t-1 border-[var(--border-color)] my-8">
 
         <!-- Product Reskin -->
-        <div class="max-w-3xl mb-8">
-            <h3 class="text-xl font-semibold mb-4">Product Reskin</h3>
+        <div class="mb-8">
+            <h3 class="text-2xl mb-4">Product Reskin</h3>
             <p>While a full redesign of the author queue wasn't within scope, I led a focused reskin of the interface, partnering closely with product and engineering to deliver a modernized, streamlined UI. The update preserved core functionality while enhancing reliability and strengthening user trust.</p>
         </div>
 
         <!-- Before/After 3 -->
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div>
+                <h4 class="mb-2 font-mono uppercase">Before</h4>
                 <img src="assets/images/author-queue-old.png" alt="Original author queue" class="w-full" />
                 <div class="pl-0 mt-4">
-                    <h3 class="text-base font-semibold mb-2">Before</h3>
                     <p class="text-sm text-[var(--nav-hover)]">Excessive iconography and unstructured whitespace made the interface difficult to scan.</p>
                 </div>
             </div>
             <div>
+                <h4 class="mb-2 font-mono uppercase">After</h4>
                 <img src="assets/images/author-queue-new.png" alt="Redesigned author queue" class="w-full" />
                 <div class="pl-0 mt-4">
-                    <h3 class="text-base font-semibold mb-2">After</h3>
                     <p class="text-sm text-[var(--nav-hover)]">Decluttered layout with exposed filter controls and a modular structure for clearer document management.</p>
                 </div>
             </div>
@@ -114,30 +131,21 @@
 
     </section>
 
-    <!-- More Work -->
+
     <section class="mt-28">
         <hr class="border-t-2 border-[var(--border-color)] my-8">
-        <h2 class="text-2xl font-semibold text-center mb-8">More work</h2>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="grid justify-end">
 
-            <a href="project-2.html" class="group block no-underline">
-                <div class="overflow-hidden rounded-md mb-3">
-                    <img src="assets/images/bridge-theme-designed.png" alt="Financial research report templates page"
-                         class="w-full transition-transform duration-200 group-hover:scale-95 rounded-md" />
-                </div>
+
+            <a href="project-2.html" class="group block no-underline md:justify-self-end !text-right">
+                <span class="font-mono text-gray-500 dark:text-gray-400 uppercase">Next </span><i class="bi bi-arrow-right"></i>
                 <h4 class="text-lg font-light text-[var(--text-color)]">Financial research report templates</h4>
-            </a>
-
-            <a href="project-3.html" class="group block no-underline">
-                <div class="overflow-hidden rounded-md mb-3">
-                    <img src="assets/images/bm-site-page-sample.png" alt="Company website redesign page"
-                         class="w-full transition-transform duration-200 group-hover:scale-95 rounded-md" />
-                </div>
-                <h4 class="text-lg font-light text-[var(--text-color)]">Company website redesign</h4>
             </a>
 
         </div>
     </section>
+
+
 
 </main>
 
