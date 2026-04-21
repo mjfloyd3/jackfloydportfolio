@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="UI Developer and Product Designer with fintech and SaaS experience">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Jack Floyd | Company Website Redesign</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noticia+Text:ital,wght@0,400;0,700;1,400;1,700&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+    <style type="text/css">
+        h3 {
+            font-family: 'Noticia Text', Georgia, serif;
+            font-weight: 400;
+        }
+    </style>
+
+    <script type="module" src="/src/main.js"></script>
+    <script>
+        if (sessionStorage.getItem('work_unlocked') !== 'true') {
+            window.location.href = 'index.html';
+        }
+    </script>
+</head>
+<body>
+
+<nav-bar></nav-bar>
+
+<div class="pt-32 bg-[#FF69B4] p-8 flex items-center justify-center overflow-hidden">
+    <img src="assets/images/carlycaptions.png" alt="Carly Captions Project" class="w-3/4 lg:w-[38%] h-auto block rounded-lg" />
+</div>
+
+<main class="max-w-6xl mx-auto px-6 md:px-10 pt-6 md:pt-16 pb-20">
+
+    <section class="mb-16 mt-8">
+        <div>
+            <h1 class="text-4xl font-medium mb-8 font-mono">Carly Captions</h1>
+            <h2 class="text-2xl font-light">A playful lyric generator for the most dedicated pop fandom</h2>
+
+        </div>
+    </section>
+
+    <!-- Overview + Goal -->
+    <section class="mb-16">
+
+        <h3 class="text-2xl mb-4">CRJ Has a Lyric for That</h3>
+        <p>
+            Most of us know the feeling: you have a moment, you need a caption, and somehow no lyric feels quite right. Carly Captions started as an experiment in "vibe-coding" with Lovable, prompting an AI to build a mood-to-lyric matcher across her entire discography. The result maps 12 curated emotional states (Giddy, Heartbroken, Confident, and nine more) to lyric snippets that fit the moment.
+        </p>
+
+
+    </section>
+
+    <!-- Discovery -->
+    <section class="mb-16">
+
+            <h3 class="text-2xl mb-4">Key Features</h3>
+            <ul class="text-xl list-disc list-inside space-y-1">
+                <li>Mood-to-Lyric Mapping: Click an emotion, get an instant lyric match from songs spanning <i>Kiss</i> to <i>The Loveliest Time</i></li>
+                <li>Smart Randomization: Regenerate within the same mood without repeats; every caption feels fresh</li>
+                <li>One-Click Copy & Share: Designed for the Instagram/TikTok workflow: grab, paste, post</li>
+                <li>Responsive, Motion-Rich UI: Spring physics animations, staggered letter reveals, and floating emoji accents that mirror Carly's sparkly aesthetic</li>
+            </ul>
+
+            <h3 class="text-2xl mb-4 mt-16">Technical Highlights</h3>
+            <p>Built as a zero-backend React app with TypeScript and Tailwind CSS. The matching engine uses a curated lookup table (emotion → lyric[]) with Fisher-Yates shuffling for unbiased randomness. UI motion handled via Framer Motion with custom spring configs. Deployed on Lovable with instant preview-to-production pipelines.</p>
+
+            <h3 class="text-2xl mb-4 mt-16">Design Philosophy</h3>
+            <p>The visual language borrows from Carly's own album art: hot pink accents, rounded pill shapes, and a custom animated logo that bounces with personality. Every interaction rewards the user: hover states tilt letters, confetti bursts on copy, and the E•MO•TION branding is treated as a marquee element.
+            </p>
+
+            <figure class="mt-8">
+                <img class="w-3/4 mx-auto rounded-md" src="assets/images/carly-captions-mobile.png"/>
+            </figure>
+
+            <h3 class="text-2xl mb-4 mt-16">Fun to Build, Fun to Use</h3>
+            <p class="!mb-16"> A shareable micro-app that turns a niche fandom moment into a quick, delightful utility. It’s the kind of project you send to a fellow stan and they immediately get it.</p>
+
+
+
+            <a href="https://carlycaptions.lovable.app/" class="font-bold px-6 py-3 bg-[#FF69B4] text-white text-lg rounded-full hover:opacity-75 transition-opacity">
+                Check it out <i class="bi bi-arrow-right"></i>
+            </a>
+
+
+    </section>
+
+
+
+    <!-- More Work -->
+    <section class="mt-28">
+        <hr class="border-t-2 border-[var(--border-color)] my-8">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-center justify-between">
+
+            <a href="work.html" class="group block no-underline">
+                <i class="bi bi-arrow-left"></i><span class="font-mono text-gray-500 dark:text-gray-400 uppercase"> Previous</span>
+                <h4 class="text-lg font-light text-[var(--text-color)]">More Work</h4>
+            </a>
+
+        </div>
+    </section>
+
+</main>
+
+<my-footer></my-footer>
+<div class="modal-overlay" id="imgModal">
+    <button class="modal-close" id="modalClose">✕</button>
+    <img id="modalImg" src="" alt="">
+</div>
+</body>
+</html>
