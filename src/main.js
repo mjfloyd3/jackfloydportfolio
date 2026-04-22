@@ -7,10 +7,10 @@ inject()
 customElements.define("nav-bar", class extends HTMLElement {
     connectedCallback() {
         this.innerHTML = `
-                <div class="fixed top-0 left-0 right-0 z-50 backdrop-blur-md bg-[#F5F5F4]/80">
-                    <nav class="flex max-w-6xl mx-auto justify-between items-center px-8 lg:px- py-8">
+                <div class="fixed top-0 left-0 right-0 z-50 backdrop-blur-md bg-[#FAFAFA]/60 ">
+                    <nav class="flex max-w-6xl mx-auto justify-between items-center px-8 py-6">
                         <div class="logo">
-                            <a href="index.html" class="link-unstyled font-semibold text-[clamp(1.15rem,1.3vw,1.35rem)]">
+                            <a href="index.html" class="link-unstyled font-semibold text-xl">
                                 Jack Floyd
                             </a>
                         </div>
@@ -41,13 +41,13 @@ customElements.define("nav-bar", class extends HTMLElement {
             localStorage.setItem('theme', theme);
 
             if (theme === 'dark') {
-                navbar.classList.remove('bg-[#F5F5F4]/80');
+                navbar.classList.remove('bg-[#FAFAFA]/60');
                 navbar.classList.add('bg-[#22222E]/80');
                 sunIcon.style.display = 'none';
                 moonIcon.style.display = 'block';
             } else {
                 navbar.classList.remove('bg-[#22222E]/80');
-                navbar.classList.add('bg-[#F5F5F4]/80');
+                navbar.classList.add('bg-[#FAFAFA]/60');
                 sunIcon.style.display = 'block';
                 moonIcon.style.display = 'none';
             }
@@ -69,7 +69,7 @@ customElements.define("my-footer", class extends HTMLElement {
         this.innerHTML = `
                     <footer class="border-t border-gray-200 text-gray-400 text-sm">
                       <div class="mx-auto max-w-6xl px-12 py-12 flex justify-between items-center">
-                        <p>&copy; 2026</p>
+                        <p class="mb-0">&copy;</p>
                         <div class="social-links flex gap-4 items-center">
                             <a href="https://github.com/mjfloyd3" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">

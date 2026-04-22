@@ -3,7 +3,7 @@
 @custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
 
 :root {
-    --bg-color: #F5F5F4;
+    --bg-color: #FAFAFA;
     --text-color: #454545;
     --nav-hover: #666666;
     --a-hover: #2563EB;
