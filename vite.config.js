@@ -14,6 +14,7 @@ export default defineConfig({
                 project3: 'project-3.html',
                 carlycaptions: 'carly-captions.html',
                 bmworkflowdiagram: 'bm-workflow-diagram.html',
+                standingroom: 'standing-room.html',
             }
         }
     }
