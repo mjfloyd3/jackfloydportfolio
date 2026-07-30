@@ -1,8 +1,8 @@
 import './style.css'
-import { inject } from '@vercel/analytics'
-
-// Initialize Vercel Analytics
-inject()
+// import { inject } from '@vercel/analytics'
+//
+// // Initialize Vercel Analytics
+// inject()
 
 customElements.define("nav-bar", class extends HTMLElement {
     connectedCallback() {
@@ -69,7 +69,7 @@ customElements.define("my-footer", class extends HTMLElement {
         this.innerHTML = `
                     <footer class="border-t border-gray-200 text-gray-400 text-sm">
                       <div class="mx-auto max-w-6xl px-12 py-12 flex justify-between items-center">
-                        <p class="mb-0">&copy;</p>
+                        <p class="mb-0">&copy; 2026</p>
                         <div class="social-links flex gap-4 items-center">
                             <a href="https://github.com/mjfloyd3" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">

@@ -3,9 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="UI Developer and Product Designer with 7 years of experience in fintech">
-  <title>Jack Floyd</title>
+  <meta name="description" content="UI Developer and Product Designer with 8 years of experience in fintech">
+  <title>Jack Floyd | UI Developer</title>
   <script type="module" src="/src/main.js" defer></script>
+  <style>
+      h2 {
+          font-family: 'Noticia Text', Georgia, serif;
+          font-weight: 400;
+      }
+      .project-item:hover .thumb-img { transform: scale(1.03); }
+  </style>
 </head>
 <body class="text-gray-900 font-sans">
 
@@ -23,7 +30,7 @@
 <!--      </div>-->
 
       <h1 class="font-display font-semibold text-left text-[clamp(2.5rem,8vw,3rem)] leading-[1.12]">
-        Designer who builds. Developer who designs.
+        Designer who builds. Developer who creates.
       </h1>
 
       <h2 class="mt-2 mb-6 max-w-4xl text-xl md:text-2xl leading-relaxed text-muted-foreground font-light">
@@ -33,6 +40,52 @@
       </h2>
 
       <a href="work.html" id="openWork" class="font-mono text-base font-medium text-[var(&#45;&#45;text-color)] underline underline-offset-4 hover:text-[var(&#45;&#45;nav-hover)] transition-colors duration-100">View Work →</a>
+
+      <hr class="border-t border-[var(--nav-hover)]/50 mt-64">
+
+      <h2 id="independent-projects" class="text-2xl font-medium text-[var(--text-color)] mb-8 mt-8">Independent Projects</h2>
+
+
+      <a href="standing-room.html" class="pb-16 group flex flex-col sm:flex-row items-stretch transition-opacity duration-150 no-underline">
+        <div class="w-full rounded-lg sm:w-[48%] shrink-0 h-64 bg-[#384567] flex items-center justify-center p-0">
+          <img src="assets/images/standingroom-mobile.png" alt="Standing Room Society thumbnail" class="w-full h-full object-cover rounded-lg transition-transform duration-300 group-hover:scale-105">
+        </div>
+          <div class="flex flex-col justify-center gap-2 flex-1 sm:px-8 py-6">
+              <h3 class="text-2xl md:text-3xl font-medium font-mono text-[var(--text-color)] m-0">Standing Room Society</h3>
+              <p class="text-sm font-light text-[var(--nav-hover)] leading-relaxed m-0">Find NYC theater lottery, standing room and rush ticket access, all in one place.</p>
+          </div>
+      </a>
+
+      <a href="https://altgeneration.lovable.app/" class="pb-16 group flex flex-col sm:flex-row items-stretch transition-opacity duration-150 no-underline">
+          <div class="w-full rounded-lg sm:w-[48%] shrink-0 h-64 bg-[#333333] flex items-center justify-center p-6">
+              <img src="assets/images/altgen.png" alt="AltGen project thumbnail" class="w-2/3 transition-transform duration-300 group-hover:scale-105">
+          </div>
+          <div class="flex flex-col justify-center gap-2 flex-1 sm:px-8 py-6">
+              <h3 class="text-2xl md:text-3xl font-medium font-mono text-[var(--text-color)] m-0">AI-Powered alt-text generation</h3>
+              <p class="text-sm font-light text-[var(--nav-hover)] leading-relaxed m-0">Generate accessible alt text for any image on the web. Right-click. Done. Powered by AI vision models.</p>
+          </div>
+      </a>
+
+      <a href="carly-captions.html" class="pb-16 group flex flex-col sm:flex-row items-stretch transition-opacity duration-150 no-underline">
+          <div class="w-full rounded-lg sm:w-[48%] shrink-0 h-64 bg-[#FF69B4] flex items-center justify-center p-6">
+              <img src="assets/images/carlycaptions.png" alt="AltGen project thumbnail" class="w-2/3 transition-transform duration-300 group-hover:scale-105">
+          </div>
+          <div class="flex flex-col justify-center gap-2 flex-1 sm:px-8 py-6">
+              <h3 class="text-2xl md:text-3xl font-medium font-mono text-[var(--text-color)] m-0">A Lyric Tool for the World's Most Dedicated Pop Audience</h3>
+              <p class="text-sm font-light text-[var(--nav-hover)] leading-relaxed m-0">Interactive lyric matcher using React, TypeScript, Framer Motion.</p>
+          </div>
+      </a>
+
+      <a href="https://mjfloyd3.github.io/NYC-Knows/" class="pb-16 group flex flex-col sm:flex-row items-stretch transition-opacity duration-150 no-underline">
+          <div class="w-full rounded-lg sm:w-[48%] shrink-0 h-64 bg-[#FF6B29] flex items-center justify-center p-0">
+              <img src="assets/images/nycknowspreview.png" alt="NYC Knows Preview" class="transition-transform duration-300 group-hover:scale-100">
+          </div>
+          <div class="flex flex-col justify-center gap-2 flex-1 sm:px-8 py-6">
+              <h3 class="text-2xl md:text-3xl font-medium font-mono text-[var(--text-color)] m-0">NYC Knows</h3>
+              <p class="text-sm font-light text-[var(--nav-hover)] leading-relaxed m-0">Web app for locating local health testing centers and visualizing public health data.</p>
+          </div>
+      </a>
+
 
 
     </div>

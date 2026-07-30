@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="UI Developer and Product Designer with fintech and SaaS experience">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Jack Floyd | Carly Captions</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noticia+Text:ital,wght@0,400;0,700;1,400;1,700&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+    <style type="text/css">
+        h3 {
+            font-family: 'Noticia Text', Georgia, serif;
+            font-weight: 400;
+        }
+    </style>
+
+    <script type="module" src="/src/main.js"></script>
+</head>
+<body>
+
+<nav-bar></nav-bar>
+
+<div class="pt-32 bg-[#384567] p-8 flex items-center justify-center overflow-hidden">
+    <img src="assets/images/standingroom-mobile.png" alt="Standing Room Society Project" class="w-3/4 lg:w-[38%] h-auto block rounded-lg" />
+</div>
+
+<main class="max-w-6xl mx-auto px-6 md:px-10 pt-6 md:pt-16 pb-20">
+
+    <section class="mb-16 mt-8">
+        <div>
+            <h1 class="text-4xl font-medium mb-8 font-mono">Standing Room Society</h1>
+            <h2 class="text-2xl font-light">A cheap-seats directory for Broadway's most dedicated theatergoers</h2>
+
+        </div>
+    </section>
+
+    <!-- Overview + Goal -->
+    <section class="mb-16">
+
+        <h3 class="text-2xl mb-4">Cheap Seats. No Seats.</h3>
+        <p>
+            Every Broadway show runs its own version of rush, lottery, or standing room, and every show buries the details somewhere different: a pinned tweet, a box office FAQ, a lottery app with its own rules. Standing Room Society is the reference layer underneath all of that: one page, every open show, same-day ticket policies in a single scannable grid, refreshed automatically every night.
+        </p>
+
+
+    </section>
+
+    <!-- Discovery -->
+    <section class="mb-16">
+
+            <h3 class="text-2xl mb-4">Key Features</h3>
+            <ul class="text-xl list-disc list-inside space-y-1">
+                <li>Nightly Auto-Refresh: A scheduled scraper pulls current standing room, rush, and lottery policies so listings never go stale and closed shows get removed</li>
+                <li>Full-Grid Browsing: Every open show at a glance, with poster art, price, and policy type surfaced up front instead of buried in FAQ pages</li>
+                <li>Poster Caching: Show art is fetched once and cached rather than re-requested, keeping the grid fast and the source sites unbothered</li>
+                <li>Responsive Layout: The grid reflows cleanly from desktop down to a single-column mobile view</li>
+            </ul>
+
+            <h3 class="text-2xl mb-4 mt-16">Technical Highlights</h3>
+            <p>Built as a static site with a Node.js scraper using Cheerio to parse Playbill listings for ticket policy data. A nightly GitHub Actions workflow runs the scrape, regenerates the site, and redeploys automatically, so the directory stays current with zero manual upkeep. Hosted on Vercel for instant, cache-friendly delivery.</p>
+
+
+            <figure class="mt-8">
+                <img class="w-3/4 mx-auto rounded-md" src="assets/images/standingroom-browser.png"/>
+            </figure>
+
+            <h3 class="text-2xl mb-4 mt-16">Built for the Fans Who Show Up Early</h3>
+            <p class="!mb-16">Part utility, part selfish project that started as a way to stop checking five different show pages/lottery sites. Now it's one page bringing that information together, every night.</p>
+
+
+
+            <a href="https://standingroomsociety.vercel.app/" class="font-bold px-6 py-3 bg-[#384567] text-white text-lg rounded-full hover:opacity-75 transition-opacity">
+                Check it out <i class="bi bi-arrow-right"></i>
+            </a>
+
+
+    </section>
+
+
+
+    <!-- More Work -->
+    <section class="mt-28">
+        <hr class="border-t-2 border-[var(--border-color)] my-8">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-center justify-between">
+
+            <a href="work.html" class="group block no-underline">
+                <i class="bi bi-arrow-left"></i><span class="font-mono text-gray-500 dark:text-gray-400 uppercase"> Previous</span>
+                <h4 class="text-lg font-light text-[var(--text-color)]">More Work</h4>
+            </a>
+
+        </div>
+    </section>
+
+</main>
+
+<my-footer></my-footer>
+<div class="modal-overlay" id="imgModal">
+    <button class="modal-close" id="modalClose">✕</button>
+    <img id="modalImg" src="" alt="">
+</div>
+</body>
+</html>
