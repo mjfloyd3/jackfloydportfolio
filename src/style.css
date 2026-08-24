@@ -2,6 +2,8 @@
 
 @custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
 
+@import url('https://fonts.googleapis.com/css2?family=Momo+Trust+Display&display=swap');
+
 :root {
     --bg-color: #FAFAFA;
     --text-color: #454545;
@@ -28,6 +30,10 @@ body {
     color: var(--text-color);
     transition: background-color 0.3s ease, color 0.3s ease;
     line-height: 1.6;
+}
+
+h1 {
+  font-family: "Momo Trust Display", sans-serif;
 }
 
 #closeModal:hover {
