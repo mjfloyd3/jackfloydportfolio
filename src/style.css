@@ -34,6 +34,7 @@ body {
 
 h1 {
   font-family: "Momo Trust Display", sans-serif;
+  font-size: 3em;
 }
 
 #closeModal:hover {
