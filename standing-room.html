@@ -31,7 +31,7 @@
     <section class="mb-16 mt-8">
         <div>
             <h1 class="text-4xl font-medium mb-8 font-mono">Standing Room Society</h1>
-            <h2 class="text-2xl font-light">A cheap-seats directory for Broadway's most dedicated theatergoers</h2>
+            <h2 class="text-2xl font-light">A cheap-seats directory for Broadway's most resourceful patrons</h2>
 
         </div>
     </section>
@@ -40,8 +40,7 @@
     <section class="mb-16">
 
         <h3 class="text-2xl mb-4">Cheap Seats. No Seats.</h3>
-        <p>
-            Every Broadway show runs its own version of rush, lottery, or standing room, and every show buries the details somewhere different: a pinned tweet, a box office FAQ, a lottery app with its own rules. Standing Room Society is the reference layer underneath all of that: one page, every open show, same-day ticket policies in a single scannable grid, refreshed automatically every night.
+        <p>Every Broadway show handles rush, lotteries, and standing room differently, and almost all of them hide the details in some buried FAQ page or obscure lottery app. Standing Room Society puts all of that in one spot: every open show, its current same-day ticket policies, exact prices and direct links to access in one clean directory.
         </p>
 
 
@@ -50,24 +49,24 @@
     <!-- Discovery -->
     <section class="mb-16">
 
-            <h3 class="text-2xl mb-4">Key Features</h3>
+            <h3 class="text-2xl mb-4">What it does</h3>
             <ul class="text-xl list-disc list-inside space-y-1">
-                <li>Nightly Auto-Refresh: A scheduled scraper pulls current standing room, rush, and lottery policies so listings never go stale and closed shows get removed</li>
-                <li>Full-Grid Browsing: Every open show at a glance, with poster art, price, and policy type surfaced up front instead of buried in FAQ pages</li>
-                <li>Poster Caching: Show art is fetched once and cached rather than re-requested, keeping the grid fast and the source sites unbothered</li>
+                <li>Nightly updates: A scheduled scraper pulls current schedules so listings never go stale and closed shows get removed.</li>
+                <li>Full-Grid Browsing: Every open show at a glance, with poster art, price, and policy type surfaced up front instead of buried in FAQ pages.</li>
+                <li>Fast & lightweight: Show artwork is cached locally to keep the grid loading instantly without hammering source servers.</li>
                 <li>Responsive Layout: The grid reflows cleanly from desktop down to a single-column mobile view</li>
             </ul>
 
             <h3 class="text-2xl mb-4 mt-16">Technical Highlights</h3>
-            <p>Built as a static site with a Node.js scraper using Cheerio to parse Playbill listings for ticket policy data. A nightly GitHub Actions workflow runs the scrape, regenerates the site, and redeploys automatically, so the directory stays current with zero manual upkeep. Hosted on Vercel for instant, cache-friendly delivery.</p>
+            <p>Built as a static site with a Node.js scraper using Cheerio to parse Playbill listings for ticket policy data. A nightly GitHub Actions workflow runs the scrape, regenerates the site, and redeploys automatically so the directory stays current. Hosted on Vercel for instant, cache-friendly delivery.</p>
 
 
             <figure class="mt-8">
                 <img class="w-3/4 mx-auto rounded-md" src="assets/images/standingroom-browser.png"/>
             </figure>
 
-            <h3 class="text-2xl mb-4 mt-16">Built for the Fans Who Show Up Early</h3>
-            <p class="!mb-16">Part utility, part selfish project that started as a way to stop checking five different show pages/lottery sites. Now it's one page bringing that information together, every night.</p>
+            <h3 class="text-2xl mb-4 mt-16">Why I built it</h3>
+            <p class="!mb-16">Part public tool, part selfish project born out of frustration from checking five different show sites every morning. Now it’s just one page, updated every night, for the people who actually show up early.</p>
 
 
 
