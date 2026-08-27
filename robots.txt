@@ -1,0 +1,42 @@
+User-agent: GPTBot
+Disallow: /project-1
+Disallow: /project-2
+Disallow: /project-3
+
+User-agent: ChatGPT-User
+Disallow: /project-1
+Disallow: /project-2
+Disallow: /project-3
+
+User-agent: CCBot
+Disallow: /project-1
+Disallow: /project-2
+Disallow: /project-3
+
+User-agent: anthropic-ai
+Disallow: /project-1
+Disallow: /project-2
+Disallow: /project-3
+
+User-agent: ClaudeBot
+Disallow: /project-1
+Disallow: /project-2
+Disallow: /project-3
+
+User-agent: Google-Extended
+Disallow: /project-1
+Disallow: /project-2
+Disallow: /project-3
+
+User-agent: PerplexityBot
+Disallow: /project-1
+Disallow: /project-2
+Disallow: /project-3
+
+User-agent: Bytespider
+Disallow: /project-1
+Disallow: /project-2
+Disallow: /project-3
+
+User-agent: *
+Allow: /
