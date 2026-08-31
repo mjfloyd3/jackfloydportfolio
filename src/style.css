@@ -40,6 +40,14 @@ h1:not(.home) {
     font-size: 3rem;
   }
 
+h2#independent-projects {
+  font-family: "Momo Trust Display", sans-serif;
+}
+
+h3 {
+  font-family: "Momo Trust Display", sans-serif;
+}
+
 #closeModal:hover {
     cursor: pointer;
 }
