@@ -156,28 +156,34 @@ if (openWorkBtn) {
 const overlay = document.getElementById('imgModal');
 const modalImg = document.getElementById('modalImg');
 
-document.querySelectorAll('img').forEach(img => {
-    img.style.cursor = 'pointer';
-    img.addEventListener('click', () => {
-        modalImg.src = img.src;
-        modalImg.alt = img.alt;
-        overlay.classList.add('active');
+// Only wire up the image lightbox on pages that actually have the modal markup
+if (overlay && modalImg) {
+    document.querySelectorAll('img').forEach(img => {
+        img.style.cursor = 'pointer';
+        img.addEventListener('click', () => {
+            modalImg.src = img.src;
+            modalImg.alt = img.alt;
+            overlay.classList.add('active');
+        });
     });
-});
 
-// Close on backdrop click
-overlay.addEventListener('click', () => overlay.classList.remove('active'));
+    // Close on backdrop click
+    overlay.addEventListener('click', () => overlay.classList.remove('active'));
 
-// Don't close when clicking the image itself
-modalImg.addEventListener('click', e => e.stopPropagation());
+    // Don't close when clicking the image itself
+    modalImg.addEventListener('click', e => e.stopPropagation());
 
-// Close button
-document.getElementById('modalClose').addEventListener('click', () => overlay.classList.remove('active'));
+    // Close button
+    const modalClose = document.getElementById('modalClose');
+    if (modalClose) {
+        modalClose.addEventListener('click', () => overlay.classList.remove('active'));
+    }
 
-// Close on Escape key
-document.addEventListener('keydown', e => {
-    if (e.key === 'Escape') overlay.classList.remove('active');
-});
+    // Close on Escape key
+    document.addEventListener('keydown', e => {
+        if (e.key === 'Escape') overlay.classList.remove('active');
+    });
+}
 
 
 // Slot-reel headline spinner — animates the two verbs in the homepage h1
