@@ -178,3 +178,80 @@ document.getElementById('modalClose').addEventListener('click', () => overlay.cl
 document.addEventListener('keydown', e => {
     if (e.key === 'Escape') overlay.classList.remove('active');
 });
+
+
+// Slot-reel headline spinner — animates the two verbs in the homepage h1
+(function initSpinHeadline() {
+    const elX = document.getElementById('spinX');
+    const elY = document.getElementById('spinY');
+    if (!elX || !elY) return;
+
+    // Paired with "Designer who" — engineering-flavored verbs
+    const engineeringWords = ["builds", "codes", "implements", "engineers", "ships", "architects", "debugs", "deploys", "refactors", "optimizes"];
+    // Paired with "Developer who" — design-flavored verbs
+    const designWords = ["designs", "iterates", "creates", "crafts", "envisions", "refines", "prototypes", "reimagines"];
+
+    const SPIN_TICK_MS = 65;
+    const SPIN_TICKS = 10;
+    const STAGGER_DELAY_MS = 450; // second word starts spinning slightly after the first
+    const HOLD_MS = 2500;
+
+    let xIndex = 0;
+    let yIndex = 0;
+
+    function randomFrom(pool, excluding) {
+        let word;
+        do {
+            word = pool[Math.floor(Math.random() * pool.length)];
+        } while (word === excluding && pool.length > 1);
+        return word;
+    }
+
+    function spinWordTo(el, pool, target) {
+        return new Promise((resolve) => {
+            el.classList.add('is-spinning');
+            el.classList.remove('is-settling');
+            let tick = 0;
+            const interval = setInterval(() => {
+                tick++;
+                if (tick >= SPIN_TICKS) {
+                    clearInterval(interval);
+                    el.textContent = target;
+                    el.classList.remove('is-spinning');
+                    el.classList.add('is-settling');
+                    el.addEventListener('animationend', () => el.classList.remove('is-settling'), { once: true });
+                    resolve();
+                } else {
+                    el.textContent = randomFrom(pool, el.textContent);
+                }
+            }, SPIN_TICK_MS);
+        });
+    }
+
+    async function playCycle() {
+        xIndex = (xIndex + 1) % engineeringWords.length;
+        yIndex = (yIndex + 1) % designWords.length;
+
+        const xDone = spinWordTo(elX, engineeringWords, engineeringWords[xIndex]);
+        const yDone = new Promise((resolve) => {
+            setTimeout(() => {
+                spinWordTo(elY, designWords, designWords[yIndex]).then(resolve);
+            }, STAGGER_DELAY_MS);
+        });
+
+        await Promise.all([xDone, yDone]);
+        setTimeout(playCycle, HOLD_MS);
+    }
+
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (prefersReducedMotion) {
+        setInterval(() => {
+            xIndex = (xIndex + 1) % engineeringWords.length;
+            yIndex = (yIndex + 1) % designWords.length;
+            elX.textContent = engineeringWords[xIndex];
+            elY.textContent = designWords[yIndex];
+        }, HOLD_MS);
+    } else {
+        playCycle();
+    }
+})();
