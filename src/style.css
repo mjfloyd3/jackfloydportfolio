@@ -52,6 +52,12 @@ h3 {
     cursor: pointer;
 }
 
+/* Each headline line stays on one line; main.js shrinks the font to fit the longest verb */
+.spin-line {
+    display: block;
+    white-space: nowrap;
+}
+
 .spin-word {
     display: inline-block;
     will-change: transform, opacity, filter;

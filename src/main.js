@@ -249,6 +249,41 @@ if (overlay && modalImg) {
         setTimeout(playCycle, HOLD_MS);
     }
 
+    // Shrink the headline so the widest possible verb fits on each line — prevents
+    // reflowing mid-spin on narrow screens. Measures off-screen clones so the live
+    // animation is never touched.
+    const headline = document.getElementById('spinHeadline');
+    function fitHeadline() {
+        headline.style.fontSize = '';
+        const available = headline.clientWidth;
+        let widest = 0;
+        [[elX, engineeringWords], [elY, designWords]].forEach(([el, pool]) => {
+            const probe = el.parentElement.cloneNode(true);
+            probe.removeAttribute('id');
+            probe.style.cssText = 'position:absolute;visibility:hidden;display:inline-block;';
+            const probeWord = probe.querySelector('.spin-word');
+            probeWord.removeAttribute('id');
+            probeWord.className = 'spin-word';
+            headline.appendChild(probe);
+            pool.forEach((word) => {
+                probeWord.textContent = word;
+                widest = Math.max(widest, probe.getBoundingClientRect().width);
+            });
+            probe.remove();
+        });
+        if (widest > available) {
+            const base = parseFloat(getComputedStyle(headline).fontSize);
+            headline.style.fontSize = `${Math.floor(base * (available / widest) * 100) / 100}px`;
+        }
+    }
+    fitHeadline();
+    if (document.fonts) document.fonts.ready.then(fitHeadline);
+    let fitRaf;
+    window.addEventListener('resize', () => {
+        cancelAnimationFrame(fitRaf);
+        fitRaf = requestAnimationFrame(fitHeadline);
+    });
+
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     if (prefersReducedMotion) {
         setInterval(() => {
