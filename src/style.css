@@ -52,6 +52,12 @@ h3 {
     cursor: pointer;
 }
 
+/* Grid items default to min-width: auto, so the nowrap lines below would stretch the
+   grid column (and the text under it) as the verbs change width. Pin it to the column. */
+#spinHeadline {
+    min-width: 0;
+}
+
 /* Each headline line stays on one line; main.js shrinks the font to fit the longest verb */
 .spin-line {
     display: block;
