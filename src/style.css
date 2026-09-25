@@ -12,6 +12,8 @@
     --border-color: #BCBBBF;
     --card-bg: #f8f8f8;
     --j-card-bg: #e4ecef;
+    --spin-x: #1B7A4E;  /* engineering verb — terminal green */
+    --spin-y: #6B46D9;  /* design verb — violet */
 }
 
 [data-theme="dark"] {
@@ -22,6 +24,8 @@
     --border-color: #cccccc;
     --card-bg: #252525;
     --j-card-bg: #39515A;
+    --spin-x: #58C795;
+    --spin-y: #B9A3FF;
 }
 
 body {
@@ -71,8 +75,8 @@ h3 {
     font-weight: 600;
 }
 
-#spinX { color: var(--a-hover); }   /* engineering word */
-#spinY { color: #D97706; }          /* design word */
+#spinX { color: var(--spin-x); }   /* engineering word */
+#spinY { color: var(--spin-y); }   /* design word */
 
 .spin-word.is-spinning {
     filter: blur(1.5px);
