@@ -56,6 +56,30 @@ h3 {
     cursor: pointer;
 }
 
+/* Skill tags on project cards — soft filled pills with no border, so they read
+   as labels rather than buttons */
+.tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.375rem;
+    margin: 0.5rem 0 0;
+    padding: 0;
+    list-style: none;
+}
+
+.tag {
+    font-family: ui-monospace, SFMono-Regular, 'SF Mono', 'Menlo', 'Consolas', monospace;
+    font-size: 0.625rem;
+    line-height: 1;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding: 0.3125rem 0.5rem;
+    border-radius: 999px;
+    color: var(--nav-hover);
+    background: color-mix(in srgb, var(--text-color) 7%, transparent);
+    cursor: default;
+}
+
 /* Grid items default to min-width: auto, so the nowrap lines below would stretch the
    grid column (and the text under it) as the verbs change width. Pin it to the column. */
 #spinHeadline {
@@ -171,4 +195,100 @@ p {
     line-height: 1;
     background: none;
     border: none;
+}
+
+
+/* "View Work →" — arrow nudges right on hover/focus */
+.nudge-arrow {
+    display: inline-block;
+    transition: transform 0.2s ease;
+}
+
+a:hover > .nudge-arrow,
+a:focus-visible > .nudge-arrow {
+    transform: translateX(4px);
+}
+
+/* Copy-email button — violet pill that turns green once copied.
+   Fixed (not theme) colors so white text stays readable in both modes. */
+.copy-email {
+    font-family: ui-monospace, SFMono-Regular, 'SF Mono', 'Menlo', 'Consolas', monospace;
+    font-size: 0.75rem;
+    line-height: 1;
+    padding: 0.5rem 0.875rem;
+    border: 0;
+    border-radius: 999px;
+    color: #FFFFFF;
+    background: #6B46D9;
+    cursor: pointer;
+    vertical-align: middle;
+    transition: background-color 0.15s ease;
+}
+
+.copy-email:hover {
+    background: #5A36C4;
+}
+
+.copy-email.is-copied {
+    background: #1B7A4E;
+}
+
+.copy-email.is-copied .copy-email__label {
+    animation: copied-pop 0.25s ease;
+}
+
+@keyframes copied-pop {
+    0% { opacity: 0; transform: translateY(3px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+.copy-email__label {
+    display: inline-block;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .nudge-arrow,
+    .copy-email.is-copied .copy-email__label {
+        transition: none;
+        animation: none;
+    }
+    a:hover > .nudge-arrow,
+    a:focus-visible > .nudge-arrow {
+        transform: none;
+    }
+}
+
+
+/* Oversized, magazine-style section headers ("Selected Work", "Independent Projects") */
+.section-display {
+    font-family: "Momo Trust Display", sans-serif;
+    font-weight: 400;
+    font-size: clamp(2.75rem, 10vw, 6.5rem);
+    line-height: 0.92;
+    letter-spacing: -0.02em;
+    margin-bottom: 2.5rem;
+    /* Hollow letters — only the outline is drawn; the stroke scales with the type */
+    color: transparent;
+    -webkit-text-stroke: max(1.5px, 0.025em) var(--text-color);
+}
+
+
+/* Dividers — every <hr> is a short, thick bar, like a magazine section marker */
+hr {
+    border: 0;
+    width: 4rem;
+    height: 5px;
+    margin-inline: 0;
+    background-color: var(--border-color);
+}
+
+/* Bar color follows the page's lean (set on <body data-lean>):
+   dev = terminal green, design = violet */
+[data-lean="dev"] hr { background-color: var(--spin-x); }
+[data-lean="design"] hr { background-color: var(--spin-y); }
+
+/* Full-width rule above the Previous / Next links on case studies */
+hr.hr-full {
+    width: 100%;
+    height: 2px;
 }

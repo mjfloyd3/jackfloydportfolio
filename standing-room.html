@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <script type="module" src="/src/main.js"></script>
 </head>
-<body>
+<body data-lean="dev">
 
 <nav-bar></nav-bar>
 
@@ -23,7 +23,7 @@
     <section class="mb-16 mt-8">
         <div>
             <h1 class="text-4xl font-medium mb-8 font-mono">Standing Room Society</h1>
-            <h2 class="text-2xl font-light">A cheap-seats directory for Broadway's most resourceful patrons</h2>
+            <h2 class="text-2xl font-light">A cheap-seats directory for New York's most resourceful theatergoers</h2>
 
         </div>
     </section>
@@ -32,7 +32,7 @@
     <section class="mb-16">
 
         <h3 class="text-2xl mb-4">"The Cheapest Seats are No Seats"</h3>
-        <p>Every Broadway production manages its own rush, lottery, and standing-room ticket policies. However, these details are frequently scattered across pinned social media posts, venue FAQ pages, and third-party lottery applications. Standing Room Society consolidates this information into a single, standardized directory, providing real-time visibility into same-day ticket options for active productions.
+        <p>Every Broadway and Off-Broadway production runs its own lottery, rush, and standing-room policy, and the details are scattered across pinned social posts, venue FAQ pages, and a handful of third-party lottery apps. Standing Room Society pulls all of it into one standardized directory: every show currently running in New York, what discount options it offers, and a direct link to enter or buy, updated every morning.
         </p>
 
 
@@ -43,22 +43,24 @@
 
             <h3 class="text-2xl mb-4">What it does</h3>
             <ul class="text-xl list-disc list-inside space-y-1">
-                <li>Nightly updates: Scheduled nightly scripts monitor active production policies to ensure listings remain accurate and closed productions are promptly removed.</li>
-                <li>Consolidated Show Directory: Every open show at a glance, with poster art, price, and policy type surfaced up front instead of buried in FAQ pages.</li>
-                <li>Fast & lightweight: Show artwork is cached locally to keep the grid loading instantly without hammering source servers.</li>
-                <li>Cross-Device Compatability: Features a responsive layout designed to transition seamlessly from desktop displays to single-column mobile viewports.</li>
+                <li>Lists every Broadway and Off-Broadway show in one place, filterable by category and searchable by title.</li>
+                <li>Surfaces each show's lottery, rush, and standing-room options, linked directly to where you enter or buy.</li>
+                <li>Includes the theater and address, run dates, and weekly performance schedule on every card.</li>
+                <li>Flags shows that are coming soon, running for a limited engagement, or closing soon, so last chances don't slip by.</li>
+                <li>Lets theatergoers share in a few taps whether they got tickets and what they paid, building a running tally for each show.</li>
             </ul>
 
             <h3 class="text-2xl mb-4 mt-16">Technical Highlights</h3>
-            <p>Built as a static site with a Node.js scraper using Cheerio to parse Playbill listings for ticket policy data. A nightly GitHub Actions workflow runs the scrape, regenerates the site, and redeploys automatically so the directory stays current. Hosted on Vercel for instant, cache-friendly delivery.</p>
+            <p>Built as a lightweight static site with no server to maintain. A scraper runs automatically every morning to pick up new shows, closing dates, and performance schedules, then redeploys the site, so the directory stays current with no manual upkeep. Poster art is cached locally to keep the grid loading fast.</p>
+            <p>Ticket offers change too often to scrape reliably, so an AI research agent verifies each one against the show's official sources, and I review every change before it goes live. Visitor reports are fully anonymous, with no free-text fields and no personal information collected, and are stored in a secured database that limits each device to editing its own reports.</p>
 
 
             <figure class="mt-8">
-                <img class="w-3/4 mx-auto rounded-md" src="assets/images/standingroom-browser.png"/>
+                <img class="w-3/4 mx-auto rounded-md" src="assets/images/standingroom-browser.png" alt="Standing Room Society show directory in a desktop browser"/>
             </figure>
 
             <h3 class="text-2xl mb-4 mt-16">Why I built it</h3>
-            <p class="!mb-16">I built Standing Room Society to solve the fragmented experience of tracking Broadway ticket distributions across disparate platforms, SRS provides theatergoers with a single, reliable point of access for same-day ticket info and policies.</p>
+            <p class="!mb-16">Tracking same-day ticket options meant checking a different site for every show, and half of that information was out of date. I built Standing Room Society to be the one place theatergoers can check before heading to Midtown. The visitor reports grew out of that: the listings say what's offered, while the reports show how it's actually going at the box office.</p>
 
 
 
@@ -73,7 +75,7 @@
 
     <!-- More Work -->
     <section class="mt-28">
-        <hr class="border-t-2 border-[var(--border-color)] my-8">
+        <hr class="hr-full border-t-2 border-[var(--border-color)] my-8">
         <div class="grid justify-end">
 
 
