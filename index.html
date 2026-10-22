@@ -7,148 +7,200 @@
   <meta name="description" content="UI Developer and Product Designer with 8 years of experience in fintech">
   <title>Jack Floyd | UI Developer</title>
   <script type="module" src="/src/main.js" defer></script>
-  <style>
-    .project-item:hover .thumb-img {
-      transform: scale(1.03);
-    }
-  </style>
 </head>
 
-<body data-lean="design" class="text-gray-900 font-sans">
+<body data-lean="design" class="retro">
 
   <nav-bar></nav-bar>
 
-  <main class="max-w-5xl mx-auto px-6 md:px-10 pt-28 pb-20">
-    <div class="max-w-[1400px] mx-auto">
-      <div class="grid pt-[10vh] pb-[7vh] sm:py-[15vh] gap-6">
-        <!--      <h1 class="text-[clamp(1.9rem,4vw,2.4rem)] text-left sm:text-center w-full">Designer who builds. Developer who designs.</h1>-->
-        <!--      <div class="grid max-w-[80ch] mx-auto w-full gap-12">-->
-        <!--        <div class="text-[clamp(1.125rem,1.3vw,1.25rem)] font-normal leading-[1.6] text-[#454545] dark:text-[#FFFFFF]">-->
-        <!--          Hi, I'm Jack. I design and build digital products with a focus on responsive, accessible interfaces. Currently at <a class="text-blue-500 underline" href="https://www.bluematrix.com/" rel="noreferrer">BlueMatrix</a>, where I develop web templates and interactive tools that institutional clients rely on every day.-->
-        <!--        </div>-->
-        <!--        <a href="work.html" id="openWork" class="font-mono text-base font-medium text-[var(&#45;&#45;text-color)] underline underline-offset-4 hover:text-[var(&#45;&#45;nav-hover)] transition-colors duration-100">View Work →</a>-->
-        <!--      </div>-->
+  <main class="retro-main">
 
-        <h1 class="home text-[2rem] sm:text-[3.75rem] text-left leading-[1.12]" id="spinHeadline">
-          <span class="spin-line">Designer who <span class="spin-word" id="spinX">builds</span></span>
-          <span class="spin-line">Developer who <span class="spin-word" id="spinY">creates</span></span>
-        </h1>
+    <section class="hero">
+      <h1 class="home hero__title" id="spinHeadline">
+        <span class="spin-line">Designer who <span class="spin-word" id="spinX">builds</span></span>
+        <span class="spin-line">Developer who <span class="spin-word" id="spinY">creates</span><span class="cursor" aria-hidden="true"></span></span>
+      </h1>
 
-        <h2 class="mt-2 mb-6 max-w-4xl text-lg sm:text-xl md:text-2xl leading-relaxed text-muted-foreground font-light">
-          Hi, I'm Jack. I design and build digital products with a focus on responsive, accessible
-          interfaces. Currently at <span className="text-foreground font-normal">BlueMatrix</span>,
-          where I develop web templates and interactive tools that institutional clients rely on every day.
-        </h2>
+      <p class="hero__intro">
+        Hi, I'm Jack. I design and build digital products with a focus on responsive, accessible
+        interfaces. Currently at BlueMatrix,
+        where I develop web templates and interactive tools that institutional clients rely on every day.
+      </p>
 
-        <a href="work.html" id="openWork"
-          class="font-mono text-base font-medium text-[var(&#45;&#45;text-color)] underline underline-offset-4 hover:text-[var(&#45;&#45;nav-hover)] transition-colors duration-100">View
-          Work <span class="nudge-arrow" aria-hidden="true">→</span></a>
+      <a href="work.html" id="openWork" class="btn">View work <span class="nudge-arrow" aria-hidden="true">→</span></a>
+    </section>
 
-        <hr class="border-t border-[var(--nav-hover)]/50 mt-64">
-
-        <h2 id="independent-projects" class="section-display text-[var(--text-color)] mb-8 mt-8">Independent
-          Projects</h2>
-
-
-        <a href="standing-room.html"
-          class="pb-16 group flex flex-col sm:flex-row items-stretch transition-opacity duration-150 no-underline">
-          <div class="w-full rounded-lg sm:w-[48%] shrink-0 h-64 overflow-hidden bg-[#384567] flex items-center justify-center p-0">
-            <img src="assets/images/standingroom-mobile.png" alt="Standing Room Society thumbnail"
-              class="w-full h-full object-cover rounded-lg transition-transform duration-300 group-hover:scale-105">
-          </div>
-          <div class="flex flex-col justify-center gap-2 flex-1 sm:px-8 py-6">
-            <h3 class="transition-colors duration-200 group-hover:text-[var(--spin-x)] text-2xl md:text-3xl font-medium font-mono text-[var(--text-color)] m-0">Standing Room Society
-            </h3>
-            <p class="text-sm font-light text-[var(--nav-hover)] leading-relaxed m-0">Find NYC theater lottery, standing
-              room and rush ticket access, all in one place.</p>
-            <ul class="tag-list" aria-label="Skills">
-              <li class="tag">Product Design</li>
-              <li class="tag">Front-End</li>
-            </ul>
-          </div>
-        </a>
-
-        <a href="https://altgeneration.lovable.app/"
-          class="pb-16 group flex flex-col sm:flex-row items-stretch transition-opacity duration-150 no-underline">
-          <div class="w-full rounded-lg sm:w-[48%] shrink-0 h-64 bg-[#333333] flex items-center justify-center p-6">
-            <img src="assets/images/altgen.png" alt="AltGen project thumbnail"
-              class="w-2/3 transition-transform duration-300 group-hover:scale-105">
-          </div>
-          <div class="flex flex-col justify-center gap-2 flex-1 sm:px-8 py-6">
-            <h3 class="transition-colors duration-200 group-hover:text-[var(--spin-y)] text-2xl md:text-3xl font-medium font-mono text-[var(--text-color)] m-0">AI-Powered alt-text
-              generation</h3>
-            <p class="text-sm font-light text-[var(--nav-hover)] leading-relaxed m-0">Generate accessible alt text for
-              any image on the web. Powered by AI vision models.</p>
-            <ul class="tag-list" aria-label="Skills">
-              <li class="tag">AI</li>
-              <li class="tag">Accessibility</li>
-            </ul>
-          </div>
-        </a>
-
-        <a href="carly-captions.html"
-          class="pb-16 group flex flex-col sm:flex-row items-stretch transition-opacity duration-150 no-underline">
-          <div class="w-full rounded-lg sm:w-[48%] shrink-0 h-64 bg-[#FF69B4] flex items-center justify-center p-6">
-            <img src="assets/images/carlycaptions.png" alt="AltGen project thumbnail"
-              class="w-2/3 transition-transform duration-300 group-hover:scale-105">
-          </div>
-          <div class="flex flex-col justify-center gap-2 flex-1 sm:px-8 py-6">
-            <h3 class="transition-colors duration-200 group-hover:text-[var(--spin-x)] text-2xl md:text-3xl font-medium font-mono text-[var(--text-color)] m-0">A Lyric Tool for the
-              World's Most Dedicated Pop Audience</h3>
-            <p class="text-sm font-light text-[var(--nav-hover)] leading-relaxed m-0">Interactive lyric matcher using
-              React, TypeScript, Framer Motion.</p>
-            <ul class="tag-list" aria-label="Skills">
-              <li class="tag">Front-End</li>
-              <li class="tag">Interaction Design</li>
-            </ul>
-          </div>
-        </a>
-
-        <a href="https://mjfloyd3.github.io/NYC-Knows/"
-          class="pb-0 sm:pb-16 group flex flex-col sm:flex-row items-stretch transition-opacity duration-150 no-underline">
-          <div class="w-full rounded-lg sm:w-[48%] shrink-0 h-64 bg-[#FF6B29] flex items-center justify-center p-0">
-            <img src="assets/images/nycknowspreview.png" alt="NYC Knows Preview"
-              class="transition-transform duration-300 group-hover:scale-100">
-          </div>
-          <div class="flex flex-col justify-center gap-2 flex-1 sm:px-8 py-6">
-            <h3 class="transition-colors duration-200 group-hover:text-[var(--spin-y)] text-2xl md:text-3xl font-medium font-mono text-[var(--text-color)] m-0">NYC Knows</h3>
-            <p class="text-sm font-light text-[var(--nav-hover)] leading-relaxed m-0">Find free, walk-in HIV testing near
-              you, with interactive maps and charts covering 40 years of NYC HIV data.</p>
-            <ul class="tag-list" aria-label="Skills">
-              <li class="tag">Front-End</li>
-              <li class="tag">Data Viz</li>
-            </ul>
-          </div>
-        </a>
-
-
-
+    <section aria-labelledby="side-quests">
+      <div class="section-head">
+        <h2 id="side-quests" class="section-title">Side quests</h2>
       </div>
-    </div>
+
+      <ol class="project-list">
+        <li>
+          <a href="standing-room.html" class="window reveal" data-cursor="See project →">
+            <div class="window__bar">
+              <span class="window__file">standing-room.html</span>
+              <span class="window__controls" aria-hidden="true"><i>_</i><i>□</i><i>×</i></span>
+            </div>
+            <div class="window__body">
+              <div class="window__media window__media--cover" style="--media-bg: #384567">
+                <img src="assets/images/standingroom-mobile.png" alt="Standing Room Society thumbnail">
+              </div>
+              <div class="window__text">
+                <h3 class="window__title">Standing Room Society</h3>
+                <p class="window__desc">Find NYC theater lottery, standing room and rush ticket access, all in one place.</p>
+                <div class="window__foot">
+                  <ul class="tag-list" aria-label="Skills">
+                    <li class="tag">Product Design</li>
+                    <li class="tag">Front-End</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </a>
+        </li>
+
+        <li>
+          <a href="https://altgeneration.lovable.app/" class="window reveal" data-cursor="Visit site ↗">
+            <div class="window__bar">
+              <span class="window__file">altgeneration.lovable.app ↗</span>
+              <span class="window__controls" aria-hidden="true"><i>_</i><i>□</i><i>×</i></span>
+            </div>
+            <div class="window__body">
+              <div class="window__media window__media--demo" style="--media-bg: #101A28">
+                <div class="ag-frame" role="img" aria-label="AltGen demo: right-clicking an image of a sailboat and choosing Generate alt text produces the caption 'A small sailboat drifts on calm blue water beneath a full moon.'">
+                  <div class="ag-stage" aria-hidden="true">
+                    <div class="ag-abs ag-glow"></div>
+                    <div class="ag-abs ag-img">
+                      <svg width="716" height="466" viewBox="0 0 556 376" preserveAspectRatio="xMidYMid slice">
+                        <rect width="556" height="376" fill="#1A2B45"/>
+                        <rect y="150" width="556" height="96" fill="#22375A"/>
+                        <circle cx="410" cy="110" r="44" fill="#E8EEE8"/>
+                        <rect y="246" width="556" height="130" fill="#2D5BC4"/>
+                        <rect y="246" width="556" height="130" fill="#132036" opacity="0.35"/>
+                        <rect x="370" y="262" width="80" height="4" fill="#E8EEE8" opacity="0.5"/>
+                        <rect x="388" y="276" width="44" height="4" fill="#E8EEE8" opacity="0.35"/>
+                        <rect x="400" y="290" width="22" height="4" fill="#E8EEE8" opacity="0.25"/>
+                        <polygon points="200,118 200,232 128,232" fill="#E8EEE8"/>
+                        <polygon points="208,140 208,232 256,232" fill="#5ECFA0"/>
+                        <rect x="202" y="112" width="4" height="124" fill="#0F1724"/>
+                        <polygon points="110,240 278,240 256,262 132,262" fill="#0F1724"/>
+                        <rect x="60" y="300" width="70" height="3" fill="#5D86D8"/>
+                        <rect x="200" y="330" width="110" height="3" fill="#5D86D8"/>
+                        <rect x="430" y="340" width="60" height="3" fill="#5D86D8"/>
+                      </svg>
+                    </div>
+                    <div class="ag-abs ag-menu">
+                      <div>Open image in new tab</div>
+                      <div>Save image as…</div>
+                      <div>Copy image</div>
+                      <div class="ag-sep"></div>
+                      <div class="ag-item">
+                        <svg width="18" height="18" viewBox="-20 -20 40 40"><path d="M0 -20 C2 -6 6 -2 20 0 C6 2 2 6 0 20 C-2 6 -6 2 -20 0 C-6 -2 -2 -6 0 -20Z" fill="#5ECFA0"/></svg>
+                        <span>Generate alt text</span>
+                      </div>
+                    </div>
+                    <div class="ag-abs ag-card">
+                      <div class="ag-head">
+                        <div class="ag-label"><span class="ag-dot"></span><span>ALT TEXT</span></div>
+                        <span class="ag-copy">
+                          <span class="ag-copy-a">COPY</span>
+                          <span class="ag-copy-b">
+                            <svg width="16" height="16" viewBox="0 0 16 16"><path d="M2.5 8.5 L6.5 12.5 L13.5 4" fill="none" stroke="#5ECFA0" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                            <span>COPIED!</span>
+                          </span>
+                        </span>
+                      </div>
+                      <p class="ag-text"><span class="ag-w" style="animation-delay:0s">A</span> <span class="ag-w" style="animation-delay:.16s">small</span> <span class="ag-w" style="animation-delay:.32s">sailboat</span> <span class="ag-w" style="animation-delay:.48s">drifts</span> <span class="ag-w" style="animation-delay:.64s">on</span> <span class="ag-w" style="animation-delay:.8s">calm</span> <span class="ag-w" style="animation-delay:.96s">blue</span> <span class="ag-w" style="animation-delay:1.12s">water</span> <span class="ag-w" style="animation-delay:1.28s">beneath</span> <span class="ag-w" style="animation-delay:1.44s">a</span> <span class="ag-w" style="animation-delay:1.6s">full</span> <span class="ag-w ag-last" style="animation-delay:1.76s">moon.</span></p>
+                    </div>
+                    <svg class="ag-abs ag-cursor" width="40" height="54" viewBox="0 0 40 54">
+                      <path d="M4 4 L4 44 L14 34 L22 51 L30 47 L22 31 L36 31Z" fill="#E8EEE8" stroke="#101A28" stroke-width="3" stroke-linejoin="round"/>
+                    </svg>
+                  </div>
+                </div>
+              </div>
+              <div class="window__text">
+                <h3 class="window__title">AI-Powered <span class="nowrap">alt-text</span> generation</h3>
+                <p class="window__desc">Generate accessible alt text for any image on the web. Powered by AI vision models.</p>
+                <div class="window__foot">
+                  <ul class="tag-list" aria-label="Skills">
+                    <li class="tag">AI</li>
+                    <li class="tag">Accessibility</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </a>
+        </li>
+
+        <li>
+          <a href="carly-captions.html" class="window reveal" data-cursor="See project →">
+            <div class="window__bar">
+              <span class="window__file">carly-captions.html</span>
+              <span class="window__controls" aria-hidden="true"><i>_</i><i>□</i><i>×</i></span>
+            </div>
+            <div class="window__body">
+              <div class="window__media" style="--media-bg: #FF69B4">
+                <img src="assets/images/carlycaptions.png" alt="Carly Captions thumbnail">
+              </div>
+              <div class="window__text">
+                <h3 class="window__title">A Lyric Tool for the World's Most Dedicated Pop Audience</h3>
+                <p class="window__desc">Interactive lyric matcher using React, TypeScript, Framer Motion.</p>
+                <div class="window__foot">
+                  <ul class="tag-list" aria-label="Skills">
+                    <li class="tag">Front-End</li>
+                    <li class="tag">Interaction Design</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </a>
+        </li>
+
+        <li>
+          <a href="https://mjfloyd3.github.io/NYC-Knows/" class="window reveal" data-cursor="Visit site ↗">
+            <div class="window__bar">
+              <span class="window__file">nyc-knows ↗</span>
+              <span class="window__controls" aria-hidden="true"><i>_</i><i>□</i><i>×</i></span>
+            </div>
+            <div class="window__body">
+              <div class="window__media window__media--cover" style="--media-bg: #FF6B29">
+                <img src="assets/images/nycknowspreview.png" alt="NYC Knows Preview">
+              </div>
+              <div class="window__text">
+                <h3 class="window__title">NYC Knows</h3>
+                <p class="window__desc">Find free, walk-in HIV testing near you, with interactive maps and charts covering 40 years of NYC HIV data.</p>
+                <div class="window__foot">
+                  <ul class="tag-list" aria-label="Skills">
+                    <li class="tag">Front-End</li>
+                    <li class="tag">Data Viz</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </a>
+        </li>
+      </ol>
+    </section>
 
 
     <!-- Password Modal -->
     <div id="passwordModal" class="fixed inset-0 z-50 hidden">
       <div class="absolute inset-0 bg-black/40 pointer-events-none"></div>
       <div class="relative z-10 flex items-center justify-center min-h-screen px-6">
-        <div class="bg-white w-full max-w-sm p-8 relative">
-          <button id="closeModal" aria-label="Close"
-            class="absolute top-4 right-4 text-gray-400 hover:text-gray-900 text-xl leading-none">&times;</button>
-          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none"
-            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-            class="text-gray-400 mb-4">
-            <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
-            <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
-          </svg>
-          <h3 class="text-sm font-medium text-gray-900 mb-6">Protected page</h3>
-          <form id="passwordForm" class="flex flex-col gap-3">
-            <input type="password" id="passwordInput" placeholder="Enter password" autocomplete="off"
-              class="w-full border border-gray-200 px-4 py-2 text-sm text-gray-900 placeholder-gray-400 focus:outline-none focus:border-gray-400" />
-            <button type="submit"
-              class="w-full bg-gray-900 text-white text-sm py-2 hover:bg-gray-700 transition-colors duration-200">Unlock
-              Project</button>
-          </form>
-          <p id="errorMessage" class="text-xs text-red-500 mt-3"></p>
+        <div class="modal-window" role="dialog" aria-modal="true" aria-labelledby="passwordTitle">
+          <div class="window__bar">
+            <span class="window__file" id="passwordTitle">work.html — locked</span>
+            <button id="closeModal" aria-label="Close">×</button>
+          </div>
+          <div class="p-6">
+            <p class="mb-4">This page is password protected.</p>
+            <form id="passwordForm" class="grid gap-3">
+              <input type="password" id="passwordInput" placeholder="Enter password" autocomplete="off" aria-label="Password" />
+              <button type="submit" class="btn">Unlock project</button>
+            </form>
+            <p id="errorMessage" class="pixel mt-3 mb-0 text-red-600" aria-live="polite"></p>
+          </div>
         </div>
       </div>
     </div>

@@ -7,8 +7,6 @@
     <meta name="robots" content="noindex, nofollow">
     <meta name="GPTBot" content="noindex">
     <title>Jack Floyd — Admin UI Redesign</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Noticia+Text:ital,wght@0,400;0,700;1,400;1,700&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
     <script type="module" src="/src/main.js"></script>
     <script>
         if (sessionStorage.getItem('work_unlocked') !== 'true') {
@@ -16,131 +14,109 @@
         }
     </script>
 </head>
-<body data-lean="design" class="work">
+<body data-lean="design" class="retro">
 
 <nav-bar></nav-bar>
 
-<div class="pt-32 bg-[#D3D9EF] p-8 flex items-center justify-center overflow-hidden">
-    <img src="assets/images/admin-new.png" alt="Admin UI redesign" class="w-3/4 lg:w-[38%] h-auto block rounded-lg" />
+<div class="case-hero" style="--hero-bg: #D3D9EF">
+    <img src="assets/images/admin-new.png" alt="Admin UI redesign" />
 </div>
 
-<main class="max-w-6xl mx-auto px-6 md:px-10 pt-6 md:pt-16 pb-20">
+<main class="case">
 
-    <section class="mb-16">
+    <section>
+        <h1 class="case-title">Product redesign</h1>
+        <p class="case-lede">Reimagining the Admin Hub as an intuitive workspace prioritizing key information and structure for effective workflows</p>
 
-        <!-- Intro -->
-
-            <h1 class="text-4xl font-medium mb-8 font-mono">Product redesign</h1>
-
-            <h2 class="text-xl font-normal mb-4">Reimagining the Admin Hub as an intuitive workspace prioritizing key information and structure for effective workflows</h2>
-            <!-- Info card -->
-            <div class="border border-(--border-color) rounded-md bg-(--bg-color) p-5 my-6">
-                <p class="mb-0 text-sm">BlueMatrix</p>
-                <p class="text-sm">Role: Designer</p>
-                <div class="flex gap-4 items-center mt-3 flex-wrap">
+        <dl class="case-meta">
+            <div><dt class="pixel">Company</dt><dd>BlueMatrix</dd></div>
+            <div><dt class="pixel">Role</dt><dd>Designer</dd></div>
+            <div>
+                <dt class="pixel">Tools</dt>
+                <dd class="case-tools">
                     <img src="https://cdn.simpleicons.org/html5" width="26" height="26" title="HTML5" alt="HTML5" />
                     <img src="https://cdn.simpleicons.org/css" width="26" height="26" title="CSS" alt="CSS" />
                     <img src="https://cdn.simpleicons.org/figma" width="26" height="26" title="Figma" alt="Figma" />
                     <img src="https://cdn.jsdelivr.net/npm/simple-icons@v12/icons/adobexd.svg" width="26" height="26" title="Adobe XD" alt="Adobe XD" />
                     <img src="https://cdn.simpleicons.org/bootstrap" width="26" height="26" title="Bootstrap" alt="Bootstrap" />
-                </div>
+                </dd>
             </div>
-            <p class="!mb-16">
-                The goal of this redesign was to modernize an outdated Admin Center and improve user interactions. The focus was on reducing cognitive load, supporting administrative confidence, and making platform configurations more intuitive.
-            </p>
+        </dl>
+
+        <p>
+            The goal of this redesign was to modernize an outdated Admin Center and improve user interactions. The focus was on reducing cognitive load, supporting administrative confidence, and making platform configurations more intuitive.
+        </p>
+    </section>
+
+    <section class="case-section">
+        <h2>From cluttered interface to intentional, structured design</h2>
 
         <!-- Before/After 1 -->
-
-        <h3 class="text-2xl mb-8">From cluttered interface to intentional, structured design</h3>
-
-
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-10">
+        <div class="compare">
             <div>
-                <h4 class="mb-2 font-mono uppercase text-gray-400 dark:text-gray-600">Before</h4>
-                <img src="assets/images/creator-landing-old.png" alt="Original creator landing page" class="w-full" />
-                <div class="pl-0 mt-4">
-                    <p class="text-sm text-(--nav-hover)">Buried navigation under competing elements with no clear hierarchy or responsive behavior</p>
-                </div>
+                <p class="compare__label pixel">Before</p>
+                <img src="assets/images/creator-landing-old.png" alt="Original creator landing page" />
+                <p class="compare__note">Buried navigation under competing elements with no clear hierarchy or responsive behavior</p>
             </div>
             <div>
-                <h4 class="mb-2 font-mono uppercase text-gray-400 dark:text-gray-600">After</h4>
-                <img src="assets/images/creator-landing-new.png" alt="Redesigned creator landing page" class="w-full" />
-                <div class="pl-0 mt-4">
-                    <p class="text-sm text-(--nav-hover)">Reorganized layout with clear information hierarchy, contextual navigation, and responsive behavior.</p>
-                </div>
+                <p class="compare__label compare__label--after pixel">After</p>
+                <img src="assets/images/creator-landing-new.png" alt="Redesigned creator landing page" />
+                <p class="compare__note">Reorganized layout with clear information hierarchy, contextual navigation, and responsive behavior.</p>
             </div>
         </div>
 
         <!-- Before/After 2 -->
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-10">
+        <div class="compare">
             <div>
-                <h4 class="mb-2 font-mono uppercase text-gray-400 dark:text-gray-600">Before</h4>
-                <img src="assets/images/admin-disc-old.png" alt="Original admin disclaimers section" class="w-full" />
-                <div class="pl-0 mt-4">
-                    <p class="text-sm text-(--nav-hover)">Editing controls were hidden off-screen with no visual structure to guide the user.</p>
-                </div>
+                <p class="compare__label pixel">Before</p>
+                <img src="assets/images/admin-disc-old.png" alt="Original admin disclaimers section" />
+                <p class="compare__note">Editing controls were hidden off-screen with no visual structure to guide the user.</p>
             </div>
             <div>
-                <h4 class="mb-2 font-mono uppercase text-gray-400 dark:text-gray-600">After</h4>
-                <img src="assets/images/admin-disc-new.png" alt="Redesigned admin disclaimers section" class="w-full" />
-                <div class="pl-0 mt-4">
-                    <p class="text-sm text-(--nav-hover)">Actionable items surfaced in context with a cleaner, more trustworthy aesthetic.</p>
-                </div>
+                <p class="compare__label compare__label--after pixel">After</p>
+                <img src="assets/images/admin-disc-new.png" alt="Redesigned admin disclaimers section" />
+                <p class="compare__note">Actionable items surfaced in context with a cleaner, more trustworthy aesthetic.</p>
             </div>
         </div>
+    </section>
 
-        <!-- Full screen sample -->
-        <div class="mt-10 mb-10">
-            <h3 class="text-2xl mb-8">Redesigned issuer configuration screen</h3>
-            <figure>
-                <img src="assets/images/topics-desktop.png" alt="Redesigned Admin Issuers page" class="w-full" />
-                <figcaption class="text-xs italic text-center mt-2 text-(--nav-hover)">Admin &gt; Issuers page — improved layout with clear primary and secondary action hierarchy.</figcaption>
-            </figure>
-        </div>
+    <!-- Full screen sample -->
+    <section class="case-section">
+        <h2>Redesigned issuer configuration screen</h2>
+        <figure>
+            <img src="assets/images/topics-desktop.png" alt="Redesigned Admin Issuers page" />
+            <figcaption>Admin &gt; Issuers page — improved layout with clear primary and secondary action hierarchy.</figcaption>
+        </figure>
+    </section>
 
-        <hr class="border-t-1 border-(--border-color) my-8">
+    <hr>
 
-        <!-- Product Reskin -->
-        <div class="mb-8">
-            <h3 class="text-2xl mb-4">Product Reskin</h3>
-            <p>While a full redesign of the author queue wasn't within scope, I led a focused reskin of the interface, partnering closely with product and engineering to deliver a modernized, streamlined UI. The update preserved core functionality while enhancing reliability and strengthening user trust.</p>
-        </div>
+    <!-- Product Reskin -->
+    <section class="case-section">
+        <h2>Product Reskin</h2>
+        <p>While a full redesign of the author queue wasn't within scope, I led a focused reskin of the interface, partnering closely with product and engineering to deliver a modernized, streamlined UI. The update preserved core functionality while enhancing reliability and strengthening user trust.</p>
 
         <!-- Before/After 3 -->
-        <div class="grid grid-cols-2 gap-8">
+        <div class="compare">
             <div>
-                <h4 class="mb-2 font-mono uppercase text-gray-400 dark:text-gray-600">Before</h4>
-                <img src="assets/images/author-queue-old.png" alt="Original author queue" class="w-full" />
-                <div class="pl-0 mt-4">
-                    <p class="text-sm text-(--nav-hover)">Excessive iconography and unstructured whitespace made the interface difficult to scan.</p>
-                </div>
+                <p class="compare__label pixel">Before</p>
+                <img src="assets/images/author-queue-old.png" alt="Original author queue" />
+                <p class="compare__note">Excessive iconography and unstructured whitespace made the interface difficult to scan.</p>
             </div>
             <div>
-                <h4 class="mb-2 font-mono uppercase text-gray-400 dark:text-gray-600">After</h4>
-                <img src="assets/images/author-queue-new.png" alt="Redesigned author queue" class="w-full" />
-                <div class="pl-0 mt-4">
-                    <p class="text-sm text-(--nav-hover)">Decluttered layout with exposed filter controls and a modular structure for clearer document management.</p>
-                </div>
+                <p class="compare__label compare__label--after pixel">After</p>
+                <img src="assets/images/author-queue-new.png" alt="Redesigned author queue" />
+                <p class="compare__note">Decluttered layout with exposed filter controls and a modular structure for clearer document management.</p>
             </div>
-        </div>
-
-    </section>
-
-
-    <section class="mt-28">
-        <hr class="hr-full border-t-2 border-(--border-color) my-8">
-        <div class="grid justify-end">
-
-
-            <a href="project-2.html" class="group block no-underline md:justify-self-end !text-right">
-                <span class="font-mono text-gray-500 dark:text-gray-400 uppercase">Next </span><i class="bi bi-arrow-right"></i>
-                <h4 class="text-lg font-light text-(--text-color)">Product communciation templates</h4>
-            </a>
-
         </div>
     </section>
 
-
+    <nav class="case-pager" aria-label="More projects">
+        <a href="project-2.html" class="pager-link pager-link--next">
+            <span class="pager-link__label pixel">Next →</span>
+            <span class="pager-link__title">Product communciation templates</span>
+        </a>
+    </nav>
 
 </main>
 

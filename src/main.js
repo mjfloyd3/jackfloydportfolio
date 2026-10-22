@@ -4,8 +4,42 @@ import { inject } from '@vercel/analytics'
 // Initialize Vercel Analytics
 inject()
 
+const THEME_ICONS = `
+                                <svg id="sunIcon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+                                </svg>
+                                <svg id="moonIcon" style="display: none;" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+                                </svg>`;
+
+const GITHUB_PATH = 'M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z';
+const LINKEDIN_PATH = 'M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z';
+
+// Pages opted into the redesign carry <body class="retro">; the rest keep the old nav/footer
+const isRetro = () => document.body.classList.contains('retro');
+
 customElements.define("nav-bar", class extends HTMLElement {
     connectedCallback() {
+        if (isRetro()) {
+            this.innerHTML = `
+                <header class="site-nav">
+                    <nav class="site-nav__inner" aria-label="Main">
+                        <div class="site-nav__id">
+                            <a href="index.html" class="site-nav__name">Jack Floyd</a>
+                            <span class="site-nav__role">UI developer &amp; product designer</span>
+                        </div>
+                        <div class="site-nav__links">
+                            <a class="nav-link" href="about.html">About</a>
+                            <button type="button" class="nav-link" data-copy-email="mjfloyd3@gmail.com"><span class="copy-email__label" aria-live="polite">Email</span></button>
+                            <button type="button" class="theme-toggle" id="themeToggle" aria-label="Toggle theme">${THEME_ICONS}</button>
+                        </div>
+                    </nav>
+                </header>
+                `;
+            this.initTheme();
+            return;
+        }
+
         this.innerHTML = `
                 <div class="fixed top-0 left-0 right-0 z-50 backdrop-blur-md bg-[#FAFAFA]/60 ">
                     <nav class="flex max-w-6xl mx-auto justify-between items-center px-8 py-6">
@@ -29,8 +63,12 @@ customElements.define("nav-bar", class extends HTMLElement {
                 </div>
                 `;
 
-        // Theme logic runs here, inside connectedCallback, so elements are guaranteed to exist
-        const navbar = this.querySelector('.fixed.top-0');
+        this.initTheme();
+    }
+
+    initTheme() {
+        // Theme logic runs after the markup is rendered, so elements are guaranteed to exist
+        const navbar = this.querySelector('.fixed.top-0'); // old nav only; the retro nav colors itself from CSS
         const themeToggle = this.querySelector('#themeToggle');
         const sunIcon = this.querySelector('#sunIcon');
         const moonIcon = this.querySelector('#moonIcon');
@@ -41,13 +79,13 @@ customElements.define("nav-bar", class extends HTMLElement {
             localStorage.setItem('theme', theme);
 
             if (theme === 'dark') {
-                navbar.classList.remove('bg-[#FAFAFA]/60');
-                navbar.classList.add('bg-[#22222E]/80');
+                navbar?.classList.remove('bg-[#FAFAFA]/60');
+                navbar?.classList.add('bg-[#22222E]/80');
                 sunIcon.style.display = 'none';
                 moonIcon.style.display = 'block';
             } else {
-                navbar.classList.remove('bg-[#22222E]/80');
-                navbar.classList.add('bg-[#FAFAFA]/60');
+                navbar?.classList.remove('bg-[#22222E]/80');
+                navbar?.classList.add('bg-[#FAFAFA]/60');
                 sunIcon.style.display = 'block';
                 moonIcon.style.display = 'none';
             }
@@ -66,6 +104,28 @@ customElements.define("nav-bar", class extends HTMLElement {
 
 customElements.define("my-footer", class extends HTMLElement {
     connectedCallback() {
+        if (isRetro()) {
+            this.innerHTML = `
+                <footer class="site-footer">
+                    <div class="site-footer__inner">
+                        <div class="site-footer__actions">
+                            <button type="button" class="copy-email" data-copy-email="mjfloyd3@gmail.com"><span class="copy-email__label" aria-live="polite">Copy email</span></button>
+                            <a href="https://github.com/mjfloyd3" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="${GITHUB_PATH}"/></svg>
+                            </a>
+                            <a href="https://linkedin.com/in/jackfloyd" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="${LINKEDIN_PATH}"/></svg>
+                            </a>
+                        </div>
+                        <div class="site-footer__meta pixel">
+                            <span>&copy; 2026 Jack Floyd</span>
+                        </div>
+                    </div>
+                </footer>
+                `;
+            return;
+        }
+
         this.innerHTML = `
                     <footer class="border-t border-gray-200 text-gray-400 text-sm">
                       <div class="mx-auto max-w-6xl px-12 py-12 flex justify-between items-center">
@@ -154,7 +214,7 @@ const modalImg = document.getElementById('modalImg');
 // Only wire up the image lightbox on pages that actually have the modal markup
 if (overlay && modalImg) {
     document.querySelectorAll('img').forEach(img => {
-        img.style.cursor = 'pointer';
+        img.style.cursor = isRetro() ? 'url("/cursors/hand.svg") 9 0, pointer' : 'pointer';
         img.addEventListener('click', () => {
             modalImg.src = img.src;
             modalImg.alt = img.alt;
@@ -316,4 +376,106 @@ document.addEventListener('click', async (e) => {
         label.textContent = btn.dataset.originalLabel;
         btn.classList.remove('is-copied');
     }, 1600);
+});
+
+
+// Scroll reveal — .reveal elements fade up as they enter the viewport. Anything already
+// on screen is marked visible before arming, so the first paint never flashes empty.
+(function initReveal() {
+    const items = document.querySelectorAll('.reveal');
+    if (!items.length || !('IntersectionObserver' in window)) return;
+
+    items.forEach((el) => {
+        if (el.getBoundingClientRect().top < window.innerHeight) el.classList.add('is-in', 'is-settled');
+    });
+    document.documentElement.classList.add('reveal-armed');
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            if (!entry.isIntersecting) return;
+            const el = entry.target;
+            el.classList.add('is-in');
+            el.addEventListener('transitionend', () => el.classList.add('is-settled'), { once: true });
+            observer.unobserve(el);
+        });
+    }, { rootMargin: '0px 0px -10% 0px' });
+
+    items.forEach((el) => {
+        if (!el.classList.contains('is-in')) observer.observe(el);
+    });
+})();
+
+
+// Cursor label — a small tag that follows the pointer over project cards, reading the
+// card's data-cursor text. Mouse/trackpad only; touch devices just get the plain card.
+(function initCursorLabel() {
+    const cards = document.querySelectorAll('[data-cursor]');
+    if (!cards.length || !window.matchMedia('(hover: hover) and (pointer: fine)').matches) return;
+
+    const label = document.createElement('div');
+    label.className = 'cursor-label';
+    label.setAttribute('aria-hidden', 'true');
+    document.body.appendChild(label);
+
+    // The tag hangs off the notch at the base of the arrow cursor (NOTCH px right and
+    // down from the pointer tip). Near the right edge it flips under the arrow's left side.
+    const NOTCH = 11;
+    const FLIP_GAP = 4;
+    // Fraction of the remaining distance covered each frame — a slight trailing lag
+    const EASE = window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 1 : 0.35;
+
+    let targetX = 0;
+    let targetY = 0;
+    let x = 0;
+    let y = 0;
+    let raf = null;
+
+    function render() {
+        const flip = targetX + NOTCH + label.offsetWidth + 8 > window.innerWidth;
+        label.classList.toggle('is-flipped', flip);
+        const tx = flip ? targetX - label.offsetWidth - FLIP_GAP : targetX + NOTCH;
+        const ty = targetY + NOTCH;
+
+        x += (tx - x) * EASE;
+        y += (ty - y) * EASE;
+        if (Math.abs(tx - x) < 0.1 && Math.abs(ty - y) < 0.1) {
+            x = tx;
+            y = ty;
+        }
+        label.style.translate = `${x}px ${y}px`;
+        raf = x === tx && y === ty ? null : requestAnimationFrame(render);
+    }
+
+    function follow(e) {
+        targetX = e.clientX;
+        targetY = e.clientY;
+        if (!raf) raf = requestAnimationFrame(render);
+    }
+
+    cards.forEach((card) => {
+        card.addEventListener('pointerenter', (e) => {
+            label.textContent = card.dataset.cursor;
+            // Snap into place on entry so the tag doesn't glide in from its last spot
+            cancelAnimationFrame(raf);
+            raf = null;
+            targetX = e.clientX;
+            targetY = e.clientY;
+            x = targetX + NOTCH;
+            y = targetY + NOTCH;
+            render();
+            label.classList.add('is-visible');
+        });
+        card.addEventListener('pointermove', follow);
+        card.addEventListener('pointerleave', () => label.classList.remove('is-visible'));
+    });
+})();
+
+
+// AltGen card demo — scales its fixed 1600x1000 stage to whatever width the card gives it
+document.querySelectorAll('.ag-frame').forEach((frame) => {
+    const stage = frame.querySelector('.ag-stage');
+    const fit = () => stage.style.setProperty('--ag-s', frame.clientWidth / 1600);
+    fit();
+    if ('ResizeObserver' in window) new ResizeObserver(fit).observe(frame);
+    else window.addEventListener('resize', fit);
 });

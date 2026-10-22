@@ -6,127 +6,272 @@
     <meta name="description" content="UI Developer and Product Designer with 7 years of experience in fintech">
     <meta name="robots" content="noindex, nofollow">
     <title>Jack Floyd | UI Developer</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Noticia+Text:ital,wght@0,400;0,700;1,400;1,700&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
     <script type="module" src="/src/main.js"></script>
     <script>
         if (sessionStorage.getItem('work_unlocked') !== 'true') {
             window.location.href = 'index.html';
         }
     </script>
-
-    <style>
-        .project-item:hover .thumb-img { transform: scale(1.03); }
-    </style>
-
 </head>
 
 
-<body>
+<body class="retro">
 
 <nav-bar></nav-bar>
-<main class="min-h-screen px-4 sm:px-6 pt-32 pb-20">
-    <div class="max-w-5xl mx-auto px-6">
-        <h2 class="section-display text-[var(--text-color)] mb-8">Selected Work</h2>
 
-        <div class="flex flex-col">
+<main class="retro-main">
 
-        <a href="project-1.html" class="group flex flex-col sm:flex-row items-stretch hover:opacity-90 transition-opacity duration-150 no-underline">
-            <div class="w-full rounded-lg sm:w-[48%] shrink-0 aspect-video overflow-hidden bg-[#D3D9EF] flex items-center justify-center p-6">
-                <img src="assets/images/admin-new.png" alt="Admin UI redesign" class="w-full h-full object-contain transition-transform duration-300 group-hover:scale-105" />
-            </div>
-            <div class="flex flex-col justify-center gap-2 flex-1 sm:px-8 py-6 py-6">
-                <h3 class="transition-colors duration-200 group-hover:text-[var(--spin-y)] text-2xl md:text-3xl font-medium font-mono text-[var(--text-color)] m-0">Product Redesign</h3>
-                <p class="text-lg font-light text-[var(--nav-hover)] leading-relaxed m-0">Admin UI redesign for a fintech publishing platform.</p>
-                <ul class="tag-list" aria-label="Skills"><li class="tag">Product Design</li><li class="tag">UI Design</li></ul>
-            </div>
-        </a>
+    <section aria-labelledby="selected-work">
+      <div class="section-head section-head--first">
+        <h2 id="selected-work" class="section-title">Selected Work</h2>
+      </div>
 
-        <a href="project-4.html" class="pt-16 group flex flex-col sm:flex-row items-stretch hover:opacity-90 transition-opacity duration-150 no-underline">
-            <div class="w-full rounded-lg sm:w-[48%] shrink-0 h-64 bg-[#AAE0EF] flex items-center justify-center p-6">
-                <img class="h-full w-auto object-contain transition-transform duration-300 group-hover:scale-105" src="assets/images/release-notes-web.png" alt="Product Comms Templates" />
+      <ol class="project-list">
+        <li>
+          <a href="project-1.html" class="window reveal" data-cursor="See project →">
+            <div class="window__bar">
+              <span class="window__file">project-1.html</span>
+              <span class="window__controls" aria-hidden="true"><i>_</i><i>□</i><i>×</i></span>
             </div>
-            <div class="flex flex-col justify-center gap-2 flex-1 sm:px-8 py-6">
-                <h3 class="transition-colors duration-200 group-hover:text-[var(--spin-x)] text-2xl md:text-3xl font-medium font-mono text-[var(--text-color)] m-0">Product Communication &amp; Marketing Materials Templates</h3>
-                <p class="text-lg font-light text-[var(--nav-hover)] leading-relaxed m-0">Consistent, on-brand messaging built on our own CMS.</p>
-                <ul class="tag-list" aria-label="Skills"><li class="tag">Web Design</li><li class="tag">Front-End</li></ul>
+            <div class="window__body">
+              <div class="window__media" style="--media-bg: #D3D9EF">
+                <img src="assets/images/admin-new.png" alt="Admin UI redesign" />
+              </div>
+              <div class="window__text">
+                <h3 class="window__title">Product Redesign</h3>
+                <p class="window__desc">Admin UI redesign for a fintech publishing platform.</p>
+                <div class="window__foot">
+                  <ul class="tag-list" aria-label="Skills">
+                    <li class="tag">Product Design</li>
+                    <li class="tag">UI Design</li>
+                  </ul>
+                </div>
+              </div>
             </div>
-        </a>
+          </a>
+        </li>
+        <li>
+          <a href="project-4.html" class="window reveal" data-cursor="See project →">
+            <div class="window__bar">
+              <span class="window__file">project-4.html</span>
+              <span class="window__controls" aria-hidden="true"><i>_</i><i>□</i><i>×</i></span>
+            </div>
+            <div class="window__body">
+              <div class="window__media" style="--media-bg: #AAE0EF">
+                <img src="assets/images/release-notes-web.png" alt="Product Comms Templates" />
+              </div>
+              <div class="window__text">
+                <h3 class="window__title">Product Communication &amp; Marketing Materials Templates</h3>
+                <p class="window__desc">Consistent, on-brand messaging built on our own CMS.</p>
+                <div class="window__foot">
+                  <ul class="tag-list" aria-label="Skills">
+                    <li class="tag">Web Design</li>
+                    <li class="tag">Front-End</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="project-2.html" class="window reveal" data-cursor="See project →">
+            <div class="window__bar">
+              <span class="window__file">project-2.html</span>
+              <span class="window__controls" aria-hidden="true"><i>_</i><i>□</i><i>×</i></span>
+            </div>
+            <div class="window__body">
+              <div class="window__media" style="--media-bg: #292E39">
+                <img src="assets/images/report-publishing-templates.png" alt="Research report templates" />
+              </div>
+              <div class="window__text">
+                <h3 class="window__title">Custom Research Publishing Templates</h3>
+                <p class="window__desc">Scalable multi-format publishing for investment banks.</p>
+                <div class="window__foot">
+                  <ul class="tag-list" aria-label="Skills">
+                    <li class="tag">Front-End</li>
+                    <li class="tag">Design Systems</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="project-3.html" class="window reveal" data-cursor="See project →">
+            <div class="window__bar">
+              <span class="window__file">project-3.html</span>
+              <span class="window__controls" aria-hidden="true"><i>_</i><i>□</i><i>×</i></span>
+            </div>
+            <div class="window__body">
+              <div class="window__media" style="--media-bg: #A5EDEA">
+                <img src="assets/images/site-page-redesign.png" alt="Company website redesign" />
+              </div>
+              <div class="window__text">
+                <h3 class="window__title">Company Website Redesign</h3>
+                <p class="window__desc">Full company website redesign, concept through deployment.</p>
+                <div class="window__foot">
+                  <ul class="tag-list" aria-label="Skills">
+                    <li class="tag">Web Design</li>
+                    <li class="tag">Front-End</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </a>
+        </li>
+      </ol>
+    </section>
 
-        <a href="project-2.html" class="py-16 group flex flex-col sm:flex-row items-stretch hover:opacity-90 transition-opacity duration-150 no-underline">
-            <div class="w-full rounded-lg sm:w-[48%] shrink-0 h-64 bg-[#292E39] flex items-center justify-center p-6">
-                <img class="h-full w-auto object-contain transition-transform duration-300 group-hover:scale-105" src="assets/images/report-publishing-templates.png" alt="Research report templates" />
-            </div>
-            <div class="flex flex-col justify-center gap-2 flex-1 sm:px-8 py-6">
-                <h3 class="transition-colors duration-200 group-hover:text-[var(--spin-x)] text-2xl md:text-3xl font-medium font-mono text-[var(--text-color)] m-0">Custom Research Publishing Templates</h3>
-                <p class="text-lg font-light text-[var(--nav-hover)] leading-relaxed m-0">Scalable multi-format publishing for investment banks.</p>
-                <ul class="tag-list" aria-label="Skills"><li class="tag">Front-End</li><li class="tag">Design Systems</li></ul>
-            </div>
-        </a>
+    <section aria-labelledby="side-quests">
+      <div class="section-head">
+        <h2 id="side-quests" class="section-title">Side quests</h2>
+      </div>
 
-
-        <a href="project-3.html" class="pb-16 group flex flex-col sm:flex-row items-stretch hover:opacity-90 transition-opacity duration-150 no-underline">
-            <div class="w-full rounded-lg sm:w-[48%] shrink-0 h-64 bg-[#A5EDEA] flex items-center justify-center p-6">
-                <img class="h-full w-auto object-contain transition-transform duration-300 group-hover:scale-105" src="assets/images/site-page-redesign.png" alt="Company website redesign" />
+      <ol class="project-list">
+        <li>
+          <a href="standing-room.html" class="window reveal" data-cursor="See project →">
+            <div class="window__bar">
+              <span class="window__file">standing-room.html</span>
+              <span class="window__controls" aria-hidden="true"><i>_</i><i>□</i><i>×</i></span>
             </div>
-            <div class="flex flex-col justify-center gap-2 flex-1 sm:px-8 py-6">
-                <h3 class="transition-colors duration-200 group-hover:text-[var(--spin-y)] text-2xl md:text-3xl font-medium font-mono text-[var(--text-color)] m-0">Company Website Redesign</h3>
-                <p class="text-sm font-light text-[var(--nav-hover)] leading-relaxed m-0">Full company website redesign, concept through deployment.</p>
-                <ul class="tag-list" aria-label="Skills"><li class="tag">Web Design</li><li class="tag">Front-End</li></ul>
+            <div class="window__body">
+              <div class="window__media window__media--cover" style="--media-bg: #384567">
+                <img src="assets/images/standingroom-mobile.png" alt="Standing Room Society thumbnail">
+              </div>
+              <div class="window__text">
+                <h3 class="window__title">Standing Room Society</h3>
+                <p class="window__desc">Find NYC theater lottery, standing room and rush ticket access, all in one place.</p>
+                <div class="window__foot">
+                  <ul class="tag-list" aria-label="Skills">
+                    <li class="tag">Product Design</li>
+                    <li class="tag">Front-End</li>
+                  </ul>
+                </div>
+              </div>
             </div>
-        </a>
-
-    </div>
-
-        <h2 id="independent-projects" class="section-display text-[var(--text-color)] mb-8 mt-8">Independent Projects</h2>
-
-        <a href="standing-room.html" class="pb-16 group flex flex-col sm:flex-row items-stretch transition-opacity duration-150 no-underline">
-          <div class="w-full rounded-lg sm:w-[48%] shrink-0 h-64 overflow-hidden bg-[#384567] flex items-center justify-center p-0">
-            <img src="assets/images/standingroom-mobile.png" alt="Standing Room Society thumbnail" class="w-full h-full object-cover rounded-lg transition-transform duration-300 group-hover:scale-105">
-          </div>
-            <div class="flex flex-col justify-center gap-2 flex-1 sm:px-8 py-6">
-                <h3 class="transition-colors duration-200 group-hover:text-[var(--spin-x)] text-2xl md:text-3xl font-medium font-mono text-[var(--text-color)] m-0">Standing Room Society</h3>
-                <p class="text-sm font-light text-[var(--nav-hover)] leading-relaxed m-0">Find NYC theater lottery, standing room and rush ticket access, all in one place.</p>
-                <ul class="tag-list" aria-label="Skills"><li class="tag">Product Design</li><li class="tag">Front-End</li></ul>
+          </a>
+        </li>
+        <li>
+          <a href="https://altgeneration.lovable.app/" class="window reveal" data-cursor="Visit site ↗">
+            <div class="window__bar">
+              <span class="window__file">altgeneration.lovable.app ↗</span>
+              <span class="window__controls" aria-hidden="true"><i>_</i><i>□</i><i>×</i></span>
             </div>
-        </a>
-
-        <a href="https://altgeneration.lovable.app/" class="pb-16 group flex flex-col sm:flex-row items-stretch transition-opacity duration-150 no-underline">
-            <div class="w-full rounded-lg sm:w-[48%] shrink-0 h-64 bg-[#333333] flex items-center justify-center p-6">
-                <img src="assets/images/altgen.png" alt="AltGen project thumbnail" class="w-2/3 transition-transform duration-300 group-hover:scale-105">
+            <div class="window__body">
+              <div class="window__media window__media--demo" style="--media-bg: #101A28">
+                <div class="ag-frame" role="img" aria-label="AltGen demo: right-clicking an image of a sailboat and choosing Generate alt text produces the caption 'A small sailboat drifts on calm blue water beneath a full moon.'">
+                  <div class="ag-stage" aria-hidden="true">
+                    <div class="ag-abs ag-glow"></div>
+                    <div class="ag-abs ag-img">
+                      <svg width="716" height="466" viewBox="0 0 556 376" preserveAspectRatio="xMidYMid slice">
+                        <rect width="556" height="376" fill="#1A2B45"/>
+                        <rect y="150" width="556" height="96" fill="#22375A"/>
+                        <circle cx="410" cy="110" r="44" fill="#E8EEE8"/>
+                        <rect y="246" width="556" height="130" fill="#2D5BC4"/>
+                        <rect y="246" width="556" height="130" fill="#132036" opacity="0.35"/>
+                        <rect x="370" y="262" width="80" height="4" fill="#E8EEE8" opacity="0.5"/>
+                        <rect x="388" y="276" width="44" height="4" fill="#E8EEE8" opacity="0.35"/>
+                        <rect x="400" y="290" width="22" height="4" fill="#E8EEE8" opacity="0.25"/>
+                        <polygon points="200,118 200,232 128,232" fill="#E8EEE8"/>
+                        <polygon points="208,140 208,232 256,232" fill="#5ECFA0"/>
+                        <rect x="202" y="112" width="4" height="124" fill="#0F1724"/>
+                        <polygon points="110,240 278,240 256,262 132,262" fill="#0F1724"/>
+                        <rect x="60" y="300" width="70" height="3" fill="#5D86D8"/>
+                        <rect x="200" y="330" width="110" height="3" fill="#5D86D8"/>
+                        <rect x="430" y="340" width="60" height="3" fill="#5D86D8"/>
+                      </svg>
+                    </div>
+                    <div class="ag-abs ag-menu">
+                      <div>Open image in new tab</div>
+                      <div>Save image as…</div>
+                      <div>Copy image</div>
+                      <div class="ag-sep"></div>
+                      <div class="ag-item">
+                        <svg width="18" height="18" viewBox="-20 -20 40 40"><path d="M0 -20 C2 -6 6 -2 20 0 C6 2 2 6 0 20 C-2 6 -6 2 -20 0 C-6 -2 -2 -6 0 -20Z" fill="#5ECFA0"/></svg>
+                        <span>Generate alt text</span>
+                      </div>
+                    </div>
+                    <div class="ag-abs ag-card">
+                      <div class="ag-head">
+                        <div class="ag-label"><span class="ag-dot"></span><span>ALT TEXT</span></div>
+                        <span class="ag-copy">
+                          <span class="ag-copy-a">COPY</span>
+                          <span class="ag-copy-b">
+                            <svg width="16" height="16" viewBox="0 0 16 16"><path d="M2.5 8.5 L6.5 12.5 L13.5 4" fill="none" stroke="#5ECFA0" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                            <span>COPIED!</span>
+                          </span>
+                        </span>
+                      </div>
+                      <p class="ag-text"><span class="ag-w" style="animation-delay:0s">A</span> <span class="ag-w" style="animation-delay:.16s">small</span> <span class="ag-w" style="animation-delay:.32s">sailboat</span> <span class="ag-w" style="animation-delay:.48s">drifts</span> <span class="ag-w" style="animation-delay:.64s">on</span> <span class="ag-w" style="animation-delay:.8s">calm</span> <span class="ag-w" style="animation-delay:.96s">blue</span> <span class="ag-w" style="animation-delay:1.12s">water</span> <span class="ag-w" style="animation-delay:1.28s">beneath</span> <span class="ag-w" style="animation-delay:1.44s">a</span> <span class="ag-w" style="animation-delay:1.6s">full</span> <span class="ag-w ag-last" style="animation-delay:1.76s">moon.</span></p>
+                    </div>
+                    <svg class="ag-abs ag-cursor" width="40" height="54" viewBox="0 0 40 54">
+                      <path d="M4 4 L4 44 L14 34 L22 51 L30 47 L22 31 L36 31Z" fill="#E8EEE8" stroke="#101A28" stroke-width="3" stroke-linejoin="round"/>
+                    </svg>
+                  </div>
+                </div>
+              </div>
+              <div class="window__text">
+                <h3 class="window__title">AI-Powered <span class="nowrap">alt-text</span> generation</h3>
+                <p class="window__desc">Generate accessible alt text for any image on the web. Right-click. Done. Powered by AI vision models.</p>
+                <div class="window__foot">
+                  <ul class="tag-list" aria-label="Skills">
+                    <li class="tag">AI</li>
+                    <li class="tag">Accessibility</li>
+                  </ul>
+                </div>
+              </div>
             </div>
-            <div class="flex flex-col justify-center gap-2 flex-1 sm:px-8 py-6">
-                <h3 class="transition-colors duration-200 group-hover:text-[var(--spin-y)] text-2xl md:text-3xl font-medium font-mono text-[var(--text-color)] m-0">AI-Powered alt-text generation</h3>
-                <p class="text-sm font-light text-[var(--nav-hover)] leading-relaxed m-0">Generate accessible alt text for any image on the web. Right-click. Done. Powered by AI vision models.</p>
-                <ul class="tag-list" aria-label="Skills"><li class="tag">AI</li><li class="tag">Accessibility</li></ul>
+          </a>
+        </li>
+        <li>
+          <a href="carly-captions.html" class="window reveal" data-cursor="See project →">
+            <div class="window__bar">
+              <span class="window__file">carly-captions.html</span>
+              <span class="window__controls" aria-hidden="true"><i>_</i><i>□</i><i>×</i></span>
             </div>
-        </a>
-
-        <a href="carly-captions.html" class="pb-16 group flex flex-col sm:flex-row items-stretch transition-opacity duration-150 no-underline">
-            <div class="w-full rounded-lg sm:w-[48%] shrink-0 h-64 bg-[#FF69B4] flex items-center justify-center p-6">
-                <img src="assets/images/carlycaptions.png" alt="AltGen project thumbnail" class="w-2/3 transition-transform duration-300 group-hover:scale-105">
+            <div class="window__body">
+              <div class="window__media" style="--media-bg: #FF69B4">
+                <img src="assets/images/carlycaptions.png" alt="Carly Captions thumbnail">
+              </div>
+              <div class="window__text">
+                <h3 class="window__title">A Lyric Tool for the World's Most Dedicated Pop Audience</h3>
+                <p class="window__desc">Interactive lyric matcher using React, TypeScript, Framer Motion.</p>
+                <div class="window__foot">
+                  <ul class="tag-list" aria-label="Skills">
+                    <li class="tag">Front-End</li>
+                    <li class="tag">Interaction Design</li>
+                  </ul>
+                </div>
+              </div>
             </div>
-            <div class="flex flex-col justify-center gap-2 flex-1 sm:px-8 py-6">
-                <h3 class="transition-colors duration-200 group-hover:text-[var(--spin-x)] text-2xl md:text-3xl font-medium font-mono text-[var(--text-color)] m-0">A Lyric Tool for the World's Most Dedicated Pop Audience</h3>
-                <p class="text-sm font-light text-[var(--nav-hover)] leading-relaxed m-0">Interactive lyric matcher using React, TypeScript, Framer Motion.</p>
-                <ul class="tag-list" aria-label="Skills"><li class="tag">Front-End</li><li class="tag">Interaction Design</li></ul>
+          </a>
+        </li>
+        <li>
+          <a href="https://mjfloyd3.github.io/NYC-Knows/" class="window reveal" data-cursor="Visit site ↗">
+            <div class="window__bar">
+              <span class="window__file">nyc-knows ↗</span>
+              <span class="window__controls" aria-hidden="true"><i>_</i><i>□</i><i>×</i></span>
             </div>
-        </a>
-
-        <a href="https://mjfloyd3.github.io/NYC-Knows/" class="pb-16 group flex flex-col sm:flex-row items-stretch transition-opacity duration-150 no-underline">
-            <div class="w-full rounded-lg sm:w-[48%] shrink-0 h-64 bg-[#FF6B29] flex items-center justify-center p-0">
-                <img src="assets/images/nycknowspreview.png" alt="NYC Knows Preview" class="transition-transform duration-300 group-hover:scale-100">
+            <div class="window__body">
+              <div class="window__media window__media--cover" style="--media-bg: #FF6B29">
+                <img src="assets/images/nycknowspreview.png" alt="NYC Knows Preview">
+              </div>
+              <div class="window__text">
+                <h3 class="window__title">NYC Knows</h3>
+                <p class="window__desc">Find free, walk-in HIV testing near you, with interactive maps and charts covering 40 years of NYC HIV data.</p>
+                <div class="window__foot">
+                  <ul class="tag-list" aria-label="Skills">
+                    <li class="tag">Front-End</li>
+                    <li class="tag">Data Viz</li>
+                  </ul>
+                </div>
+              </div>
             </div>
-            <div class="flex flex-col justify-center gap-2 flex-1 sm:px-8 py-6">
-                <h3 class="transition-colors duration-200 group-hover:text-[var(--spin-y)] text-2xl md:text-3xl font-medium font-mono text-[var(--text-color)] m-0">NYC Knows</h3>
-                <p class="text-sm font-light text-[var(--nav-hover)] leading-relaxed m-0">Find free, walk-in HIV testing near you, with interactive maps and charts covering 40 years of NYC HIV data.</p>
-                <ul class="tag-list" aria-label="Skills"><li class="tag">Front-End</li><li class="tag">Data Viz</li></ul>
-            </div>
-        </a>
+          </a>
+        </li>
+      </ol>
+    </section>
 
-
-
-    </div>
 </main>
 
 <my-footer></my-footer>

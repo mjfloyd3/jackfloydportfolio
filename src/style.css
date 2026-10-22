@@ -1,4 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Momo+Trust+Display&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=VT323&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;1,8..60,400&family=Inter:wght@400;500;600&display=swap');
 
 @import "tailwindcss";
 
@@ -291,4 +293,1307 @@ hr {
 hr.hr-full {
     width: 100%;
     height: 2px;
+}
+
+
+/* ==========================================================================
+   Retro skin — "Web 1.0, remastered"
+   Scoped to <body class="retro"> so pages move over one at a time; everything
+   above keeps styling the pages that haven't been converted yet.
+   ========================================================================== */
+
+.retro {
+    --paper: #F6F4EC;
+    --ink: #121412;
+    --ink-soft: #4A4D48;
+    --link: #0047CC;          /* classic hyperlink blue */
+    --link-visited: #6B46D9;  /* classic visited purple */
+    --highlight: #D9F45B;     /* highlighter fill on hover */
+    --spin-x: #0047CC;        /* engineering verb — hyperlink blue */
+    --spin-y: #D11F7A;        /* design verb — Y2K hot magenta */
+    --success: #1B7A4E;       /* "Copied!" confirmations */
+    --cursor-label-bg: #8FE3EF; /* aqua — only the label that follows the pointer over cards */
+    --on-highlight: #121412;
+    --font-display: "Bricolage Grotesque", -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica', 'Arial', sans-serif;
+    --font-pixel: "VT323", ui-monospace, SFMono-Regular, 'SF Mono', 'Menlo', monospace;
+    --nav-h: 4rem;
+
+    font-family: var(--font-display);
+    font-size: 1.125rem;
+    line-height: 1.55;
+    background-color: var(--paper);
+    color: var(--ink);
+}
+
+/* Dark mode is a CRT: deep navy glass, phosphor-green links */
+[data-theme="dark"] .retro {
+    --paper: #0E1222;
+    --ink: #E9ECF2;
+    --ink-soft: #A9B0C2;
+    --link: #7CF2A8;
+    --link-visited: #B9A3FF;
+    --highlight: #7CF2A8;
+    --spin-x: #7FDCEB;
+    --spin-y: #FF7AC0;
+    --success: #58C795;
+    --cursor-label-bg: #7FDCEB;
+    --on-highlight: #0E1222;
+}
+
+/* Pixel-art cursors (public/cursors) — chunky arrow for the page, pointing hand for
+   anything clickable. The keywords after each url are the fallback if the image fails. */
+.retro {
+    cursor: url("/cursors/arrow.svg") 3 3, auto;
+}
+
+.retro a,
+.retro button,
+.retro summary,
+.retro label[for] {
+    cursor: url("/cursors/hand.svg") 9 0, pointer;
+}
+
+.retro input,
+.retro textarea {
+    cursor: text;
+}
+
+/* Project cards keep the arrow — the cursor label already says they're clickable */
+.retro .window {
+    cursor: url("/cursors/arrow.svg") 3 3, auto;
+}
+
+.retro ::selection {
+    background: var(--highlight);
+    color: var(--on-highlight);
+}
+
+/* Undo the global p size; :where keeps it weak enough for component classes to win */
+:where(.retro) p {
+    font-size: inherit;
+}
+
+.retro .pixel {
+    font-family: var(--font-pixel);
+    font-size: 1.375rem;
+    line-height: 1;
+    letter-spacing: 0.02em;
+}
+
+/* Inline links — underlined blue, a highlighter swipe fills in on hover */
+.retro .link {
+    color: var(--link);
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 3px;
+    background: linear-gradient(var(--highlight), var(--highlight)) no-repeat 0 100% / 100% 0;
+    transition: background-size 0.18s ease, color 0.18s ease;
+}
+
+.retro .link:visited {
+    color: var(--link-visited);
+}
+
+.retro .link:hover,
+.retro .link:focus-visible {
+    color: var(--on-highlight);
+    background-size: 100% 100%;
+    text-decoration-color: transparent;
+}
+
+.retro :focus-visible {
+    outline: 3px solid var(--link);
+    outline-offset: 3px;
+}
+
+/* Blinking block cursor */
+.retro .cursor {
+    display: inline-block;
+    width: 0.5em;
+    height: 0.82em;
+    margin-left: 0.08em;
+    vertical-align: -0.04em;
+    background: currentColor;
+    animation: cursor-blink 1.06s steps(1) infinite;
+}
+
+@keyframes cursor-blink {
+    50% { opacity: 0; }
+}
+
+
+/* --- Nav ------------------------------------------------------------------ */
+
+.site-nav {
+    position: fixed;
+    inset: 0 0 auto;
+    z-index: 50;
+    background: var(--paper);
+    border-bottom: 2px solid var(--ink);
+    transition: background-color 0.3s ease;
+}
+
+.site-nav__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
+    max-width: 72rem;
+    height: var(--nav-h);
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+/* Name with the role stacked underneath */
+.site-nav__id {
+    display: flex;
+    flex-direction: column;
+    gap: 0.125rem;
+}
+
+.site-nav__name {
+    font-weight: 800;
+    font-size: 1.25rem;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+}
+
+.site-nav__role {
+    font-size: 0.75rem;
+    line-height: 1.2;
+    white-space: nowrap;
+    color: var(--ink-soft);
+}
+
+.site-nav__links {
+    display: flex;
+    align-items: center;
+    gap: 0.875rem;
+}
+
+/* Nav links — the underline wipes in from the left */
+.nav-link {
+    position: relative;
+    padding: 0.25rem 0;
+    border: 0;
+    background: none;
+    color: inherit;
+    cursor: pointer;
+    font-family: var(--font-pixel);
+    font-size: 1.5rem;
+    line-height: 1;
+}
+
+.nav-link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 2px;
+    background: currentColor;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.2s ease;
+}
+
+.nav-link:hover::after,
+.nav-link:focus-visible::after {
+    transform: scaleX(1);
+}
+
+.nav-link.is-copied {
+    color: var(--success);
+}
+
+.retro .theme-toggle {
+    color: var(--ink);
+    padding: 0.25rem;
+}
+
+@media (max-width: 374px) {
+    .site-nav__links { gap: 0.625rem; }
+    .nav-link { font-size: 1.375rem; }
+    .site-nav__role { font-size: 0.6875rem; }
+}
+
+@media (min-width: 640px) {
+    .site-nav__inner { padding: 0 2rem; }
+    .site-nav__links { gap: 1.75rem; }
+    .site-nav__role { font-size: 0.8125rem; }
+}
+
+
+/* --- Layout ---------------------------------------------------------------- */
+
+.retro-main {
+    max-width: 72rem;
+    margin: 0 auto;
+    padding: calc(var(--nav-h) + 3rem) 1rem 6rem;
+}
+
+@media (min-width: 640px) {
+    .retro-main { padding-inline: 2rem; }
+}
+
+
+/* --- Hero ------------------------------------------------------------------ */
+
+.hero {
+    display: grid;
+    gap: 1.75rem;
+    padding: 6vh 0 10vh;
+}
+
+.retro .hero__title {
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: clamp(2.25rem, 6.5vw, 5rem);
+    line-height: 0.98;
+    letter-spacing: -0.035em;
+    margin: 0;
+}
+
+/* The slot-reel verbs switch to the pixel face — taller cap so they sit level
+   with the grotesk next to them */
+.retro .spin-word {
+    font-family: var(--font-pixel);
+    font-weight: 400;
+    font-size: 1.12em;
+    letter-spacing: 0;
+}
+
+.hero__intro {
+    max-width: 38ch;
+    margin: 0;
+    font-size: clamp(1.25rem, 2.2vw, 1.625rem);
+    line-height: 1.45;
+    color: var(--ink-soft);
+}
+
+/* Chunky button — solid offset shadow, presses in on click */
+.btn {
+    justify-self: start;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.25rem;
+    border: 2px solid var(--ink);
+    background: var(--highlight);
+    color: var(--on-highlight);
+    font-weight: 700;
+    font-size: 1.125rem;
+    box-shadow: 4px 4px 0 var(--ink);
+    transition: transform 0.12s ease, box-shadow 0.12s ease;
+}
+
+.btn:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 6px 6px 0 var(--ink);
+}
+
+.btn:active {
+    transform: translate(4px, 4px);
+    box-shadow: 0 0 0 var(--ink);
+}
+
+
+/* --- Projects -------------------------------------------------------------- */
+
+.section-head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 1rem;
+    margin: 6rem 0 2.5rem;
+}
+
+.retro .section-title {
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: clamp(2.25rem, 6vw, 4.5rem);
+    line-height: 1;
+    letter-spacing: -0.03em;
+    margin: 0;
+}
+
+/* First section on a page sits right under the nav — no big gap above it */
+.section-head--first {
+    margin-top: 1rem;
+}
+
+.section-head .pixel {
+    color: var(--ink-soft);
+    white-space: nowrap;
+}
+
+.project-list {
+    display: grid;
+    gap: 2.5rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+/* Project card dressed as an old OS window */
+.window {
+    display: block;
+    border: 2px solid var(--ink);
+    background: var(--paper);
+    box-shadow: 5px 5px 0 var(--ink);
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.window:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 7px 7px 0 var(--ink);
+}
+
+.window:active {
+    transform: translate(5px, 5px);
+    box-shadow: 0 0 0 var(--ink);
+}
+
+.window__bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 0.3125rem 0.625rem;
+    border-bottom: 2px solid var(--ink);
+    color: var(--ink-soft);
+    font-family: var(--font-pixel);
+    font-size: 1.125rem;
+    line-height: 1;
+    transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+/* Light bar at rest; it fills with the highlighter on hover, like the buttons */
+.window:hover .window__bar {
+    background: var(--highlight);
+    color: var(--on-highlight);
+}
+
+.window__file {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/* Minimize / maximize / close — decorative, kept quieter than the filename */
+.window__controls {
+    display: flex;
+    gap: 0.3125rem;
+    opacity: 0.7;
+}
+
+.window__controls i {
+    display: grid;
+    place-items: center;
+    width: 1rem;
+    height: 1rem;
+    border: 1.5px solid currentColor;
+    font-style: normal;
+    font-size: 0.875rem;
+}
+
+.window__body {
+    display: grid;
+}
+
+/* Every thumbnail panel shares one shape so the stack reads as a set */
+.window__media {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    aspect-ratio: 16 / 10;
+    overflow: hidden;
+    padding: 1.5rem;
+    border-bottom: 2px solid var(--ink);
+    background: var(--media-bg, var(--ink));
+}
+
+.window__media img {
+    max-width: 72%;
+    max-height: 100%;
+    object-fit: contain;
+    transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.window__media--cover {
+    padding: 0;
+}
+
+.window__media--cover img {
+    width: 100%;
+    height: 100%;
+    max-width: none;
+    object-fit: cover;
+}
+
+.window:hover .window__media img {
+    transform: scale(1.03);
+}
+
+/* Title and blurb sit at the top; tags and the call to action pin to the bottom */
+.window__text {
+    display: flex;
+    flex-direction: column;
+    gap: 0.625rem;
+    padding: 1.5rem 1.5rem 1.25rem;
+}
+
+.retro .window__title {
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: clamp(1.625rem, 2.6vw, 2.25rem);
+    line-height: 1.05;
+    letter-spacing: -0.025em;
+    text-wrap: balance;
+    margin: 0;
+}
+
+.window__desc {
+    max-width: 44ch;
+    margin: 0;
+    line-height: 1.5;
+    color: var(--ink-soft);
+}
+
+.window__foot {
+    margin-top: auto;
+    padding-top: 1.25rem;
+}
+
+.window__foot .tag-list {
+    margin: 0;
+}
+
+.retro .tag {
+    font-family: var(--font-pixel);
+    font-size: 1rem;
+    letter-spacing: 0.02em;
+    text-transform: none;
+    padding: 0.1875rem 0.4375rem;
+    border: 1.5px solid currentColor;
+    border-radius: 0;
+    background: none;
+    color: var(--ink-soft);
+}
+
+@media (min-width: 768px) {
+    .window__body {
+        grid-template-columns: 48% 1fr;
+    }
+
+    .window__media {
+        border-bottom: 0;
+        border-right: 2px solid var(--ink);
+    }
+
+    .window__text {
+        padding: 2rem 2rem 1.75rem;
+    }
+}
+
+
+/* AltGen card media — animated demo (from altgen-card.html): a fixed 1600x1000 stage
+   scaled to the panel by main.js. Replaces the static screenshot. */
+.window__media--demo {
+    padding: 0;
+}
+
+.window__media--demo .ag-frame {
+    height: 100%;
+}
+.ag-frame { position: relative; width: 100%; aspect-ratio: 16 / 10; overflow: hidden; background: #101A28; }
+.ag-stage {
+  position: absolute; left: 0; top: 0; width: 1600px; height: 1000px;
+  transform-origin: 0 0; transform: scale(var(--ag-s, 0.5));
+  background-color: #101A28;
+  background-image: linear-gradient(#1B2636 1.5px, transparent 1.5px), linear-gradient(90deg, #1B2636 1.5px, transparent 1.5px);
+  background-size: 100px 100px; background-position: -1px -1px;
+  font-family: 'Inter', system-ui, sans-serif; color: #E8EEE8;
+}
+.ag-stage * { box-sizing: border-box; }
+.ag-abs { position: absolute; }
+
+.ag-glow { left: 380px; top: 560px; width: 840px; height: 380px; border-radius: 50%; background: radial-gradient(closest-side, rgba(94,207,160,.16), rgba(94,207,160,0)); }
+.ag-img { left: 330px; top: 130px; width: 720px; height: 470px; border: 2px solid #2E3B4C; background: #131D2B; box-shadow: 18px 18px 0 rgba(6,10,18,.5); }
+.ag-img svg { display: block; }
+
+.ag-menu { left: 920px; top: 290px; width: 360px; padding: 8px 0; background: #1B2634; border: 2px solid #34425A; box-shadow: 16px 16px 0 rgba(6,10,18,.55); font-size: 20px; color: #C6D0DA; }
+.ag-menu > div { padding: 12px 24px; }
+.ag-menu .ag-sep { height: 2px; margin: 8px 0; padding: 0; background: #2B3848; }
+.ag-menu .ag-item { display: flex; align-items: center; gap: 12px; margin: 0 8px; padding: 13px 16px; background-color: rgba(94,207,160,.16); color: #8AF0B4; font-weight: 500; }
+
+.ag-card { left: 470px; top: 650px; width: 680px; padding: 34px 42px 40px; background: #1C2836; border: 2px solid #2E3B4C; display: flex; flex-direction: column; gap: 18px; }
+.ag-head { display: flex; justify-content: space-between; align-items: center; }
+.ag-label { display: flex; align-items: center; gap: 12px; font-size: 16px; letter-spacing: 4.5px; color: #93A1B0; }
+.ag-dot { width: 9px; height: 9px; border-radius: 50%; background: #5ECFA0; }
+.ag-copy { display: inline-grid; justify-items: center; align-items: center; font-size: 15px; letter-spacing: 3px; color: #5ECFA0; border: 1.5px solid #3F7F66; padding: 6px 12px; }
+.ag-copy-a, .ag-copy-b { grid-area: 1 / 1; }
+.ag-copy-b { display: flex; align-items: center; gap: 8px; opacity: 0; }
+.ag-text { margin: 0; font-family: 'Source Serif 4', Georgia, serif; font-size: 38px; line-height: 1.25; color: #E8EEE8; }
+/* typing caret: rides on the newest word, then blinks after the last one */
+.ag-w { position: relative; }
+.ag-w::after { content: ""; position: absolute; left: calc(100% + 4px); top: .12em; width: 3px; height: 1em; background: #5ECFA0; visibility: hidden; animation: ag-wcaret 8s steps(1, end) infinite both; animation-delay: inherit; }
+.ag-w.ag-last::after { animation: ag-lastcaret 8s steps(1, end) infinite both, ag-blink 1s steps(1, end) infinite; animation-delay: inherit; }
+
+.ag-cursor { left: 0; top: 0; transform: translate(1192px, 512px); transform-origin: 4px 4px; }
+
+/* animation: 8s loop, always playing */
+.ag-cursor { animation: ag-cursor 8s ease-in-out infinite both; }
+.ag-menu   { transform-origin: 0 0; animation: ag-menu 8s ease-out infinite both; }
+.ag-item   { animation: ag-item 8s linear infinite both; }
+.ag-card, .ag-glow { animation: ag-card 8s cubic-bezier(.2,.8,.2,1) infinite both; }
+.ag-w      { animation: ag-word 8s steps(1, end) infinite both; }
+@keyframes ag-wcaret    { 0%, 45% { visibility: hidden; } 46%, 48% { visibility: visible; } 48.1%, 100% { visibility: hidden; } }
+@keyframes ag-lastcaret { 0%, 45% { visibility: hidden; } 46%, 99.9% { visibility: visible; } 100% { visibility: hidden; } }
+.ag-copy   { animation: ag-copy 8s ease-out infinite both; }
+
+@keyframes ag-cursor {
+  0%   { opacity: 0; transform: translate(1360px, 840px); }
+  4%   { opacity: 1; transform: translate(1360px, 840px); }
+  15%  { transform: translate(912px, 288px) scale(1); }
+  16.5%{ transform: translate(912px, 288px) scale(.82); }
+  18%, 22% { transform: translate(912px, 288px) scale(1); }
+  30%  { transform: translate(1192px, 512px) scale(1); }
+  31.5%{ transform: translate(1192px, 512px) scale(.82); }
+  33%, 44% { transform: translate(1192px, 512px) scale(1); }
+  72%  { transform: translate(1056px, 690px) scale(1); }
+  75%  { transform: translate(1056px, 690px) scale(.82); }
+  77%  { transform: translate(1056px, 690px) scale(1); }
+  90%  { opacity: 1; transform: translate(1056px, 690px); }
+  94%, 100% { opacity: 0; transform: translate(1360px, 840px); }
+}
+@keyframes ag-menu {
+  0%, 17%  { opacity: 0; transform: scale(.94); }
+  19%, 34% { opacity: 1; transform: scale(1); }
+  37%, 100%{ opacity: 0; transform: scale(1); }
+}
+@keyframes ag-item {
+  0%, 29%  { background-color: rgba(94,207,160,0); color: #C6D0DA; }
+  30%, 100%{ background-color: rgba(94,207,160,.16); color: #8AF0B4; }
+}
+@keyframes ag-card {
+  0%, 37%  { opacity: 0; transform: translateY(36px); }
+  43%, 92% { opacity: 1; transform: translateY(0); }
+  96%, 100%{ opacity: 0; transform: translateY(0); }
+}
+@keyframes ag-word {
+  0%, 45%    { opacity: 0; }
+  46%, 99.9% { opacity: 1; }
+  100%       { opacity: 0; }
+}
+@keyframes ag-blink { 0% { opacity: 1; } 50% { opacity: 0; } }
+.ag-copy-a { animation: ag-copy-a 8s ease-out infinite both; }
+.ag-copy-b { animation: ag-copy-b 8s cubic-bezier(.2,1.4,.4,1) infinite both; }
+@keyframes ag-copy {
+  0%, 75%     { background-color: rgba(94,207,160,0); border-color: #3F7F66; }
+  76.5%, 100% { background-color: rgba(94,207,160,.14); border-color: #5ECFA0; }
+}
+@keyframes ag-copy-a {
+  0%, 75%   { opacity: 1; }
+  76%, 100% { opacity: 0; }
+}
+@keyframes ag-copy-b {
+  0%, 75%     { opacity: 0; transform: scale(.8); }
+  77.5%, 100% { opacity: 1; transform: scale(1); }
+}
+/* people who ask their OS for less motion get the finished still frame */
+@media (prefers-reduced-motion: reduce) {
+  .ag-cursor, .ag-menu, .ag-item, .ag-card, .ag-glow, .ag-w, .ag-w::after, .ag-copy, .ag-copy-a, .ag-copy-b { animation: none; }
+}
+
+
+
+/* Tag that hangs off the arrow cursor over project cards (positioned in main.js) */
+.cursor-label {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 60;
+    padding: 0.375rem 0.625rem;
+    border: 2px solid var(--ink);
+    background: var(--cursor-label-bg);
+    color: #121412;
+    box-shadow: 3px 3px 0 var(--ink);
+    font-family: var(--font-pixel);
+    font-size: 1.25rem;
+    line-height: 1;
+    white-space: nowrap;
+    pointer-events: none;
+    opacity: 0;
+    scale: 0.6;
+    transform-origin: top left;
+    transition: opacity 0.12s ease, scale 0.18s cubic-bezier(0.2, 1.4, 0.4, 1);
+}
+
+.cursor-label.is-visible {
+    opacity: 1;
+    scale: 1;
+}
+
+/* Flipped to the arrow's left near the window edge — pop from the corner nearest it */
+.cursor-label.is-flipped {
+    transform-origin: top right;
+}
+
+
+/* --- Footer ---------------------------------------------------------------- */
+
+.site-footer {
+    border-top: 2px solid var(--ink);
+}
+
+.site-footer__inner {
+    display: grid;
+    gap: 2rem;
+    max-width: 72rem;
+    margin: 0 auto;
+    padding: 4rem 1rem 2rem;
+}
+
+.site-footer__actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1.25rem;
+}
+
+.site-footer__actions a {
+    color: var(--ink);
+    transition: color 0.15s ease, transform 0.15s ease;
+}
+
+.site-footer__actions a:hover {
+    color: var(--link);
+    transform: translateY(-2px);
+}
+
+/* The shared copy-email pill becomes a chunky button here */
+.retro .copy-email {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 1.125rem;
+    padding: 0.75rem 1.25rem;
+    border: 2px solid var(--ink);
+    border-radius: 0;
+    background: var(--highlight);
+    color: var(--on-highlight);
+    box-shadow: 4px 4px 0 var(--ink);
+    transition: transform 0.12s ease, box-shadow 0.12s ease, background-color 0.15s ease;
+}
+
+.retro .copy-email:hover {
+    background: var(--highlight);
+    transform: translate(-2px, -2px);
+    box-shadow: 6px 6px 0 var(--ink);
+}
+
+.retro .copy-email:active {
+    transform: translate(4px, 4px);
+    box-shadow: 0 0 0 var(--ink);
+}
+
+.retro .copy-email.is-copied {
+    background: var(--success);
+    color: #FFFFFF;
+}
+
+.site-footer__meta {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 0.5rem 2rem;
+    padding-top: 1.25rem;
+    border-top: 2px dashed var(--ink-soft);
+    color: var(--ink-soft);
+    font-size: 1.125rem;
+}
+
+@media (min-width: 640px) {
+    .site-footer__inner { padding-inline: 2rem; }
+}
+
+
+/* --- Project pages ----------------------------------------------------------- */
+
+/* Colored band with the project's hero image, sitting under the fixed nav */
+.case-hero {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: calc(var(--nav-h) + 2.5rem) 1rem 2.5rem;
+    border-bottom: 2px solid var(--ink);
+    background: var(--hero-bg, var(--ink));
+}
+
+.case-hero img {
+    width: min(75%, 34rem);
+    height: auto;
+}
+
+.case {
+    max-width: 60rem;
+    margin: 0 auto;
+    padding: 3.5rem 1rem 6rem;
+}
+
+@media (min-width: 640px) {
+    .case { padding-inline: 2rem; }
+}
+
+.retro .case-title {
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: clamp(2.25rem, 5vw, 4rem);
+    line-height: 1.02;
+    letter-spacing: -0.035em;
+    text-wrap: balance;
+    margin: 0 0 1.25rem;
+}
+
+.case-lede {
+    max-width: 46ch;
+    margin: 0;
+    font-size: clamp(1.25rem, 2vw, 1.5rem);
+    line-height: 1.45;
+    color: var(--ink-soft);
+}
+
+/* Company / role / tools strip */
+.case-meta {
+    display: grid;
+    gap: 1.25rem 2.5rem;
+    margin: 2.5rem 0 1rem;
+    padding: 1.25rem 1.5rem;
+    border: 2px solid var(--ink);
+    box-shadow: 5px 5px 0 var(--ink);
+}
+
+.case-meta dt {
+    margin-bottom: 0.375rem;
+    color: var(--ink-soft);
+}
+
+.case-meta dd {
+    margin: 0;
+    font-weight: 700;
+}
+
+@media (min-width: 768px) {
+    .case-meta { grid-template-columns: auto auto 1fr; }
+}
+
+/* Tool logos sit on small white tiles so dark logos stay visible in dark mode */
+.case-tools {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.case-tools img,
+.case-tools i {
+    display: block;
+    box-sizing: content-box;
+    width: 22px;
+    height: 22px;
+    padding: 5px;
+    border: 1.5px solid var(--ink);
+    background: #FFFFFF;
+    color: #121412;
+    font-size: 22px;
+    line-height: 1;
+}
+
+.case-section {
+    margin: 4.5rem 0;
+}
+
+.retro .case h2 {
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: clamp(1.625rem, 3vw, 2.375rem);
+    line-height: 1.1;
+    letter-spacing: -0.025em;
+    text-wrap: balance;
+    margin: 0 0 1rem;
+}
+
+.retro .case h3 {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 1.25rem;
+    line-height: 1.3;
+    margin: 2rem 0 0.75rem;
+}
+
+.case p {
+    max-width: 65ch;
+    margin: 0 0 1.125rem;
+    line-height: 1.65;
+}
+
+/* Square bullets in link blue */
+.case-list {
+    max-width: 65ch;
+    margin: 0 0 1.5rem;
+    padding: 0;
+    list-style: none;
+}
+
+.case-list li {
+    position: relative;
+    padding-left: 1.5rem;
+    margin-bottom: 0.5rem;
+    line-height: 1.6;
+}
+
+.case-list li::before {
+    content: "";
+    position: absolute;
+    left: 0.25rem;
+    top: 0.62em;
+    width: 0.4375rem;
+    height: 0.4375rem;
+    background: var(--link);
+}
+
+.retro .case hr {
+    width: 100%;
+    height: 0;
+    margin: 3.5rem 0;
+    border: 0;
+    border-top: 2px dashed var(--ink-soft);
+    background: none;
+}
+
+.case figure {
+    margin: 2.5rem 0;
+}
+
+.case figure img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.case figcaption {
+    max-width: 60ch;
+    margin: 0.875rem auto 0;
+    font-size: 0.9375rem;
+    line-height: 1.5;
+    text-align: center;
+    color: var(--ink-soft);
+}
+
+/* Before / after screenshot pairs */
+.compare {
+    display: grid;
+    gap: 2rem;
+    margin: 2.5rem 0;
+}
+
+@media (min-width: 768px) {
+    .compare { grid-template-columns: 1fr 1fr; }
+}
+
+.compare img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border: 2px solid var(--ink);
+}
+
+.case .compare__label {
+    display: inline-block;
+    margin: 0 0 0.625rem;
+    font-size: 1.125rem;
+    padding: 0.25rem 0.5rem;
+    border: 1.5px solid var(--ink);
+    color: var(--ink-soft);
+}
+
+.case .compare__label--after {
+    background: var(--highlight);
+    color: var(--on-highlight);
+}
+
+.case .compare__note {
+    margin: 0.875rem 0 0;
+    font-size: 0.9375rem;
+    line-height: 1.5;
+    color: var(--ink-soft);
+}
+
+/* Pull quote, boxed like a window */
+.case-quote {
+    max-width: 44rem;
+    margin: 3rem 0;
+    padding: 1.5rem 1.75rem;
+    border: 2px solid var(--ink);
+    box-shadow: 5px 5px 0 var(--ink);
+}
+
+.case .case-quote p {
+    margin: 0 0 0.875rem;
+    font-weight: 700;
+    font-size: clamp(1.25rem, 2.2vw, 1.5rem);
+    line-height: 1.4;
+}
+
+.case-quote footer {
+    color: var(--ink-soft);
+}
+
+.case-quote cite {
+    font-style: normal;
+}
+
+/* Closing statement in larger type */
+.case .case-statement {
+    max-width: 42ch;
+    margin-top: 3.5rem;
+    font-weight: 700;
+    font-size: clamp(1.375rem, 2.4vw, 1.75rem);
+    line-height: 1.45;
+}
+
+/* Previous / next project links — chunky boxes like the cards */
+.case-pager {
+    display: grid;
+    gap: 1.5rem;
+    margin-top: 6rem;
+}
+
+@media (min-width: 640px) {
+    .case-pager { grid-template-columns: 1fr 1fr; }
+}
+
+.pager-link {
+    display: block;
+    padding: 1.25rem 1.5rem;
+    border: 2px solid var(--ink);
+    box-shadow: 5px 5px 0 var(--ink);
+    transition: transform 0.15s ease, box-shadow 0.15s ease, background-color 0.15s ease;
+}
+
+.pager-link:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 7px 7px 0 var(--ink);
+    background: var(--highlight);
+    color: var(--on-highlight);
+}
+
+.pager-link:active {
+    transform: translate(5px, 5px);
+    box-shadow: 0 0 0 var(--ink);
+}
+
+.pager-link__label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: var(--ink-soft);
+}
+
+.pager-link:hover .pager-link__label {
+    color: inherit;
+}
+
+.pager-link__title {
+    display: block;
+    font-weight: 700;
+    font-size: 1.25rem;
+    line-height: 1.3;
+}
+
+@media (min-width: 640px) {
+    .pager-link--next {
+        grid-column: 2;
+        text-align: right;
+    }
+}
+
+/* Editor / Web / PDF / Email tabs on the research templates page */
+.case-tabs__bar {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.case-tabs__btn {
+    margin-right: -2px;
+    padding: 0.5rem 1rem;
+    border: 2px solid var(--ink);
+    border-bottom: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--font-pixel);
+    font-size: 1.25rem;
+    line-height: 1;
+}
+
+.case-tabs__btn:hover {
+    background: color-mix(in srgb, var(--highlight) 45%, var(--paper));
+    color: var(--ink);
+}
+
+.case-tabs__btn.active {
+    background: var(--highlight);
+    color: var(--on-highlight);
+}
+
+.case-tabs__panel {
+    display: none;
+    border: 2px solid var(--ink);
+    background: color-mix(in srgb, var(--ink) 4%, var(--paper));
+}
+
+.case-tabs__panel.active {
+    display: block;
+}
+
+.case-tabs__panel img {
+    display: block;
+    width: 90%;
+    height: auto;
+    margin: 2.5rem auto;
+    border: 2px solid var(--ink);
+}
+
+.case .case-tabs__caption {
+    max-width: none;
+    margin: 0;
+    padding: 0.875rem 1rem;
+    border: 2px solid var(--ink);
+    border-top: 0;
+    font-size: 1rem;
+    text-align: center;
+    color: var(--ink-soft);
+}
+
+.case-diagram {
+    display: block;
+    width: 100%;
+    height: 600px;
+    margin: 2.5rem 0;
+    border: 0;
+}
+
+.case-logos {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem 5rem;
+    padding: 2.5rem 0.5rem;
+}
+
+/* "Check it out" link to a live side project */
+.case-cta {
+    margin-top: 1.5rem;
+}
+
+.case-cta:hover .nudge-arrow {
+    transform: translate(3px, -3px);
+}
+
+.case .case-note {
+    margin: -0.5rem 0 0;
+    color: var(--ink-soft);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .pager-link { transition: none; }
+    .pager-link:hover,
+    .pager-link:active,
+    .case-cta:hover .nudge-arrow { transform: none; }
+}
+
+
+/* --- About page -------------------------------------------------------------- */
+
+.about {
+    max-width: 52rem;
+    margin: 0 auto;
+    padding: calc(var(--nav-h) + 4rem) 1rem 6rem;
+}
+
+@media (min-width: 640px) {
+    .about { padding-inline: 2rem; }
+}
+
+.about-intro {
+    display: grid;
+    gap: 2rem;
+    align-items: start;
+    margin-top: 2.5rem;
+}
+
+@media (min-width: 768px) {
+    .about-intro { grid-template-columns: 12rem 1fr; gap: 2.5rem; }
+}
+
+.about-photo {
+    width: 12rem;
+    height: 12rem;
+    margin: 0;
+    border: 2px solid var(--ink);
+    box-shadow: 6px 6px 0 var(--ink);
+    overflow: hidden;
+}
+
+.about-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+}
+
+.about-intro p {
+    max-width: 60ch;
+    margin: 0 0 1.125rem;
+    line-height: 1.65;
+}
+
+/* Small inline version of the copy-email button, for use inside a sentence */
+.retro .copy-email--inline {
+    margin-left: 0.25rem;
+    padding: 0.25rem 0.625rem;
+    font-size: 0.875rem;
+    box-shadow: 3px 3px 0 var(--ink);
+}
+
+.about-exp {
+    margin-top: 4.5rem;
+}
+
+.about-exp__head {
+    margin: 0 0 1rem;
+    color: var(--ink-soft);
+}
+
+.about-exp ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    border-top: 2px solid var(--ink);
+}
+
+.about-exp li {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 0.25rem 1.5rem;
+    padding: 0.875rem 0;
+    border-bottom: 1.5px solid color-mix(in srgb, var(--ink) 18%, transparent);
+}
+
+.about-exp__org {
+    font-weight: 600;
+}
+
+.about-exp__role {
+    color: var(--ink-soft);
+}
+
+
+/* Image lightbox on project pages */
+.retro .modal-overlay img {
+    border: 2px solid #FFFFFF;
+    border-radius: 0;
+}
+
+
+/* --- Password modal (window style) ------------------------------------------ */
+
+.retro .modal-window {
+    width: 100%;
+    max-width: 24rem;
+    border: 2px solid var(--ink);
+    background: var(--paper);
+    color: var(--ink);
+    box-shadow: 8px 8px 0 var(--ink);
+    animation: window-open 0.18s cubic-bezier(0.2, 1.4, 0.4, 1);
+}
+
+.retro .modal-window .window__bar button {
+    color: inherit;
+    font: inherit;
+    line-height: 1;
+}
+
+.retro .modal-window input {
+    width: 100%;
+    padding: 0.625rem 0.75rem;
+    border: 2px solid var(--ink);
+    background: var(--paper);
+    color: var(--ink);
+    font: inherit;
+}
+
+.retro .modal-window .btn {
+    justify-self: stretch;
+    justify-content: center;
+    cursor: pointer;
+}
+
+@keyframes window-open {
+    from { transform: scale(0.94); opacity: 0; }
+}
+
+
+/* --- Scroll reveal ---------------------------------------------------------- */
+
+/* Only hidden once main.js has armed the observer, so nothing is lost without JS */
+.reveal-armed .reveal:not(.is-in) {
+    opacity: 0;
+    transform: translateY(24px);
+}
+
+.reveal-armed .reveal {
+    transition: opacity 0.5s ease, transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.15s ease;
+}
+
+/* Once revealed, hand transform back to the snappier hover/press timing */
+.reveal-armed .reveal.is-settled {
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+
+@media (prefers-reduced-motion: reduce) {
+    .retro .cursor,
+    .retro .modal-window {
+        animation: none;
+    }
+
+    .reveal-armed .reveal:not(.is-in) {
+        opacity: 1;
+        transform: none;
+    }
+
+    .btn,
+    .window,
+    .cursor-label,
+    .retro .copy-email,
+    .nav-link::after,
+    .retro .link,
+    .window__media img {
+        transition: none;
+    }
+
+    .btn:hover,
+    .btn:active,
+    .window:hover,
+    .window:active,
+    .retro .copy-email:hover,
+    .retro .copy-email:active,
+    .window:hover .window__media img {
+        transform: none;
+    }
+}
+
+.retro .nowrap {
+    white-space: nowrap;
 }

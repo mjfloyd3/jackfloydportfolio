@@ -6,79 +6,42 @@
     <meta name="description" content="UI Developer and Product Designer with fintech and SaaS experience">
     <meta name="robots" content="noindex, nofollow">
     <title>About | Jack Floyd</title>
-    <link href="https://fonts.googleapis.com/css2?family=Noticia+Text:ital,wght@0,400;0,700;1,400;1,700&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
-    <style>
-      .about-section {
-
-      }
-
-      .exp-list {
-        list-style: none;
-        display: flex;
-        flex-direction: column;
-        gap: 14px;
-        padding: 0;
-      }
-
-      .about-section-head {
-        font-size: 13px;
-        text-transform:uppercase;
-
-      }
-
-      .exp-list li {
-        display: flex;
-        justify-content: space-between;
-        font-size: 15px;
-        border-bottom: 1px solid rgb(0 0 0 / 10%);
-        padding-bottom: 14px;
-      }
-
-      .exp-list li .role {
-        color: #808080;
-      }
-
-    </style>
     <script type="module" src="/src/main.js"></script>
 </head>
-<body>
+<body class="retro">
 
 <nav-bar></nav-bar>
 
-<main class="max-w-6xl mx-auto px-8 pt-32 pb-20">
+<main class="about">
 
-    <section class="mb-16">
-        <div class="max-w-3xl mx-auto">
-            <h1 class="text-3xl font-medium my-8 mb-16 md:ml-56 ml-0">About me</h1>
+    <section>
+        <h1 class="case-title">About me</h1>
 
-            <div class="flex flex-col md:flex-row gap-8 items-start mb-6">
-                <figure class="flex-shrink-0">
-                    <img src="assets/images/jf-headshot.png" alt="Jack Floyd" class="w-48 h-48 object-cover object-top rounded-full" />
-                </figure>
-                <div>
-                    <p class="mt-0">With a background in both design and front-end development, I bring equal attention to how things look, how they work, and how they're built.</p>
-                    <p>Since 2018 I've been designing and building products at <a class="text-blue-500 underline" href="https://www.bluematrix.com/" rel="noreferrer">BlueMatrix</a>, a SaaS fintech firm powering the global investment research industry. My work there spans UI design, front-end development, and everything in between. I own projects from early wireframes to shipped code.</p>
-                    <p>Before BlueMatrix, a GIS certification sparked my interest in design. Learning to turn complex spatial data into clear, readable visuals was where I first understood what good design is capable of.</p>
-                    <p>Interested in learning more or working together? Reach me at <a class="text-blue-500 underline" href="mailto:mjfloyd3@gmail.com">mjfloyd3@gmail.com</a> <button type="button" class="copy-email" data-copy-email="mjfloyd3@gmail.com"><span class="copy-email__label" aria-live="polite">Copy</span></button></p>
-                </div>
+        <div class="about-intro">
+            <figure class="about-photo">
+                <img src="assets/images/jf-headshot.png" alt="Jack Floyd" />
+            </figure>
+            <div>
+                <p>With a background in both design and front-end development, I bring equal attention to how things look, how they work, and how they're built.</p>
+                <p>Since 2018 I've been designing and building products at <a class="link" href="https://www.bluematrix.com/" rel="noreferrer">BlueMatrix</a>, a SaaS fintech firm powering the global investment research industry. My work there spans UI design, front-end development, and everything in between. I own projects from early wireframes to shipped code.</p>
+                <p>Before BlueMatrix, a GIS certification sparked my interest in design. Learning to turn complex spatial data into clear, readable visuals was where I first understood what good design is capable of.</p>
+                <p>Interested in learning more or working together? Reach me at <a class="link" href="mailto:mjfloyd3@gmail.com">mjfloyd3@gmail.com</a> <button type="button" class="copy-email copy-email--inline" data-copy-email="mjfloyd3@gmail.com"><span class="copy-email__label" aria-live="polite">Copy</span></button></p>
             </div>
-
-              <div class="about-section">
-                <div class="about-section-head font-mono mb-4">Experience + Communities</div>
-                <ul class="exp-list">
-                  <li><span>BlueMatrix</span><span class="role">UI Developer</span></li>
-                  <li><span>Services &amp; Advocacy for GLBT Elders (SAGE)</span><span class="role">Volunteer</span></li>
-                  <li><span>Hunter Digital Marketing</span><span class="role">Web Developer/Designer</span></li>
-                  <li><span>Arts Alliance Illinois</span><span class="role">Data & Research Assistant</span></li>
-                  <li><span>Law Bulletin Publishing Company</span><span class="role">GIS Editor</span></li>
-                  <li><span>Center for Neighborhood Technology</span><span class="role">Intern</span></li>
-                  <li><span>Jeni's Splendid Ice Creams</span><span class="role">Shift Leader</span></li>
-                  <li><span>Loyola Chicago Undergrad Admissions Office</span><span class="role">Student Supervisor</span></li>
-                </ul>
-              </div>
-
-
         </div>
+    </section>
+
+    <section class="about-exp">
+        <h2 class="about-exp__head pixel">Experience + Communities</h2>
+        <ul>
+            <li><span class="about-exp__org">BlueMatrix</span><span class="about-exp__role">UI Developer</span></li>
+            <li><span class="about-exp__org">Services &amp; Advocacy for GLBT Elders (SAGE)</span><span class="about-exp__role">Volunteer</span></li>
+            <li><span class="about-exp__org">Hunter Digital Marketing</span><span class="about-exp__role">Web Developer/Designer</span></li>
+            <li><span class="about-exp__org">Arts Alliance Illinois</span><span class="about-exp__role">Data &amp; Research Assistant</span></li>
+            <li><span class="about-exp__org">Law Bulletin Publishing Company</span><span class="about-exp__role">GIS Editor</span></li>
+            <li><span class="about-exp__org">Center for Neighborhood Technology</span><span class="about-exp__role">Intern</span></li>
+            <li><span class="about-exp__org">Jeni's Splendid Ice Creams</span><span class="about-exp__role">Shift Leader</span></li>
+            <li><span class="about-exp__org">Loyola Chicago Undergrad Admissions Office</span><span class="about-exp__role">Student Supervisor</span></li>
+        </ul>
     </section>
 
 </main>
