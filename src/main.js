@@ -30,7 +30,6 @@ customElements.define("nav-bar", class extends HTMLElement {
                         </div>
                         <div class="site-nav__links">
                             <a class="nav-link" href="about.html">About</a>
-                            <button type="button" class="nav-link" data-copy-email="mjfloyd3@gmail.com"><span class="copy-email__label" aria-live="polite">Email</span></button>
                             <button type="button" class="theme-toggle" id="themeToggle" aria-label="Toggle theme">${THEME_ICONS}</button>
                         </div>
                     </nav>
