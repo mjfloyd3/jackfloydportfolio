@@ -213,7 +213,7 @@ const modalImg = document.getElementById('modalImg');
 // Only wire up the image lightbox on pages that actually have the modal markup
 if (overlay && modalImg) {
     document.querySelectorAll('img').forEach(img => {
-        img.style.cursor = isRetro() ? 'url("/cursors/hand.svg") 9 0, pointer' : 'pointer';
+        img.style.cursor = 'pointer';
         img.addEventListener('click', () => {
             modalImg.src = img.src;
             modalImg.alt = img.alt;
@@ -416,9 +416,9 @@ document.addEventListener('click', async (e) => {
     label.setAttribute('aria-hidden', 'true');
     document.body.appendChild(label);
 
-    // The tag hangs off the notch at the base of the arrow cursor (NOTCH px right and
-    // down from the pointer tip). Near the right edge it flips under the arrow's left side.
-    const NOTCH = 11;
+    // The tag sits NOTCH px right and down from the pointer tip, clear of the system
+    // hand cursor. Near the right edge it flips to the pointer's left side.
+    const NOTCH = 20;
     const FLIP_GAP = 4;
     // Fraction of the remaining distance covered each frame — a slight trailing lag
     const EASE = window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 1 : 0.35;

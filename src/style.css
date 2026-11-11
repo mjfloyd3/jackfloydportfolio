@@ -339,27 +339,11 @@ hr.hr-full {
     --on-highlight: #171815;
 }
 
-/* Pixel-art cursors (public/cursors) — chunky arrow for the page, pointing hand for
-   anything clickable. The keywords after each url are the fallback if the image fails. */
-.retro {
-    cursor: url("/cursors/arrow.svg") 3 3, auto;
-}
-
-.retro a,
+/* System cursors; buttons and other clickable non-links get the pointing hand too */
 .retro button,
 .retro summary,
 .retro label[for] {
-    cursor: url("/cursors/hand.svg") 9 0, pointer;
-}
-
-.retro input,
-.retro textarea {
-    cursor: text;
-}
-
-/* Project cards keep the arrow — the cursor label already says they're clickable */
-.retro .window {
-    cursor: url("/cursors/arrow.svg") 3 3, auto;
+    cursor: pointer;
 }
 
 .retro ::selection {

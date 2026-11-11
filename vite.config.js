@@ -12,7 +12,7 @@ export default defineConfig({
                 project1: 'project-1.html',
                 project2: 'project-2.html',
                 project3: 'project-3.html',
-                project4: 'project-4.html',
+                // project4: 'project-4.html', // hidden for now: not built or deployed
                 carlycaptions: 'carly-captions.html',
                 bmworkflowdiagram: 'bm-workflow-diagram.html',
                 standingroom: 'standing-room.html',
