@@ -316,6 +316,7 @@ hr.hr-full {
     --font-display: "Hanken Grotesk", -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica', 'Arial', sans-serif;
     --font-mono: "Spline Sans Mono", ui-monospace, SFMono-Regular, 'SF Mono', 'Menlo', monospace;
     --nav-h: 4.75rem;
+    --nav-top: 0rem;          /* extra space above the nav content; added on desktop below */
 
     font-family: var(--font-display);
     font-size: 1.125rem;
@@ -411,8 +412,13 @@ hr.hr-full {
     position: fixed;
     inset: 0 0 auto;
     z-index: 50;
+    padding-top: var(--nav-top);
     background: var(--paper);
     transition: background-color 0.3s ease;
+}
+
+@media (min-width: 768px) {
+    .retro { --nav-top: 1rem; }
 }
 
 .site-nav__inner {
@@ -512,7 +518,7 @@ hr.hr-full {
 .retro-main {
     max-width: 72rem;
     margin: 0 auto;
-    padding: calc(var(--nav-h) + 3rem) 1rem 6rem;
+    padding: calc(var(--nav-h) + var(--nav-top) + 3rem) 1rem 6rem;
 }
 
 @media (min-width: 640px) {
@@ -992,7 +998,7 @@ hr.hr-full {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: calc(var(--nav-h) + 2.5rem) 1rem 2.5rem;
+    padding: calc(var(--nav-h) + var(--nav-top) + 2.5rem) 1rem 2.5rem;
     border-bottom: 2px solid var(--ink);
     background: var(--hero-bg, var(--ink));
 }
@@ -1689,7 +1695,7 @@ hr.hr-full {
 .about {
     max-width: 52rem;
     margin: 0 auto;
-    padding: calc(var(--nav-h) + 4rem) 1rem 6rem;
+    padding: calc(var(--nav-h) + var(--nav-top) + 4rem) 1rem 6rem;
 }
 
 @media (min-width: 640px) {
