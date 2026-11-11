@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=VT323&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400..800&family=Spline+Sans+Mono:wght@400..700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400&family=Inter:wght@400;500&display=swap');
 
 @import "tailwindcss";
@@ -302,20 +302,20 @@ hr.hr-full {
    ========================================================================== */
 
 .retro {
-    --paper: #F6F4EC;
-    --ink: #121412;
-    --ink-soft: #4A4D48;
-    --link: #0047CC;          /* classic hyperlink blue */
-    --link-visited: #6B46D9;  /* classic visited purple */
-    --highlight: #D9F45B;     /* highlighter fill on hover */
-    --spin-x: #0047CC;        /* engineering verb — hyperlink blue */
-    --spin-y: #D11F7A;        /* design verb — Y2K hot magenta */
-    --success: #1B7A4E;       /* "Copied!" confirmations */
-    --cursor-label-bg: #8FE3EF; /* aqua — only the label that follows the pointer over cards */
-    --on-highlight: #121412;
-    --font-display: "Bricolage Grotesque", -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica', 'Arial', sans-serif;
-    --font-pixel: "VT323", ui-monospace, SFMono-Regular, 'SF Mono', 'Menlo', monospace;
-    --nav-h: 4rem;
+    --paper: #EFEDE6;
+    --ink: #22231F;
+    --ink-soft: #5A5B53;
+    --link: #2F5D46;          /* forest green */
+    --link-visited: #6A4C5E;  /* dusty plum */
+    --highlight: #DCCFA8;     /* wheat highlighter fill on hover */
+    --spin-x: #2F5D46;        /* engineering verb — forest green */
+    --spin-y: #A4542F;        /* design verb — clay */
+    --success: #2F5D46;       /* "Copied!" confirmations */
+    --cursor-label-bg: #C9D6C3; /* sage — only the label that follows the pointer over cards */
+    --on-highlight: #22231F;
+    --font-display: "Hanken Grotesk", -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica', 'Arial', sans-serif;
+    --font-mono: "Spline Sans Mono", ui-monospace, SFMono-Regular, 'SF Mono', 'Menlo', monospace;
+    --nav-h: 4.75rem;
 
     font-family: var(--font-display);
     font-size: 1.125rem;
@@ -324,19 +324,19 @@ hr.hr-full {
     color: var(--ink);
 }
 
-/* Dark mode is a CRT: deep navy glass, phosphor-green links */
+/* Dark mode: warm charcoal, sage links, terracotta for the design verb */
 [data-theme="dark"] .retro {
-    --paper: #0E1222;
-    --ink: #E9ECF2;
-    --ink-soft: #A9B0C2;
-    --link: #7CF2A8;
-    --link-visited: #B9A3FF;
-    --highlight: #7CF2A8;
-    --spin-x: #7FDCEB;
-    --spin-y: #FF7AC0;
-    --success: #58C795;
-    --cursor-label-bg: #7FDCEB;
-    --on-highlight: #0E1222;
+    --paper: #171815;
+    --ink: #E6E3D8;
+    --ink-soft: #A8A598;
+    --link: #8FC2A4;
+    --link-visited: #C4A6B8;
+    --highlight: #8FC2A4;
+    --spin-x: #8FC2A4;
+    --spin-y: #E0936B;
+    --success: #8FC2A4;
+    --cursor-label-bg: #C9D6C3;
+    --on-highlight: #171815;
 }
 
 /* Pixel-art cursors (public/cursors) — chunky arrow for the page, pointing hand for
@@ -373,10 +373,10 @@ hr.hr-full {
 }
 
 .retro .pixel {
-    font-family: var(--font-pixel);
-    font-size: 1.375rem;
+    font-family: var(--font-mono);
+    font-size: 0.9375rem;
     line-height: 1;
-    letter-spacing: 0.02em;
+    letter-spacing: 0;
 }
 
 /* Inline links — underlined blue, a highlighter swipe fills in on hover */
@@ -428,7 +428,6 @@ hr.hr-full {
     inset: 0 0 auto;
     z-index: 50;
     background: var(--paper);
-    border-bottom: 2px solid var(--ink);
     transition: background-color 0.3s ease;
 }
 
@@ -452,13 +451,13 @@ hr.hr-full {
 
 .site-nav__name {
     font-weight: 800;
-    font-size: 1.25rem;
+    font-size: 2rem;
     line-height: 1.1;
     letter-spacing: -0.02em;
 }
 
 .site-nav__role {
-    font-size: 0.75rem;
+    font-size: 0.875rem;
     line-height: 1.2;
     white-space: nowrap;
     color: var(--ink-soft);
@@ -478,8 +477,8 @@ hr.hr-full {
     background: none;
     color: inherit;
     cursor: pointer;
-    font-family: var(--font-pixel);
-    font-size: 1.5rem;
+    font-family: var(--font-mono);
+    font-size: 1rem;
     line-height: 1;
 }
 
@@ -513,13 +512,14 @@ hr.hr-full {
 @media (max-width: 374px) {
     .site-nav__links { gap: 0.625rem; }
     .nav-link { font-size: 1.375rem; }
-    .site-nav__role { font-size: 0.6875rem; }
+    .site-nav__name { font-size: 1.625rem; }
+    .site-nav__role { font-size: 0.8125rem; }
 }
 
 @media (min-width: 640px) {
     .site-nav__inner { padding: 0 2rem; }
     .site-nav__links { gap: 1.75rem; }
-    .site-nav__role { font-size: 0.8125rem; }
+    .site-nav__role { font-size: 1rem; }
 }
 
 
@@ -541,7 +541,12 @@ hr.hr-full {
 .hero {
     display: grid;
     gap: 1.75rem;
-    padding: 6vh 0 10vh;
+    padding: 6vh 0 4vh;
+}
+
+/* Home only: pull the first section up so its heading peeks above the fold on a laptop */
+.hero + section > .section-head {
+    margin-top: 3rem;
 }
 
 .retro .hero__title {
@@ -553,12 +558,12 @@ hr.hr-full {
     margin: 0;
 }
 
-/* The slot-reel verbs switch to the pixel face — taller cap so they sit level
-   with the grotesk next to them */
+/* The slot-reel verbs switch to the mono face — slightly smaller so its wide
+   letters sit level with the grotesk next to them */
 .retro .spin-word {
-    font-family: var(--font-pixel);
-    font-weight: 400;
-    font-size: 1.12em;
+    font-family: var(--font-mono);
+    font-weight: 700;
+    font-size: 0.9em;
     letter-spacing: 0;
 }
 
@@ -570,30 +575,28 @@ hr.hr-full {
     color: var(--ink-soft);
 }
 
-/* Chunky button — solid offset shadow, presses in on click */
+/* Plain solid button — ink fill, shifts to the accent on hover */
 .btn {
     justify-self: start;
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
     padding: 0.75rem 1.25rem;
-    border: 2px solid var(--ink);
-    background: var(--highlight);
-    color: var(--on-highlight);
-    font-weight: 700;
-    font-size: 1.125rem;
-    box-shadow: 4px 4px 0 var(--ink);
-    transition: transform 0.12s ease, box-shadow 0.12s ease;
+    border: 0;
+    border-radius: 4px;
+    background: var(--ink);
+    color: var(--paper);
+    font-weight: 600;
+    font-size: 1.0625rem;
+    transition: background-color 0.15s ease, transform 0.1s ease;
 }
 
 .btn:hover {
-    transform: translate(-2px, -2px);
-    box-shadow: 6px 6px 0 var(--ink);
+    background: var(--link);
 }
 
 .btn:active {
-    transform: translate(4px, 4px);
-    box-shadow: 0 0 0 var(--ink);
+    transform: translateY(1px);
 }
 
 
@@ -616,6 +619,11 @@ hr.hr-full {
     margin: 0;
 }
 
+/* Side quests sits a step below the main headings */
+.retro #side-quests {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+}
+
 /* First section on a page sits right under the nav — no big gap above it */
 .section-head--first {
     margin-top: 1rem;
@@ -634,23 +642,26 @@ hr.hr-full {
     list-style: none;
 }
 
-/* Project card dressed as an old OS window */
+/* Project card — thin hairline frame with a filename bar; lifts softly on hover */
 .window {
+    /* Mixed with paper, not transparent, so dark thumbnail backgrounds can't show through the divider */
+    --card-line: color-mix(in srgb, var(--ink) 18%, var(--paper));
     display: block;
-    border: 2px solid var(--ink);
+    overflow: hidden;
+    border: 1px solid var(--card-line);
+    border-radius: 8px;
     background: var(--paper);
-    box-shadow: 5px 5px 0 var(--ink);
-    transition: transform 0.15s ease, box-shadow 0.15s ease;
+    transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
 }
 
 .window:hover {
-    transform: translate(-2px, -2px);
-    box-shadow: 7px 7px 0 var(--ink);
+    transform: translateY(-2px);
+    border-color: color-mix(in srgb, var(--ink) 40%, transparent);
+    box-shadow: 0 12px 32px -14px rgba(0, 0, 0, 0.3);
 }
 
 .window:active {
-    transform: translate(5px, 5px);
-    box-shadow: 0 0 0 var(--ink);
+    transform: translateY(0);
 }
 
 .window__bar {
@@ -658,42 +669,19 @@ hr.hr-full {
     align-items: center;
     justify-content: space-between;
     gap: 1rem;
-    padding: 0.3125rem 0.625rem;
-    border-bottom: 2px solid var(--ink);
+    padding: 0.5rem 0.75rem;
+    border-bottom: 1px solid var(--card-line);
     color: var(--ink-soft);
-    font-family: var(--font-pixel);
-    font-size: 1.125rem;
+    font-family: var(--font-mono);
+    font-size: 0.8125rem;
     line-height: 1;
     transition: background-color 0.15s ease, color 0.15s ease;
-}
-
-/* Light bar at rest; it fills with the highlighter on hover, like the buttons */
-.window:hover .window__bar {
-    background: var(--highlight);
-    color: var(--on-highlight);
 }
 
 .window__file {
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
-}
-
-/* Minimize / maximize / close — decorative, kept quieter than the filename */
-.window__controls {
-    display: flex;
-    gap: 0.3125rem;
-    opacity: 0.7;
-}
-
-.window__controls i {
-    display: grid;
-    place-items: center;
-    width: 1rem;
-    height: 1rem;
-    border: 1.5px solid currentColor;
-    font-style: normal;
-    font-size: 0.875rem;
 }
 
 .window__body {
@@ -708,7 +696,7 @@ hr.hr-full {
     aspect-ratio: 16 / 10;
     overflow: hidden;
     padding: 1.5rem;
-    border-bottom: 2px solid var(--ink);
+    border-bottom: 1px solid var(--card-line);
     background: var(--media-bg, var(--ink));
 }
 
@@ -769,9 +757,9 @@ hr.hr-full {
 }
 
 .retro .tag {
-    font-family: var(--font-pixel);
-    font-size: 1rem;
-    letter-spacing: 0.02em;
+    font-family: var(--font-mono);
+    font-size: 0.8125rem;
+    letter-spacing: 0;
     text-transform: none;
     padding: 0.1875rem 0.4375rem;
     border: 1.5px solid currentColor;
@@ -787,7 +775,7 @@ hr.hr-full {
 
     .window__media {
         border-bottom: 0;
-        border-right: 2px solid var(--ink);
+        border-right: 1px solid var(--card-line);
     }
 
     .window__text {
@@ -918,8 +906,8 @@ hr.hr-full {
     background: var(--cursor-label-bg);
     color: #121412;
     box-shadow: 3px 3px 0 var(--ink);
-    font-family: var(--font-pixel);
-    font-size: 1.25rem;
+    font-family: var(--font-mono);
+    font-size: 0.875rem;
     line-height: 1;
     white-space: nowrap;
     pointer-events: none;
@@ -971,34 +959,31 @@ hr.hr-full {
     transform: translateY(-2px);
 }
 
-/* The shared copy-email pill becomes a chunky button here */
+/* The shared copy-email pill matches .btn here */
 .retro .copy-email {
     font-family: var(--font-display);
-    font-weight: 700;
-    font-size: 1.125rem;
+    font-weight: 600;
+    font-size: 1.0625rem;
     padding: 0.75rem 1.25rem;
-    border: 2px solid var(--ink);
-    border-radius: 0;
-    background: var(--highlight);
-    color: var(--on-highlight);
-    box-shadow: 4px 4px 0 var(--ink);
-    transition: transform 0.12s ease, box-shadow 0.12s ease, background-color 0.15s ease;
+    border: 0;
+    border-radius: 4px;
+    background: var(--ink);
+    color: var(--paper);
+    box-shadow: none;
+    transition: background-color 0.15s ease, transform 0.1s ease;
 }
 
 .retro .copy-email:hover {
-    background: var(--highlight);
-    transform: translate(-2px, -2px);
-    box-shadow: 6px 6px 0 var(--ink);
+    background: var(--link);
 }
 
 .retro .copy-email:active {
-    transform: translate(4px, 4px);
-    box-shadow: 0 0 0 var(--ink);
+    transform: translateY(1px);
 }
 
 .retro .copy-email.is-copied {
     background: var(--success);
-    color: #FFFFFF;
+    color: var(--paper);
 }
 
 .site-footer__meta {
@@ -1007,7 +992,6 @@ hr.hr-full {
     justify-content: space-between;
     gap: 0.5rem 2rem;
     padding-top: 1.25rem;
-    border-top: 2px dashed var(--ink-soft);
     color: var(--ink-soft);
     font-size: 1.125rem;
 }
@@ -1465,7 +1449,7 @@ hr.hr-full {
     height: 0;
     margin: 3.5rem 0;
     border: 0;
-    border-top: 2px dashed var(--ink-soft);
+    border-top: 1px solid color-mix(in srgb, var(--ink) 18%, var(--paper));
     background: none;
 }
 
@@ -1633,8 +1617,8 @@ hr.hr-full {
     border-bottom: 0;
     background: var(--paper);
     color: var(--ink);
-    font-family: var(--font-pixel);
-    font-size: 1.25rem;
+    font-family: var(--font-mono);
+    font-size: 0.875rem;
     line-height: 1;
 }
 
@@ -1766,7 +1750,6 @@ hr.hr-full {
     margin-left: 0.25rem;
     padding: 0.25rem 0.625rem;
     font-size: 0.875rem;
-    box-shadow: 3px 3px 0 var(--ink);
 }
 
 .about-exp {
@@ -1862,7 +1845,7 @@ hr.hr-full {
 
 /* Once revealed, hand transform back to the snappier hover/press timing */
 .reveal-armed .reveal.is-settled {
-    transition: transform 0.15s ease, box-shadow 0.15s ease;
+    transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
 }
 
 

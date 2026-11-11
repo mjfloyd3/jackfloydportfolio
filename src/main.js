@@ -26,7 +26,7 @@ customElements.define("nav-bar", class extends HTMLElement {
                     <nav class="site-nav__inner" aria-label="Main">
                         <div class="site-nav__id">
                             <a href="index.html" class="site-nav__name">Jack Floyd</a>
-                            <span class="site-nav__role">UI developer &amp; product designer</span>
+                            <span class="site-nav__role">Design Engineer</span>
                         </div>
                         <div class="site-nav__links">
                             <a class="nav-link" href="about.html">About</a>
