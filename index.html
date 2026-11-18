@@ -172,18 +172,19 @@
     <div id="passwordModal" class="fixed inset-0 z-50 hidden">
       <div class="absolute inset-0 bg-black/40 pointer-events-none"></div>
       <div class="relative z-10 flex items-center justify-center min-h-screen px-6">
-        <div class="modal-window" role="dialog" aria-modal="true" aria-label="Password required">
-          <div class="window__bar">
-            <button id="closeModal" aria-label="Close">×</button>
+        <div class="modal-window" role="dialog" aria-modal="true" aria-labelledby="passwordTitle">
+          <button id="closeModal" class="modal-window__close" aria-label="Close">
+            <svg viewBox="0 0 20 20" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M5 5l10 10M15 5L5 15"/></svg>
+          </button>
+          <div class="modal-window__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4.5" y="10.5" width="15" height="10" rx="2.5"/><path d="M8 10.5V8a4 4 0 0 1 8 0v2.5"/></svg>
           </div>
-          <div class="p-6">
-            <p class="mb-4">This page is password protected.</p>
-            <form id="passwordForm" class="grid gap-3">
-              <input type="password" id="passwordInput" placeholder="Enter password" autocomplete="off" aria-label="Password" />
-              <button type="submit" class="btn">Unlock project</button>
-            </form>
-            <p id="errorMessage" class="pixel mt-3 mb-0 text-red-600" aria-live="polite"></p>
-          </div>
+          <h2 class="modal-window__title" id="passwordTitle">This page is password protected.</h2>
+          <form id="passwordForm" class="modal-window__form" novalidate>
+            <input type="password" id="passwordInput" placeholder="Enter password" autocomplete="off" aria-label="Password" aria-describedby="errorMessage" />
+            <p id="errorMessage" class="modal-window__error" role="alert"></p>
+            <button type="submit" class="btn">Unlock project</button>
+          </form>
         </div>
       </div>
     </div>

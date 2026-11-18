@@ -175,6 +175,7 @@ if (openWorkBtn) {
         passwordModal.classList.remove('hidden');
         passwordInput.value = '';
         errorMessage.textContent = '';
+        passwordInput.removeAttribute('aria-invalid');
         setTimeout(() => passwordInput.focus(), 100);
     }
 
@@ -201,9 +202,16 @@ if (openWorkBtn) {
             window.location.href = 'work.html';
         } else {
             errorMessage.textContent = 'Incorrect password. Please try again.';
+            passwordInput.setAttribute('aria-invalid', 'true');
             passwordInput.value = '';
             passwordInput.focus();
         }
+    });
+
+    // Clear the error state as soon as they start typing again
+    passwordInput.addEventListener('input', () => {
+        passwordInput.removeAttribute('aria-invalid');
+        errorMessage.textContent = '';
     });
 }
 
