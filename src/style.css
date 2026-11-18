@@ -302,7 +302,7 @@ hr.hr-full {
    ========================================================================== */
 
 .retro {
-    --paper: #EFEDE6;
+    --paper: #FFFFFF;
     --ink: #22231F;
     --ink-soft: #5A5B53;
     --link: #2F5D46;          /* forest green */
@@ -412,7 +412,6 @@ hr.hr-full {
     position: fixed;
     inset: 0 0 auto;
     z-index: 50;
-    padding-top: var(--nav-top);
     background: var(--paper);
     transition: background-color 0.3s ease;
 }
@@ -427,7 +426,9 @@ hr.hr-full {
     justify-content: space-between;
     gap: 0.75rem;
     max-width: 72rem;
-    height: var(--nav-h);
+    /* Same overall nav height as before (base + the desktop extra), with the content
+       centered in all of it instead of sitting low under a padded top */
+    height: calc(var(--nav-h) + var(--nav-top));
     margin: 0 auto;
     padding: 0 1rem;
 }
@@ -687,7 +688,14 @@ hr.hr-full {
     overflow: hidden;
     padding: 1.5rem;
     border-bottom: 1px solid var(--card-line);
+    /* A soft diagonal sheen: lighter at the top left, a little deeper at the bottom right */
     background: var(--media-bg, var(--ink));
+    background: linear-gradient(
+        145deg,
+        color-mix(in srgb, var(--media-bg, var(--ink)), white 16%) 0%,
+        var(--media-bg, var(--ink)) 55%,
+        color-mix(in srgb, var(--media-bg, var(--ink)), black 12%) 100%
+    );
 }
 
 .window__media img {
@@ -752,8 +760,8 @@ hr.hr-full {
     letter-spacing: 0;
     text-transform: none;
     padding: 0.1875rem 0.4375rem;
-    border: 1.5px solid currentColor;
-    border-radius: 0;
+    border: 1px solid color-mix(in srgb, var(--ink) 28%, var(--paper));
+    border-radius: 3px;
     background: none;
     color: var(--ink-soft);
 }
@@ -921,15 +929,15 @@ hr.hr-full {
 /* --- Footer ---------------------------------------------------------------- */
 
 .site-footer {
-    border-top: 2px solid var(--ink);
+    border-top: 1px solid color-mix(in srgb, var(--ink) 18%, var(--paper));
 }
 
 .site-footer__inner {
     display: grid;
-    gap: 2rem;
+    gap: 1rem;
     max-width: 72rem;
     margin: 0 auto;
-    padding: 4rem 1rem 2rem;
+    padding: 2.5rem 1rem 2rem;
 }
 
 .site-footer__actions {
@@ -949,22 +957,24 @@ hr.hr-full {
     transform: translateY(-2px);
 }
 
-/* The shared copy-email pill matches .btn here */
+/* Copy email: an outlined, secondary button so it doesn't outweigh the page */
 .retro .copy-email {
     font-family: var(--font-display);
-    font-weight: 600;
-    font-size: 1.0625rem;
-    padding: 0.75rem 1.25rem;
-    border: 0;
+    font-weight: 500;
+    font-size: 0.9375rem;
+    padding: 0.5rem 0.875rem;
+    border: 1px solid color-mix(in srgb, var(--ink) 35%, var(--paper));
     border-radius: 4px;
-    background: var(--ink);
-    color: var(--paper);
+    background: transparent;
+    color: var(--ink);
     box-shadow: none;
-    transition: background-color 0.15s ease, transform 0.1s ease;
+    transition: color 0.15s ease, border-color 0.15s ease;
 }
 
 .retro .copy-email:hover {
-    background: var(--link);
+    background: transparent;
+    border-color: var(--link);
+    color: var(--link);
 }
 
 .retro .copy-email:active {
@@ -972,8 +982,9 @@ hr.hr-full {
 }
 
 .retro .copy-email.is-copied {
-    background: var(--success);
-    color: var(--paper);
+    background: transparent;
+    border-color: var(--success);
+    color: var(--success);
 }
 
 .site-footer__meta {
@@ -981,9 +992,9 @@ hr.hr-full {
     flex-wrap: wrap;
     justify-content: space-between;
     gap: 0.5rem 2rem;
-    padding-top: 1.25rem;
+    padding-top: 0.75rem;
     color: var(--ink-soft);
-    font-size: 1.125rem;
+    font-size: 0.9375rem;
 }
 
 @media (min-width: 640px) {
@@ -999,7 +1010,6 @@ hr.hr-full {
     align-items: center;
     justify-content: center;
     padding: calc(var(--nav-h) + var(--nav-top) + 2.5rem) 1rem 2.5rem;
-    border-bottom: 2px solid var(--ink);
     background: var(--hero-bg, var(--ink));
 }
 
@@ -1023,6 +1033,299 @@ hr.hr-full {
 .case-hero .hero-stage img {
     display: block;
     width: 100%;
+}
+
+/* Hero with two screenshots (project 4): the email sits lower and overlaps the web
+   output's right edge */
+.hero-pair {
+    display: flex;
+    align-items: flex-start;
+    width: min(92%, 63rem);
+}
+
+.case-hero .hero-pair img {
+    min-width: 0;
+    height: auto;
+    border-radius: 3px;
+    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.18);
+}
+
+.case-hero .hero-pair__web {
+    flex: 0 0 59%;
+    width: 59%;
+}
+
+/* Minimal browser frame around the web output */
+.browser {
+    overflow: hidden;
+    border-radius: 6px;
+    background: #FFFFFF;
+    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.18);
+}
+
+.browser__bar {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    height: 2rem;
+    padding: 0 0.75rem;
+    background: #F1F1F2;
+    border-bottom: 1px solid #DEDEE0;
+}
+
+.browser__dots {
+    display: flex;
+    gap: 0.375rem;
+}
+
+.browser__dots i {
+    width: 0.5rem;
+    height: 0.5rem;
+    border-radius: 50%;
+    background: #CDCDD1;
+}
+
+.browser__url {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: min(55vw, 17rem);
+    height: 1.1875rem;
+    border-radius: 999px;
+    background: #FFFFFF;
+    color: #6B6B72;
+    font-family: Roboto, "Helvetica Neue", Arial, sans-serif;
+    font-size: 0.6875rem;
+    line-height: 1.2;
+}
+
+.case-hero .hero-pair .browser img {
+    display: block;
+    width: 100%;
+    border-radius: 0;
+    box-shadow: none;
+}
+
+/* Minimal mail-client frame around the email. Everything inside is sized in em, and the
+   frame's font size is tied to its own width so the whole window scales as one piece. */
+.case-hero .hero-pair__mail {
+    position: relative;
+    z-index: 1;
+    flex: 0 0 47.6%;
+    width: 47.6%;
+    margin-left: -6.7%;
+    margin-top: 4rem;
+    box-shadow: 0 14px 34px rgba(0, 0, 0, 0.28);
+}
+
+.mail {
+    container-type: inline-size;
+    overflow: hidden;
+    border-radius: 6px;
+    background: #FFFFFF;
+    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.18);
+    font-family: Roboto, "Helvetica Neue", Arial, sans-serif;
+    line-height: 1.25;
+    color: #3A3F47;
+}
+
+/* cq units resolve against the nearest container ancestor, so the size goes on the children */
+.mail__top,
+.mail__body {
+    font-size: 1.9cqw;
+}
+
+.mail__top {
+    display: grid;
+    grid-template-columns: 1fr 42% 1fr;
+    align-items: center;
+    height: 3.4em;
+    padding: 0 1em;
+    background: #2467B3;
+}
+
+.mail__apps {
+    width: 1.5em;
+    height: 1.5em;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.85) 0.12em, transparent 0.14em) 0 0 / 0.5em 0.5em;
+}
+
+.mail__search {
+    padding: 0.45em 0.9em;
+    border-radius: 0.35em;
+    background: rgba(255, 255, 255, 0.88);
+    color: #5B6679;
+    font-size: 0.95em;
+}
+
+.mail__me {
+    justify-self: end;
+    width: 1.5em;
+    height: 1.5em;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.55);
+}
+
+.mail__body {
+    display: grid;
+    grid-template-columns: 17% 27% 1fr;
+}
+
+.mail__side {
+    padding: 0.9em 0;
+    background: #F3F4F6;
+}
+
+.mail__side li {
+    display: flex;
+    align-items: center;
+    gap: 0.6em;
+    padding: 0.6em 0.9em;
+    font-size: 0.95em;
+    white-space: nowrap;
+}
+
+.mail__side li::before {
+    content: "";
+    flex: none;
+    width: 0.9em;
+    height: 0.9em;
+    border: 1px solid #8D93A1;
+    border-radius: 0.2em;
+}
+
+.mail__side .is-on {
+    background: #D6E4F4;
+    color: #1B2430;
+    font-weight: 500;
+}
+
+.mail__list {
+    overflow: hidden;
+    background: #FFFFFF;
+    border-right: 1px solid #E4E5E8;
+}
+
+.mail__list-head {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.9em 0.9em 0.7em;
+    font-weight: 700;
+    color: #1B2430;
+}
+
+.mail__list-head span {
+    font-weight: 400;
+    color: #2467B3;
+}
+
+.mail__item {
+    display: grid;
+    grid-template-columns: 2.2em 1fr;
+    gap: 0.6em;
+    padding: 0.7em 0.9em;
+    border-bottom: 1px solid #F0F1F3;
+}
+
+.mail__item.is-on {
+    background: #D6E4F4;
+}
+
+.mail__av {
+    display: grid;
+    place-items: center;
+    width: 2.2em;
+    height: 2.2em;
+    border-radius: 50%;
+    color: #FFFFFF;
+    font-size: 0.9em;
+}
+
+.mail__item b {
+    display: block;
+    font-weight: 500;
+    color: #1B2430;
+}
+
+.mail__item span {
+    display: block;
+    overflow: hidden;
+    font-size: 0.9em;
+    color: #6A707C;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.mail__read {
+    padding: 1em;
+    background: #F6F7F8;
+}
+
+.mail__subject {
+    margin: 0 0 0.8em;
+    font-size: 1.15em;
+    color: #1B2430;
+}
+
+.mail__from {
+    display: flex;
+    align-items: center;
+    gap: 0.7em;
+    margin-bottom: 0.9em;
+    font-size: 0.9em;
+    color: #6A707C;
+}
+
+.mail__from b {
+    display: block;
+    font-weight: 500;
+    color: #1B2430;
+}
+
+.mail__from .mail__av {
+    background: #2467B3;
+}
+
+.mail .mail__read img {
+    display: block;
+    width: 100%;
+    border: 1px solid #E1E2E5;
+    border-radius: 0;
+    box-shadow: none;
+}
+
+@media (max-width: 639px) {
+    .hero-pair {
+        flex-direction: column;
+        align-items: flex-start;
+        width: min(92%, 34rem);
+    }
+
+    .case-hero .hero-pair__web {
+        flex: none;
+        width: 100%;
+    }
+
+    /* On phones the mail frame shrinks to its top bar and reading pane */
+    .case-hero .hero-pair__mail {
+        flex: none;
+        width: 78%;
+        margin: -2rem 0 0 auto;
+    }
+
+    .mail__top,
+    .mail__body {
+        font-size: 3.4cqw;
+    }
+
+    .mail__body {
+        grid-template-columns: 1fr;
+    }
+
+    .mail__side,
+    .mail__list {
+        display: none;
+    }
 }
 
 /* A: floating editor bits, styled like the Creator authoring UI */
@@ -1275,7 +1578,7 @@ hr.hr-full {
 .case {
     max-width: 60rem;
     margin: 0 auto;
-    padding: 3.5rem 1rem 6rem;
+    padding: 3.5rem 1rem 3.5rem;
 }
 
 @media (min-width: 640px) {
@@ -1300,14 +1603,15 @@ hr.hr-full {
     color: var(--ink-soft);
 }
 
-/* Company / role / tools strip */
+/* Company / role / tools strip: hairline rules instead of a boxed card, so it reads as
+   page metadata and not as another call-out */
 .case-meta {
     display: grid;
-    gap: 1.25rem 2.5rem;
+    gap: 1.25rem 3rem;
     margin: 2.5rem 0 1rem;
-    padding: 1.25rem 1.5rem;
-    border: 2px solid var(--ink);
-    box-shadow: 5px 5px 0 var(--ink);
+    padding: 1.25rem 0;
+    border-top: 1px solid color-mix(in srgb, var(--ink) 18%, var(--paper));
+    border-bottom: 1px solid color-mix(in srgb, var(--ink) 18%, var(--paper));
 }
 
 .case-meta dt {
@@ -1317,18 +1621,18 @@ hr.hr-full {
 
 .case-meta dd {
     margin: 0;
-    font-weight: 700;
+    font-weight: 500;
 }
 
 @media (min-width: 768px) {
     .case-meta { grid-template-columns: auto auto 1fr; }
 }
 
-/* Goal row spans the full width of the meta box */
+/* Goal row spans the full width of the meta strip */
 .case-meta__goal {
     grid-column: 1 / -1;
     padding-top: 1.25rem;
-    border-top: 2px solid var(--ink);
+    border-top: 1px solid color-mix(in srgb, var(--ink) 18%, var(--paper));
 }
 
 .case-meta__goal dd {
@@ -1340,11 +1644,11 @@ hr.hr-full {
     margin: 0;
 }
 
-/* Impact row spans the full width of the meta box */
+/* Impact row spans the full width of the meta strip */
 .case-meta__impact {
     grid-column: 1 / -1;
     padding-top: 1.25rem;
-    border-top: 2px solid var(--ink);
+    border-top: 1px solid color-mix(in srgb, var(--ink) 18%, var(--paper));
 }
 
 .case-meta__impact dd {
@@ -1371,18 +1675,19 @@ hr.hr-full {
 .case-tools i {
     display: block;
     box-sizing: content-box;
-    width: 22px;
-    height: 22px;
+    width: 20px;
+    height: 20px;
     padding: 5px;
-    border: 1.5px solid var(--ink);
+    border: 1px solid color-mix(in srgb, var(--ink) 22%, var(--paper));
+    border-radius: 4px;
     background: #FFFFFF;
     color: #121412;
-    font-size: 22px;
+    font-size: 20px;
     line-height: 1;
 }
 
 .case-section {
-    margin: 4.5rem 0;
+    margin: 3.25rem 0;
 }
 
 .retro .case h2 {
@@ -1437,7 +1742,7 @@ hr.hr-full {
 .retro .case hr {
     width: 100%;
     height: 0;
-    margin: 3.5rem 0;
+    margin: 3.25rem 0;
     border: 0;
     border-top: 1px solid color-mix(in srgb, var(--ink) 18%, var(--paper));
     background: none;
@@ -1451,6 +1756,46 @@ hr.hr-full {
     display: block;
     width: 100%;
     height: auto;
+}
+
+/* Two figures in a row. The flex-grow values are the images' width/height ratios, so both
+   come out the same height and the squarer moodboard is the narrower, secondary one. */
+.case .figure-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.25rem;
+    margin: 2.5rem 0;
+}
+
+.case .figure-row figure {
+    min-width: 0;
+    margin: 0;
+}
+
+.case .figure-row__mood { flex: 1.087 1 0; }
+.case .figure-row__system { flex: 1.734 1 0; }
+
+@media (max-width: 639px) {
+    .case .figure-row {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    .case .figure-row figure {
+        flex: none;
+        width: 100%;
+    }
+
+    .case .figure-row__mood { width: 70%; }
+}
+
+.case .figure-widgets img {
+    border-radius: 6px;
+}
+
+.case .figure-mail .mail {
+    max-width: 46rem;
+    margin-inline: auto;
 }
 
 .case figcaption {
@@ -1501,19 +1846,19 @@ hr.hr-full {
     color: var(--ink-soft);
 }
 
-/* Pull quote, boxed like a window */
+/* Pull quote: a quiet left rule in the divider tone instead of a boxed card */
 .case-quote {
-    margin: 3rem 0;
-    padding: 1.5rem 1.75rem;
-    border: 2px solid var(--ink);
-    box-shadow: 5px 5px 0 var(--ink);
+    max-width: 58ch;
+    margin: 2.5rem 0;
+    padding: 0.25rem 0 0.25rem 1.25rem;
+    border-left: 2px solid color-mix(in srgb, var(--ink) 25%, var(--paper));
 }
 
 .case .case-quote p {
-    margin: 0 0 0.875rem;
-    font-weight: 700;
-    font-size: clamp(1.25rem, 2.2vw, 1.5rem);
-    line-height: 1.4;
+    margin: 0 0 0.75rem;
+    font-weight: 500;
+    font-size: clamp(1.125rem, 2vw, 1.375rem);
+    line-height: 1.45;
 }
 
 .case-quote footer {
@@ -1524,26 +1869,32 @@ hr.hr-full {
     font-style: normal;
 }
 
-/* Closing statement in larger type */
+/* Closing statement: no rule or box, set apart by scale. Larger display type with the key
+   phrases picked out in the link green. */
 .case .case-statement {
-    max-width: 58ch;
-    margin-top: 3.5rem;
-    padding-left: 1.25rem;
-    border-left: 4px solid var(--link);
+    max-width: 34em;
+    margin-top: 3rem;
+    font-family: var(--font-display);
     font-weight: 500;
-    font-size: clamp(1.25rem, 2.2vw, 1.5rem);
-    line-height: 1.45;
+    font-size: clamp(1.375rem, 2.6vw, 1.875rem);
+    line-height: 1.35;
+    letter-spacing: -0.01em;
+    text-wrap: pretty;
 }
 
 .case .case-statement strong {
     font-weight: 700;
+    color: var(--link);
 }
 
-/* Previous / next project links — chunky boxes like the cards */
+/* Previous / next project links: quiet text links under a hairline rule, in the same
+   weight as the section dividers so they don't compete with the page content */
 .case-pager {
     display: grid;
-    gap: 1.5rem;
-    margin-top: 6rem;
+    gap: 1.25rem;
+    margin-top: 5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid color-mix(in srgb, var(--ink) 18%, var(--paper));
 }
 
 @media (min-width: 640px) {
@@ -1552,39 +1903,37 @@ hr.hr-full {
 
 .pager-link {
     display: block;
-    padding: 1.25rem 1.5rem;
-    border: 2px solid var(--ink);
-    box-shadow: 5px 5px 0 var(--ink);
-    transition: transform 0.15s ease, box-shadow 0.15s ease, background-color 0.15s ease;
-}
-
-.pager-link:hover {
-    transform: translate(-2px, -2px);
-    box-shadow: 7px 7px 0 var(--ink);
-    background: var(--highlight);
-    color: var(--on-highlight);
-}
-
-.pager-link:active {
-    transform: translate(5px, 5px);
-    box-shadow: 0 0 0 var(--ink);
+    padding: 0.25rem 0;
+    color: var(--ink);
 }
 
 .pager-link__label {
     display: block;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.25rem;
     color: var(--ink-soft);
-}
-
-.pager-link:hover .pager-link__label {
-    color: inherit;
+    transition: color 0.15s ease;
 }
 
 .pager-link__title {
     display: block;
-    font-weight: 700;
-    font-size: 1.25rem;
-    line-height: 1.3;
+    font-weight: 500;
+    font-size: 1.0625rem;
+    line-height: 1.35;
+    text-decoration: underline;
+    text-decoration-color: transparent;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 0.25em;
+    transition: text-decoration-color 0.15s ease;
+}
+
+.pager-link:hover .pager-link__label,
+.pager-link:focus-visible .pager-link__label {
+    color: var(--link);
+}
+
+.pager-link:hover .pager-link__title,
+.pager-link:focus-visible .pager-link__title {
+    text-decoration-color: currentColor;
 }
 
 @media (min-width: 640px) {
@@ -1683,9 +2032,6 @@ hr.hr-full {
 }
 
 @media (prefers-reduced-motion: reduce) {
-    .pager-link { transition: none; }
-    .pager-link:hover,
-    .pager-link:active,
     .case-cta:hover .nudge-arrow { transform: none; }
 }
 
@@ -1795,10 +2141,17 @@ hr.hr-full {
     animation: window-open 0.18s cubic-bezier(0.2, 1.4, 0.4, 1);
 }
 
+.retro .modal-window .window__bar {
+    justify-content: flex-end;
+    padding: 0.25rem 0.5rem;
+}
+
 .retro .modal-window .window__bar button {
+    padding: 0 0.25rem;
     color: inherit;
     font: inherit;
-    line-height: 1;
+    font-size: 2.125rem;
+    line-height: 0.8;
 }
 
 .retro .modal-window input {

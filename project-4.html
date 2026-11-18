@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,93 +16,282 @@
         }
     </script>
 </head>
+
 <body data-lean="dev" class="retro">
 
-<nav-bar></nav-bar>
+    <nav-bar></nav-bar>
 
-<div class="case-hero" style="--hero-bg: #AAE0EF">
-    <img src="assets/images/release-notes-web.png" alt="Admin UI redesign" />
-</div>
-
-<main class="case">
-
-    <section>
-        <h1 class="case-title">Template Systems for Product and Marketing Communications</h1>
-        <p class="case-lede">Highlighting market expertise for improved product communication &amp; impact</p>
-
-        <dl class="case-meta">
-            <div><dt class="pixel">Company</dt><dd>BlueMatrix</dd></div>
-            <div><dt class="pixel">Role</dt><dd>Lead Designer &amp; Developer</dd></div>
-            <div>
-                <dt class="pixel">Tools</dt>
-                <dd class="case-tools">
-                    <img src="https://cdn.simpleicons.org/html5" width="26" height="26" title="HTML5" alt="HTML5" />
-                    <img src="https://cdn.simpleicons.org/css" width="26" height="26" title="CSS" alt="CSS" />
-                    <img src="https://cdn.simpleicons.org/sass" width="26" height="26" title="Sass" alt="Sass" />
-                    <img src="https://cdn.simpleicons.org/javascript" width="26" height="26" title="JavaScript" alt="JavaScript" />
-                    <img src="https://cdn.jsdelivr.net/npm/simple-icons@v12/icons/adobexd.svg" width="26" height="26" title="Adobe XD" alt="Adobe XD" />
-                    <img src="https://cdn.simpleicons.org/bootstrap" width="26" height="26" title="Bootstrap" alt="Bootstrap" />
-                </dd>
+    <div class="case-hero" style="--hero-bg: #8FA6BF">
+        <div class="hero-pair">
+            <div class="hero-pair__web browser">
+                <div class="browser__bar" aria-hidden="true">
+                    <span class="browser__dots"><i></i><i></i><i></i></span>
+                    <span class="browser__url">
+                        <svg viewBox="0 0 12 12" width="10" height="10" fill="none" stroke="currentColor"
+                            stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="2.25" y="5.25" width="7.5" height="5" rx="1.25" />
+                            <path d="M4 5.25V3.75a2 2 0 0 1 4 0v1.5" />
+                        </svg>
+                    </span>
+                </div>
+                <img src="assets/images/release-notes-tags.png"
+                    alt="Release notes web output with a contents panel and feature highlight tags beside section headings" />
             </div>
-        </dl>
-    </section>
+            <div class="hero-pair__mail mail">
+                <div class="mail__top" aria-hidden="true">
+                    <span class="mail__apps"></span>
+                    <span class="mail__search">Search</span>
+                    <span class="mail__me"></span>
+                </div>
+                <div class="mail__body">
+                    <ul class="mail__side" aria-hidden="true">
+                        <li class="is-on">Inbox</li>
+                        <li>Junk Email</li>
+                        <li>Drafts</li>
+                        <li>Sent Items</li>
+                        <li>Archive</li>
+                        <li>Deleted Items</li>
+                    </ul>
+                    <div class="mail__list" aria-hidden="true">
+                        <div class="mail__list-head">Inbox <span>Filter</span></div>
+                        <div class="mail__item is-on"><i class="mail__av" style="background:#2467B3">R</i>
+                            <div><b>Release Notes</b><span>2026.4 Release Notes: Creator &amp; Portals</span></div>
+                        </div>
+                        <div class="mail__item"><i class="mail__av" style="background:#8A5A3C">C</i>
+                            <div><b>Client Services</b><span>Scheduled maintenance this weekend</span></div>
+                        </div>
+                        <div class="mail__item"><i class="mail__av" style="background:#C2307A">R</i>
+                            <div><b>Research Team</b><span>Draft review: Q2 sector update</span></div>
+                        </div>
+                        <div class="mail__item"><i class="mail__av" style="background:#5B5FC7">P</i>
+                            <div><b>Product Updates</b><span>2026.3 Release Notes: Creator</span></div>
+                        </div>
+                        <div class="mail__item"><i class="mail__av" style="background:#C25B1E">M</i>
+                            <div><b>Marketing</b><span>Newsletter schedule for June</span></div>
+                        </div>
+                        <div class="mail__item"><i class="mail__av" style="background:#3E8E6B">R</i>
+                            <div><b>Release Notes</b><span>2026.2 Release Notes: Portals</span></div>
+                        </div>
+                        <div class="mail__item"><i class="mail__av" style="background:#7A5BA6">S</i>
+                            <div><b>Support</b><span>Weekly ticket summary</span></div>
+                        </div>
+                    </div>
+                    <div class="mail__read">
+                        <div class="mail__subject">2026.4 Release Notes: Creator &amp; Portals</div>
+                        <div class="mail__from" aria-hidden="true">
+                            <i class="mail__av">R</i>
+                            <div><b>Release Notes</b>Mon 6/8/2026 9:00 AM &middot; To: You</div>
+                        </div>
+                        <img src="assets/images/release-notes-email.png"
+                            alt="The matching email version of the release notes, with a View Full Document button" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
-    <!-- Overview + Goal -->
-    <section class="case-section">
+    <main class="case">
 
-        <h2>What Communications Looked Like Before</h2>
-        <p>Client-facing communications and release notes were built in Word and sent to customers as PDF attachments.</p>
-        <p>I worked with our Chief Client Officer, product managers, and marketing team to replace that with a template system inside our own CMS, the same one our clients use. Authors write directly into a structured, on-brand format and publish to every channel from a single source.</p>
-        <p>The goals were to:</p>
-        <ul class="case-list">
-            <li>move authors off Word and PDF attachments and into the CMS</li>
-            <li>deliver PDF, web and email versions from one source, so customers can share them downstream</li>
-            <li>give official communications a unified look that builds trust and professionalism</li>
-        </ul>
+        <section>
+            <h1 class="case-title">Template Systems for Product and Marketing Communications</h1>
+            <p class="case-lede">Highlighting market expertise for improved product communication &amp; impact</p>
 
-    </section>
+            <dl class="case-meta">
+                <div>
+                    <dt class="pixel">Company</dt>
+                    <dd>BlueMatrix</dd>
+                </div>
+                <div>
+                    <dt class="pixel">Role</dt>
+                    <dd>Lead Designer &amp; Developer</dd>
+                </div>
+                <div>
+                    <dt class="pixel">Tools</dt>
+                    <dd class="case-tools">
+                        <img src="https://cdn.simpleicons.org/html5" width="26" height="26" title="HTML5" alt="HTML5" />
+                        <img src="https://cdn.simpleicons.org/css" width="26" height="26" title="CSS" alt="CSS" />
+                        <img src="https://cdn.simpleicons.org/sass" width="26" height="26" title="Sass" alt="Sass" />
+                        <img src="https://cdn.simpleicons.org/javascript" width="26" height="26" title="JavaScript"
+                            alt="JavaScript" />
+                        <img src="https://cdn.jsdelivr.net/npm/simple-icons@v12/icons/adobexd.svg" width="26"
+                            height="26" title="Adobe XD" alt="Adobe XD" />
+                        <img src="https://cdn.simpleicons.org/bootstrap" width="26" height="26" title="Bootstrap"
+                            alt="Bootstrap" />
+                    </dd>
+                </div>
+            </dl>
+        </section>
 
-    <hr>
+        <!-- Overview + Goal -->
+        <section class="case-section">
 
-    <section class="case-section">
+            <h2>What Communications Looked Like Before</h2>
+            <p>
+                Client-facing communications and release notes were built manually in Word and sent to customers as
+                static PDF attachments.
+            </p>
+            <p>
+                I partnered with our Chief Client Officer, product managers, and marketing team to replace that
+                fragmented workflow with a structured template system built directly inside the same
+                publishing platform our clients use every day.
+            </p>
+            <p>The goals were to:</p>
+            <ul class="case-list">
+                <li>Eliminate manual formatting: Move authors out of Word and static PDFs into a structured CMS
+                    workflow.</li>
+                <li>Publish once, distribute everywhere: Generate PDF, web, and email versions from a single source so
+                    customers can easily share updates downstream.</li>
+                <li>Establish brand trust: Give all official communications a unified, professional look.</li>
+            </ul>
 
-        <h2>Inside the Template System</h2>
-        <h3>Structuring the Content</h3>
-        <h3>The Authoring Experience</h3>
-        <h3></h3>
+        </section>
 
-    </section>
+        <hr>
 
-    <hr>
+        <section class="case-section">
 
-    <section class="case-section">
+            <h2>Inside the Template System</h2>
+            <h3>Standardized Content Structure</h3>
+            <p>Product release notes were our starting point. Every note follows a consistent architecture: an executive
+                summary (which automatically populates the email introduction) followed by modular body components. To
+                keep longer updates easy to scan, a configurable table of contents sits alongside the main content and
+                adapts seamlessly to smaller screens.</p>
+            <h3>Streamlined Authoring Workflow</h3>
+            <p>Instead of wrestling with layout and spacing, authors shape a note using lightweight metadata tags:</p>
+            <ul class="case-list">
+                <li><strong>Product Logo Tag:</strong> Automatically places the appropriate product branding at the top
+                    of the note.</li>
+                <li><strong>Feature Highlight Tags:</strong> Applied via a component's attributes menu (Announcement,
+                    New Feature, Improvement, Tip, Security, and Deprecated) to surface key updates at a glance.
+                    Components can carry multiple tags as needed.</li>
+                <li><strong>Smart Attachments:</strong> When a release calendar is attached, a dedicated action button
+                    automatically appears beside View PDF for quick access.</li>
+            </ul>
+            <p>
+                Typography, including headings, image captions, sources, and footnotes, is governed by strict system
+                styles, ensuring every note stays on-brand without manual intervention.
+            </p>
+            <figure class="figure-widgets">
+                <img src="assets/images/release-notes-widgets.png"
+                    alt="Authoring options for a release note: table of contents source, product logo, feature highlight tags, release calendar attachment and the summary that feeds the email intro" />
+                <figcaption>The authoring options behind each note: table of contents source, product logo, feature
+                    highlight tags and attachments. UI shown is illustrative.</figcaption>
+            </figure>
 
-        <h2>Practicing What We Preach: Scaling Internal Comms</h2>
-        <p>
-        What used to require hours of manual formatting now happens automatically, ensuring every communication stays on-brand by default. This consistency built customer trust while giving internal teams a unified system, eliminating the need to reinvent layouts for every send. It also proved the power of our CMS, allowing us to run our own communications on the exact product our clients rely on daily.
-        </p>
+            <!-- <figure>
+                <div class="browser">
+                    <div class="browser__bar" aria-hidden="true">
+                        <span class="browser__dots"><i></i><i></i><i></i></span>
+                        <span class="browser__url">
+                            <svg viewBox="0 0 12 12" width="10" height="10" fill="none" stroke="currentColor"
+                                stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="2.25" y="5.25" width="7.5" height="5" rx="1.25" />
+                                <path d="M4 5.25V3.75a2 2 0 0 1 4 0v1.5" />
+                            </svg>
+                        </span>
+                    </div>
+                    <img src="assets/images/release-notes-tags.png"
+                        alt="Release notes web output with a contents panel on the left and New Feature and Improvement tags beside section headings" />
+                </div>
+                <figcaption>Release notes web output with feature highlight tags beside section headings. Content shown
+                    is illustrative.</figcaption>
+            </figure> -->
 
-    </section>
+            <h3>From Web Page to Inbox</h3>
+            <p>Each note publishes simultaneously to web, PDF, and email from a single source of truth. The email
+                version pulls the note’s summary as its opening hook and includes a direct CTA to the full web version,
+                allowing authors to write once while keeping every channel in sync.</p>
+
+            <figure class="figure-mail">
+                <div class="mail">
+                    <div class="mail__top" aria-hidden="true">
+                        <span class="mail__apps"></span>
+                        <span class="mail__search">Search</span>
+                        <span class="mail__me"></span>
+                    </div>
+                    <div class="mail__body">
+                        <ul class="mail__side" aria-hidden="true">
+                            <li class="is-on">Inbox</li>
+                            <li>Junk Email</li>
+                            <li>Drafts</li>
+                            <li>Sent Items</li>
+                            <li>Archive</li>
+                            <li>Deleted Items</li>
+                        </ul>
+                        <div class="mail__list" aria-hidden="true">
+                            <div class="mail__list-head">Inbox <span>Filter</span></div>
+                            <div class="mail__item is-on"><i class="mail__av" style="background:#2467B3">R</i>
+                                <div><b>Release Notes</b><span>2026.4 Release Notes: Creator &amp; Portals</span></div>
+                            </div>
+                            <div class="mail__item"><i class="mail__av" style="background:#8A5A3C">C</i>
+                                <div><b>Client Services</b><span>Scheduled maintenance this weekend</span></div>
+                            </div>
+                            <div class="mail__item"><i class="mail__av" style="background:#C2307A">R</i>
+                                <div><b>Research Team</b><span>Draft review: Q2 sector update</span></div>
+                            </div>
+                            <div class="mail__item"><i class="mail__av" style="background:#5B5FC7">P</i>
+                                <div><b>Product Updates</b><span>2026.3 Release Notes: Creator</span></div>
+                            </div>
+                            <div class="mail__item"><i class="mail__av" style="background:#C25B1E">M</i>
+                                <div><b>Marketing</b><span>Newsletter schedule for June</span></div>
+                            </div>
+                            <div class="mail__item"><i class="mail__av" style="background:#3E8E6B">R</i>
+                                <div><b>Release Notes</b><span>2026.2 Release Notes: Portals</span></div>
+                            </div>
+                            <div class="mail__item"><i class="mail__av" style="background:#7A5BA6">S</i>
+                                <div><b>Support</b><span>Weekly ticket summary</span></div>
+                            </div>
+                        </div>
+                        <div class="mail__read">
+                            <div class="mail__subject">2026.4 Release Notes: Creator &amp; Portals</div>
+                            <div class="mail__from" aria-hidden="true">
+                                <i class="mail__av">R</i>
+                                <div><b>Release Notes</b>Mon 6/8/2026 9:00 AM &middot; To: You</div>
+                            </div>
+                            <img src="assets/images/release-notes-email.png"
+                                alt="The matching email version of the release notes, with a View Full Document button" />
+                        </div>
+                    </div>
+                </div>
+                <figcaption>The matching email version. Content shown is illustrative.</figcaption>
+            </figure>
+
+        </section>
+
+        <hr>
+
+        <section class="case-section">
+
+            <h2>Practicing What We Preach: Scaling Internal Comms</h2>
+            <p>What previously required hours of manual formatting now happens automatically, keeping every client
+                communication on-brand by default.</p>
+            <p>This consistency strengthened customer trust and gave internal teams a repeatable framework, eliminating
+                the need to reinvent layouts for every send. Just as importantly, it served as real-world proof of our
+                CMS's capabilities, allowing us to run our own external communications on the exact product our clients
+                rely on.</p>
+
+        </section>
 
 
-    <!-- More Work -->
-    <nav class="case-pager" aria-label="More projects">
-        <a href="project-3.html" class="pager-link">
-            <span class="pager-link__label pixel">← Previous</span>
-            <span class="pager-link__title">Company Website Redesign</span>
-        </a>
-        <a href="work.html#side-quests" class="pager-link pager-link--next">
-            <span class="pager-link__label pixel">Next →</span>
-            <span class="pager-link__title">More Work</span>
-        </a>
-    </nav>
+        <!-- More Work -->
+        <nav class="case-pager" aria-label="More projects">
+            <a href="project-3.html" class="pager-link">
+                <span class="pager-link__label pixel">← Previous</span>
+                <span class="pager-link__title">Company Website Redesign</span>
+            </a>
+            <a href="work.html#side-quests" class="pager-link pager-link--next">
+                <span class="pager-link__label pixel">Next →</span>
+                <span class="pager-link__title">More Work</span>
+            </a>
+        </nav>
 
-</main>
+    </main>
 
-<my-footer></my-footer>
-<div class="modal-overlay" id="imgModal">
-    <button class="modal-close" id="modalClose">✕</button>
-    <img id="modalImg" src="" alt="">
-</div>
+    <my-footer></my-footer>
+    <div class="modal-overlay" id="imgModal">
+        <button class="modal-close" id="modalClose">✕</button>
+        <img id="modalImg" src="" alt="">
+    </div>
 </body>
+
 </html>
